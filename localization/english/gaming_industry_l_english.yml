@@ -1,0 +1,326 @@
+l_english:
+  # Buildings
+  building_gaming_establishments: "Gaming Establishments"
+  building_gaming_establishments_desc: "Places where people gather to play games of strategy, chance, and skill - from traditional board games to modern gaming parlors."
+  
+  building_chess_academy: "Chess Academy"
+  building_chess_academy_desc: "An institution dedicated to the teaching, study, and competitive play of chess and other strategic board games."
+  
+  # Building groups
+  bg_gaming: "Gaming Industry"
+  bg_gaming_desc: "Businesses catering to peoples' desire for entertainment and strategic challenges through games."
+  
+  # Production Methods
+  pm_traditional_gaming: "Traditional Board Games"
+  pm_traditional_gaming_desc: "Classic board games using simple wooden pieces and paper boards, often with regional variants passed down through generations."
+  
+  pm_parlor_games: "Parlor Games"
+  pm_parlor_games_desc: "More sophisticated games enjoyed by the middle and upper classes in their parlors, incorporating elements of social interaction and strategy."
+  
+  pm_wargaming: "Military Wargaming"
+  pm_wargaming_desc: "Simulations of military conflicts used for both entertainment and officer training, using detailed rules to represent battlefield tactics."
+  
+  pm_gambling_houses: "Gambling Houses"
+  pm_gambling_houses_desc: "Establishments where patrons can wager on games of chance, creating revenue through the house edge while offering the allure of potential winnings."
+  
+  pm_modern_board_games: "Modern Board Games"
+  pm_modern_board_games_desc: "Advanced board games with complex rule systems, thematic elements, and specialized components, creating immersive gameplay experiences beyond traditional games."
+  
+  pm_role_playing_games: "Role-Playing Games"
+  pm_role_playing_games_desc: "Narrative-focused games where players assume the roles of characters in collaborative storytelling experiences guided by formal rule systems and the imagination."
+  
+  pm_traditional_chess_sets: "Traditional Chess Sets"
+  pm_traditional_chess_sets_desc: "Hand-crafted chess sets in a variety of regional styles, often made from local materials by skilled artisans."
+  
+  pm_staunton_chess_sets: "Staunton Chess Sets"
+  pm_staunton_chess_sets_desc: "Standardized chess pieces following the Staunton design, allowing for consistent tournament play and international recognition."
+  
+  pm_international_chess_tournaments: "International Chess Tournaments"
+  pm_international_chess_tournaments_desc: "Organized competitions bringing together the best players from around the world, generating prestige and tourism."
+  
+  pm_no_special_events: "Regular Operations"
+  pm_no_special_events_desc: "Standard daily operations without special tournaments or events."
+  
+  pm_mahjong_parlors: "Mahjong Parlors"
+  pm_mahjong_parlors_desc: "Establishments featuring the tile-based game of Mahjong, originating in China and popular throughout East Asia."
+  
+  pm_carrom_houses: "Carrom Houses"
+  pm_carrom_houses_desc: "Social venues centered around the South Asian board game Carrom, a strike and pocket game played on a wooden board with circular pieces."
+  
+  pm_mancala_variations: "Mancala Gaming Houses"
+  pm_mancala_variations_desc: "Venues for playing various forms of Mancala, one of the world's oldest known games, with roots in Africa and the Middle East."
+  
+  # Production Method Groups
+  pmg_gaming_type: "Gaming Type"
+  pmg_regional_gaming: "Regional Specialization"
+  pmg_chess_sets: "Chess Equipment"
+  pmg_chess_events: "Chess Events"
+  
+  # Technologies
+  tech_traditional_gaming: "Traditional Gaming Heritage"
+  tech_traditional_gaming_desc: "Our cultural heritage includes numerous games of skill and chance that have been refined over generations, forming an important part of social life."
+  
+  tech_modern_gaming: "Modern Gaming"
+  tech_modern_gaming_desc: "The formalization of gaming rules and mass production techniques allows for wider dissemination of games for entertainment and education."
+  
+  tech_gambling_halls: "Gambling Halls"
+  tech_gambling_halls_desc: "Professionally managed establishments that offer games of chance to patrons, generating significant tax revenue while raising moral concerns."
+  
+  tech_chess_academy: "Chess Academy"
+  tech_chess_academy_desc: "Dedicated institutions for the study and advancement of chess, training both recreational players and potential champions."
+  
+  tech_professional_gaming: "Professional Gaming"
+  tech_professional_gaming_desc: "The organization of gaming into professional leagues and international tournaments creates a formalized structure for competitive play."
+  
+  tech_advanced_game_design: "Advanced Game Design"
+  tech_advanced_game_design_desc: "Sophisticated gaming systems that blend psychology, mathematics, and artistry to create complex interactive experiences beyond traditional games."
+  
+  tech_psychological_theory: "Psychological Theory"
+  tech_psychological_theory_desc: "Scientific understanding of human psychology and behavior, with applications ranging from therapeutic techniques to understanding social dynamics."
+  
+  # Character Traits
+  trait_gaming_entrepreneur: "Gaming Entrepreneur"
+  trait_gaming_entrepreneur_desc: "This individual has a talent for monetizing leisure activities, seeing opportunity in peoples' desire for entertainment."
+  
+  trait_game_designer: "Game Designer"
+  trait_game_designer_desc: "A creative mind capable of designing engaging games with coherent rule systems, balancing chance and skill to create compelling experiences."
+  
+  trait_chess_master: "Chess Master"
+  trait_chess_master_desc: "A highly skilled chess player capable of deep strategic thinking and pattern recognition, often bringing these skills to other areas of life."
+  
+  trait_professional_gambler: "Professional Gambler"
+  trait_professional_gambler_desc: "An individual who makes their living through games of chance, combining mathematical understanding with psychological insight."
+  
+  trait_game_preservationist: "Game Preservationist"
+  trait_game_preservationist_desc: "A champion of traditional games, working to preserve cultural heritage through the maintenance of historical gaming traditions."
+  
+  # Events - Titles
+  gaming_industry_event.1.t: "Introduction of Kriegsspiel"
+  gaming_industry_event.2.t: "Little Wars Published"
+  gaming_industry_event.3.t: "The Landlord's Game"
+  gaming_industry_event.4.t: "The Monte Carlo Casino Opens"
+  gaming_industry_event.5.t: "Staunton Chess Set Standardization"
+  gaming_industry_event.6.t: "First International Chess Tournament"
+  gaming_industry_event.7.t: "Chess Prodigy Emerges"
+  gaming_industry_event.8.t: "Traditional Games Revival"
+  gaming_industry_event.9.t: "Gambling Reform Debate"
+  gaming_industry_event.10.t: "Lasker's Mathematical Contributions"
+  gaming_industry_event.11.t: "Go Masters Meet Western Chess"
+  gaming_industry_event.12.t: "The Rise of Gaming Tournaments"
+  gaming_industry_event.13.t: "Modern Board Game Revolution"
+  gaming_industry_event.14.t: "Role-Playing Game Innovation"
+  gaming_industry_event.15.t: "Game Design Studio Established"
+  gaming_industry_event.16.t: "Gaming Industry Consolidation"
+  gaming_industry_event.17.t: "Universal Gaming Corporation Established"
+  
+  # Events - Descriptions
+  gaming_industry_event.1.d: "A Prussian officer has introduced a tactical board game called 'Kriegsspiel' as a training tool for our military staff. This simulation uses terrain maps, unit tokens, and dice to represent battlefield conditions and the fog of war. While originally developed for officer training, it is gaining interest as a form of entertainment among both military and civilian enthusiasts."
+  
+  gaming_industry_event.2.d: "A famous author has published rules for tabletop wargaming with toy soldiers, calling it 'Little Wars.' This system uses miniature cannons that actually fire projectiles to knock down opponent pieces, and includes comprehensive rules for movement, combat, and victory conditions. While marketed as entertainment, there is debate about whether it glorifies or demystifies warfare."
+  
+  gaming_industry_event.3.d: "A new board game designed to teach economic principles has been created, where players buy properties and charge rent to demonstrate the dangers of monopolistic capitalism. The designer intended it as an educational tool highlighting wealth inequality, though ironically it may evolve into a celebration of capitalist accumulation. The game features a circular board, play money, and property cards."
+  
+  gaming_industry_event.4.d: "The grand opening of the Monte Carlo Casino has drawn aristocrats from across Europe. This opulent establishment features not only gaming tables for roulette, baccarat, and other games of chance, but also theatrical performances and fine dining. While promising significant revenue and tourism, it raises moral questions about state-sanctioned gambling."
+  
+  gaming_industry_event.5.d: "A new standardized design for chess pieces has been introduced by Howard Staunton, one of the world's leading chess players. The 'Staunton pattern' features pieces with distinctive shapes that are both aesthetically pleasing and practical for play. This standardization could facilitate international competition by ensuring all players use familiar equipment."
+  
+  gaming_industry_event.6.d: "Our capital is hosting the first truly international chess tournament, bringing together champion players from several countries. The event has attracted significant public interest, with newspapers reporting on the matches and spectators gathering to watch the games. This could establish our nation as a center for intellectual competition."
+  
+  gaming_industry_event.7.d: "A remarkable young chess talent has emerged in our nation, demonstrating extraordinary skill at a tender age. This prodigy can defeat experienced adult players and shows an intuitive understanding of complex strategic positions. With proper cultivation, this natural talent could bring international prestige to our country."
+  
+  gaming_industry_event.8.d: "Traditional games that have been played in our country for generations are experiencing a revival of interest. These games, deeply embedded in our cultural heritage, contain accumulated wisdom about strategy, probability, and social dynamics. Supporting this revival could strengthen cultural identity while providing entertainment that doesn't require expensive imported materials."
+  
+  gaming_industry_event.9.d: "The expansion of gambling establishments has prompted a moral debate in our society. Religious leaders condemn gambling as immoral and destructive to families, while business interests point to the tax revenue and tourism benefits. We must decide whether to embrace gambling for its economic advantages or restrict it for moral concerns."
+  
+  gaming_industry_event.10.d: "Emanuel Lasker, known primarily as a chess champion, has begun applying his analytical mind to mathematical problems, particularly in the fields of algebra and game theory. His work suggests that the strategic thinking developed through chess can have applications in theoretical mathematics and beyond. Supporting his research could yield benefits in multiple fields."
+  
+  gaming_industry_event.11.d: "Masters of the ancient game of Go from Japan have begun studying Western chess, while our chess players have shown interest in learning Go. This cultural exchange has sparked fascinating discussions about different approaches to strategy and abstract thinking. The two games, though superficially different, both reward deep calculation and pattern recognition."
+  
+  gaming_industry_event.12.d: "Competitive gaming has evolved from casual recreation to organized tournaments with formal rules, officials, and prizes. These events attract both participants and spectators, creating a new form of entertainment. Establishing professional leagues could further legitimize gaming as a serious pursuit worthy of public attention."
+  
+  gaming_industry_event.13.d: "Our researchers and game designers have made a remarkable breakthrough in gaming theory, creating a new generation of board games far more sophisticated than traditional pastimes. These 'modern board games' feature intricate rule systems, thematic elements, and specialized components that create deeply engaging experiences. This development is decades ahead of its time and could revolutionize leisure and education."
+  
+  gaming_industry_event.14.d: "An innovative fusion of psychological theory, storytelling, and gaming mechanics has led to the creation of 'role-playing games' - a completely new form of collaborative entertainment. In these games, participants assume the roles of fictional characters in imaginary settings, guided by formalized rules but empowered by creative freedom. The potential applications range from entertainment to therapy, education, and social development."
+  
+  gaming_industry_event.15.d: "The success of our advanced gaming innovations has led to the establishment of a dedicated game design studio - perhaps the first of its kind in the world. This creative workshop brings together designers, artists, writers, and mathematicians to develop new gaming experiences. What might have been considered mere children's play is now approached with professional rigor and artistic ambition, potentially creating an entirely new cultural industry."
+  
+  gaming_industry_event.16.d: "Our pioneering gaming industry has reached a level of sophistication and popularity that suggests potential for further consolidation and integration. The various gaming companies—from traditional card manufacturers to innovative design studios—could potentially be united under a single corporate umbrella. Such a conglomerate would have unprecedented influence over gaming culture and could revolutionize entertainment on a global scale."
+  
+  gaming_industry_event.17.d: "The Universal Gaming Corporation has been formally established, creating the world's first major entertainment conglomerate focused entirely on gaming. This revolutionary business entity unites various gaming traditions and innovations—from chess and traditional board games to modern board games and role-playing experiences—under a single corporate structure. This represents a transformation of gaming from scattered hobbyist pursuits into a unified, professional industry with global reach and influence."
+  
+  # Events - Flavor Text
+  gaming_industry_event.1.f: "The colored blocks on the map represent our forces, sir, while this dice roll determines the outcome of the engagement."
+  
+  gaming_industry_event.2.f: "The little nursery floor generals drag their artillery into action."
+  
+  gaming_industry_event.3.f: "Pass GO and collect $200!"
+  
+  gaming_industry_event.4.f: "Les jeux sont faits! Rien ne va plus!"
+  
+  gaming_industry_event.5.f: "A knight that could be recognized as such by a child of six."
+  
+  gaming_industry_event.6.f: "The international language of chess transcends national borders."
+  
+  gaming_industry_event.7.f: "The young prodigy moves the pieces with uncanny confidence."
+  
+  gaming_industry_event.8.f: "Games carried forward from antiquity contain the wisdom of our ancestors."
+  
+  gaming_industry_event.9.f: "The spinning roulette wheel: a symbol of fortune or moral decay?"
+  
+  gaming_industry_event.10.f: "From the sixty-four squares to mathematical infinity."
+  
+  gaming_industry_event.11.f: "Black and white stones on a wooden grid, ivory pieces on a checkered board."
+  
+  gaming_industry_event.12.f: "The trophy awaits the champion who can outthink all challengers."
+  
+  gaming_industry_event.13.f: "A world of immersive adventure awaits, contained within a box of cardboard and rules."
+  
+  gaming_industry_event.14.f: "The game master describes the scene, and the players decide what their characters will do next..."
+  
+  gaming_industry_event.15.f: "Our team of designers debates mechanics late into the night, testing iterations until the experience is perfect."
+  
+  gaming_industry_event.16.f: "The scattered pieces of our gaming industry could form something greater when united under a single vision."
+  
+  gaming_industry_event.17.f: "From parlor games to global entertainment: the Universal Gaming Corporation has forever changed how the world plays."
+  gaming_industry_event.1.f: "The colored blocks on the map represent our forces, sir, while this dice roll determines the outcome of the engagement."
+  
+  gaming_industry_event.2.f: "The little nursery floor generals drag their artillery into action."
+  
+  gaming_industry_event.3.f: "Pass GO and collect $200!"
+  
+  gaming_industry_event.4.f: "Les jeux sont faits! Rien ne va plus!"
+  
+  gaming_industry_event.5.f: "A knight that could be recognized as such by a child of six."
+  
+  gaming_industry_event.6.f: "The international language of chess transcends national borders."
+  
+  gaming_industry_event.7.f: "The young prodigy moves the pieces with uncanny confidence."
+  
+  gaming_industry_event.8.f: "Games carried forward from antiquity contain the wisdom of our ancestors."
+  
+  gaming_industry_event.9.f: "The spinning roulette wheel: a symbol of fortune or moral decay?"
+  
+  gaming_industry_event.10.f: "From the sixty-four squares to mathematical infinity."
+  
+  gaming_industry_event.11.f: "Black and white stones on a wooden grid, ivory pieces on a checkered board."
+  
+  gaming_industry_event.12.f: "The trophy awaits the champion who can outthink all challengers."
+  
+  gaming_industry_event.13.f: "A world of immersive adventure awaits, contained within a box of cardboard and rules."
+  
+  gaming_industry_event.14.f: "The game master describes the scene, and the players decide what their characters will do next..."
+  
+  gaming_industry_event.15.f: "Our team of designers debates mechanics late into the night, testing iterations until the experience is perfect."
+  
+  # Events - Options
+  gaming_industry_event.1.a: "Adopt it for military training"
+  gaming_industry_event.1.b: "This is merely a frivolous game"
+  
+  gaming_industry_event.2.a: "Promote it as family entertainment"
+  gaming_industry_event.2.b: "Criticize it as glorifying warfare"
+  
+  gaming_industry_event.3.a: "An innovative way to teach economics"
+  gaming_industry_event.3.b: "Denounce it as anti-capitalist propaganda"
+  
+  gaming_industry_event.4.a: "A magnificent addition to our tourism industry"
+  
+  gaming_industry_event.5.a: "Adopt the Staunton standard internationally"
+  gaming_industry_event.5.b: "Preserve our traditional chess designs"
+  
+  gaming_industry_event.6.a: "Host an international tournament with great fanfare"
+  gaming_industry_event.6.b: "Focus on domestic chess development"
+  
+  gaming_industry_event.7.a: "Celebrate this natural talent"
+  gaming_industry_event.7.b: "Provide state support for their development"
+  
+  gaming_industry_event.8.a: "Promote our cultural gaming heritage"
+  gaming_industry_event.8.b: "Focus on adopting more modern games"
+  
+  gaming_industry_event.9.a: "Support gambling for economic benefits"
+  gaming_industry_event.9.b: "Restrict gambling on moral grounds"
+  
+  gaming_industry_event.10.a: "Support Lasker's mathematical research"
+  gaming_industry_event.10.b: "Celebrate his chess achievements instead"
+  
+  gaming_industry_event.11.a: "Embrace both gaming traditions"
+  gaming_industry_event.11.b: "Preserve our traditional games exclusively"
+  
+  gaming_industry_event.12.a: "Establish international tournaments"
+  gaming_industry_event.12.b: "Create professional gaming leagues"
+  
+  gaming_industry_event.13.a: "Support this gaming revolution"
+  gaming_industry_event.13.b: "Focus on educational applications"
+  
+  gaming_industry_event.14.a: "Embrace this creative new form of gaming"
+  gaming_industry_event.14.b: "Explore its psychological applications"
+  
+  gaming_industry_event.15.a: "Establish a commercial game design studio"
+  gaming_industry_event.15.b: "Support an artistic and experimental approach"
+  
+  gaming_industry_event.16.a: "Pursue the creation of a gaming conglomerate"
+  gaming_industry_event.16.b: "Foster an ecosystem of diverse gaming companies"
+  
+  gaming_industry_event.17.a: "Leverage our global gaming leadership"
+  gaming_industry_event.17.b: "Focus on gaming as cultural soft power"
+  
+  # Modifiers
+  kriegsspiel_training: "Kriegsspiel Military Training"
+  little_wars_popularity: "Little Wars Popularity"
+  property_trading_game: "Economic Board Game Trend"
+  famous_casino: "Famous Casino Resort"
+  traditional_military_training: "Traditional Military Training"
+  pacifist_literature_censored: "Pacifist Literature Censored"
+  anti_capitalist_critique: "Anti-Capitalist Critique"
+  standardized_chess: "Standardized Chess Equipment"
+  traditional_chess_preference: "Traditional Chess Designs"
+  international_chess_tournament: "International Chess Tournament"
+  domestic_chess_focus: "Domestic Chess Development"
+  chess_tourism: "Chess Tourism"
+  chess_prodigy: "National Chess Prodigy"
+  state_supported_chess: "State-Supported Chess Program"
+  traditional_games_revival: "Traditional Games Revival"
+  modernization_focus: "Cultural Modernization Focus"
+  cultural_modernization: "Cultural Modernization"
+  gambling_tourism: "Gambling Tourism"
+  gambling_restricted: "Gambling Restrictions"
+  gambling_moral_outrage: "Moral Outrage Against Gambling"
+  gambling_business_opportunity: "Gambling Business Opportunity"
+  gambling_moral_victory: "Moral Victory Against Gambling"
+  gambling_business_restricted: "Gambling Business Restricted"
+  mathematical_game_theory: "Mathematical Game Theory Research"
+  game_theory_research: "Game Theory Research Center"
+  chess_champion_prestige: "Chess Champion Prestige"
+  east_west_game_exchange: "East-West Gaming Exchange"
+  traditional_go_preservation: "Traditional Go Preservation"
+  comparative_game_studies: "Comparative Game Studies"
+  international_gaming_tournaments: "International Gaming Tournaments"
+  tournament_tourism: "Tournament Tourism"
+  professional_gaming_leagues: "Professional Gaming Leagues"
+  professional_gaming_economy: "Professional Gaming Economy"
+  modern_board_game_revolution: "Modern Board Game Revolution"
+  educational_board_games: "Educational Board Game Movement"
+  educational_gaming_center: "Educational Gaming Center"
+  academic_gaming_interest: "Academic Gaming Interest"
+  role_playing_revolution: "Role-Playing Game Revolution"
+  narrative_gaming_center: "Narrative Gaming Center"
+  therapeutic_role_playing: "Therapeutic Role-Playing Applications"
+  psychological_gaming_research: "Psychological Gaming Research"
+  commercial_game_studio: "Commercial Game Design Studio"
+  game_design_industry: "Game Design Industry"
+  experimental_game_studio: "Experimental Game Studio"
+  game_art_movement: "Gaming Art Movement"
+  game_artistic_hub: "Gaming Artistic Hub"
+  gaming_innovation_ecosystem: "Gaming Innovation Ecosystem"
+  advanced_military_simulation: "Advanced Military Simulations" 
+  gaming_industrial_complex: "Gaming Industrial Complex"
+  established_gaming_industry: "Established Gaming Industry"
+  gaming_innovation_leader: "Gaming Innovation Leader"
+  global_gaming_leader: "Global Gaming Leader"
+  game_theory_department: "Game Theory Department"
+  cultural_trendsetter: "Cultural Trendsetter"
+  gaming_innovation_pioneer: "Gaming Innovation Pioneer"
+  cultural_soft_power: "Cultural Soft Power"
+  gaming_cultural_mecca: "Gaming Cultural Mecca"
+  
+  # Custom Tooltips
+  gaming_conglomerate_opportunity_tt: "This may open the path to creating a #bold gaming conglomerate#! if we meet the necessary conditions."
