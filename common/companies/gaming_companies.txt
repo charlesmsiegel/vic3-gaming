@@ -1,0 +1,434 @@
+# Gaming Companies for Victoria 3 Gaming Industry Mod
+
+# Historical
+nintendo_company = {
+    texture = "gfx/interface/icons/company_icons/nintendo.dds"
+    
+    # Nintendo was founded in 1889 as a playing card company in Japan
+    possible = {
+        OR = {
+            # Can be founded in Japan if traditional conditions are met
+            AND = {
+                country_has_primary_culture = cu:japanese
+                has_technology_researched = technology_traditional_gaming
+                year >= 1889
+            }
+            # Can also be founded elsewhere if alternate history path is taken
+            AND = {
+                has_technology_researched = technology_advanced_game_design
+                year >= 1880
+            }
+        }
+    }
+    
+    # Focuses on traditional card games initially
+    on_created = {
+        activate_production_method = {
+            building_type = building_gaming_establishments
+            production_method = pm_traditional_gaming
+        }
+    }
+    
+    # Bonus from Nintendo
+    country_modifiers = {
+        building_gaming_establishments_throughput_mult = 0.15
+        country_prestige_add = 5
+    }
+    
+    # Higher priority for Japan
+    ai_weight = {
+        base = 100
+        
+        modifier = {
+            factor = 2
+            country_has_primary_culture = cu:japanese
+        }
+    }
+    
+    # Can transform in the alternate history path
+    can_upgrade = {
+        hidden_trigger = {
+            owner = {
+                has_technology_researched = technology_advanced_game_design
+            }
+        }
+        
+        has_active_production_method = {
+            building_type = building_gaming_establishments
+            production_method = pm_traditional_gaming
+        }
+    }
+    
+    # Upgrade to modern game company
+    upgrade_option = {
+        name = upgrade_to_modern_nintendo
+        texture = "gfx/interface/icons/company_icons/nintendo_modern.dds"
+        
+        required_technologies = {
+            technology_advanced_game_design
+        }
+        
+        on_upgraded = {
+            activate_production_method = {
+                building_type = building_gaming_establishments
+                production_method = pm_modern_board_games
+            }
+        }
+        
+        country_modifiers = {
+            building_gaming_establishments_throughput_mult = 0.2
+            country_prestige_add = 10
+            country_innovation_mult = 0.02
+        }
+    }
+}
+
+parker_brothers_company = {
+    texture = "gfx/interface/icons/company_icons/parker_brothers.dds"
+    
+    # Parker Brothers was founded in 1883 in the United States
+    possible = {
+        OR = {
+            # Can be founded in US/UK if traditional conditions are met
+            AND = {
+                OR = {
+                    country_has_primary_culture = cu:yankee
+                    country_has_primary_culture = cu:dixie
+                    country_has_primary_culture = cu:british
+                }
+                has_technology_researched = technology_modern_gaming
+                year >= 1883
+            }
+            # Can also be founded elsewhere if alternate history path is taken
+            AND = {
+                has_technology_researched = technology_modern_gaming
+                year >= 1880
+            }
+        }
+    }
+    
+    # Focuses on parlor games initially
+    on_created = {
+        activate_production_method = {
+            building_type = building_gaming_establishments
+            production_method = pm_parlor_games
+        }
+    }
+    
+    # Bonus from Parker Brothers
+    country_modifiers = {
+        building_gaming_establishments_throughput_mult = 0.15
+        state_entertainment_add = 2
+    }
+    
+    # Higher priority for US/UK
+    ai_weight = {
+        base = 100
+        
+        modifier = {
+            factor = 2
+            OR = {
+                country_has_primary_culture = cu:yankee
+                country_has_primary_culture = cu:dixie
+                country_has_primary_culture = cu:british
+            }
+        }
+    }
+    
+    # Can transform in the alternate history path
+    can_upgrade = {
+        hidden_trigger = {
+            owner = {
+                has_technology_researched = technology_advanced_game_design
+            }
+        }
+        
+        has_active_production_method = {
+            building_type = building_gaming_establishments
+            production_method = pm_parlor_games
+        }
+    }
+    
+    # Upgrade to modern game company
+    upgrade_option = {
+        name = upgrade_to_modern_parker_brothers
+        texture = "gfx/interface/icons/company_icons/parker_brothers_modern.dds"
+        
+        required_technologies = {
+            technology_advanced_game_design
+        }
+        
+        on_upgraded = {
+            activate_production_method = {
+                building_type = building_gaming_establishments
+                production_method = pm_modern_board_games
+            }
+        }
+        
+        country_modifiers = {
+            building_gaming_establishments_throughput_mult = 0.2
+            state_entertainment_add = 5
+            country_innovation_mult = 0.01
+        }
+    }
+}
+
+# Alternate History Companies - would only exist if advanced gaming techs are researched early
+
+rpg_publishing_company = {
+    texture = "gfx/interface/icons/company_icons/rpg_publishing.dds"
+    
+    # Can only be founded if role-playing games are developed
+    possible = {
+        has_technology_researched = technology_advanced_game_design
+        has_technology_researched = technology_psychological_theory
+        any_scope_building = {
+            is_building_type = building_gaming_establishments
+            has_active_production_method = pm_role_playing_games
+        }
+    }
+    
+    # Focuses on role-playing games
+    on_created = {
+        activate_production_method = {
+            building_type = building_gaming_establishments
+            production_method = pm_role_playing_games
+        }
+    }
+    
+    # Bonus from RPG publisher
+    country_modifiers = {
+        building_gaming_establishments_throughput_mult = 0.2
+        country_innovation_mult = 0.03
+        state_education_access_add = 0.02
+    }
+    
+    # Higher priority for literate countries
+    ai_weight = {
+        base = 100
+        
+        modifier = {
+            factor = 3
+            literacy_rate > 0.8
+        }
+        
+        modifier = {
+            factor = 2
+            any_scope_state = {
+                has_building = building_university
+            }
+        }
+    }
+}
+
+wargaming_corporation = {
+    texture = "gfx/interface/icons/company_icons/wargaming_corp.dds"
+    
+    # Can be founded if wargaming is developed
+    possible = {
+        has_technology_researched = technology_modern_gaming
+        any_scope_building = {
+            is_building_type = building_gaming_establishments
+            has_active_production_method = pm_wargaming
+        }
+    }
+    
+    # Focuses on wargaming
+    on_created = {
+        activate_production_method = {
+            building_type = building_gaming_establishments
+            production_method = pm_wargaming
+        }
+    }
+    
+    # Bonus from wargaming publisher
+    country_modifiers = {
+        building_gaming_establishments_throughput_mult = 0.15
+        state_offense_add = 3
+        country_military_goods_cost_mult = -0.05
+    }
+    
+    # Higher priority for militaristic countries
+    ai_weight = {
+        base = 100
+        
+        modifier = {
+            factor = 2
+            has_strategy = ai_strategy_armed_deterrence
+        }
+        
+        modifier = {
+            factor = 2
+            any_scope_state = {
+                has_building = building_barracks
+            }
+        }
+    }
+    
+    # Can transform in the alternate history path
+    can_upgrade = {
+        hidden_trigger = {
+            owner = {
+                has_technology_researched = technology_advanced_game_design
+            }
+        }
+        
+        has_active_production_method = {
+            building_type = building_gaming_establishments
+            production_method = pm_wargaming
+        }
+    }
+    
+    # Upgrade to advanced wargaming company
+    upgrade_option = {
+        name = upgrade_to_advanced_wargaming
+        texture = "gfx/interface/icons/company_icons/advanced_wargaming.dds"
+        
+        required_technologies = {
+            technology_advanced_game_design
+        }
+        
+        on_upgraded = {
+            activate_production_method = {
+                building_type = building_gaming_establishments
+                production_method = pm_modern_board_games
+            }
+            
+            random_scope_state = {
+                limit = {
+                    has_building = building_barracks
+                    is_incorporated = yes
+                }
+                add_modifier = {
+                    name = advanced_military_simulation
+                    months = -1
+                }
+            }
+        }
+        
+        country_modifiers = {
+            building_gaming_establishments_throughput_mult = 0.2
+            state_offense_add = 5
+            country_military_goods_cost_mult = -0.1
+            country_military_training_rate_mult = 0.05
+        }
+    }
+}
+
+chess_publishing_house = {
+    texture = "gfx/interface/icons/company_icons/chess_publishing.dds"
+    
+    # Can be founded if chess academy exists
+    possible = {
+        has_technology_researched = technology_chess_academy
+        any_scope_building = {
+            is_building_type = building_chess_academy
+        }
+    }
+    
+    # Focuses on chess publishing and equipment
+    on_created = {
+        activate_production_method = {
+            building_type = building_chess_academy
+            production_method = pm_staunton_chess_sets
+        }
+    }
+    
+    # Bonus from chess publisher
+    country_modifiers = {
+        building_chess_academy_throughput_mult = 0.2
+        country_prestige_add = 5
+        state_education_access_add = 0.01
+    }
+    
+    # Higher priority for countries with chess academies
+    ai_weight = {
+        base = 100
+        
+        modifier = {
+            factor = 3
+            calc_true_if = {
+                amount = 2
+                any_scope_state = {
+                    has_building = building_chess_academy
+                }
+            }
+        }
+    }
+}
+
+# Advanced Gaming Conglomerate - only possible in alternate history path
+gaming_conglomerate = {
+    texture = "gfx/interface/icons/company_icons/gaming_conglomerate.dds"
+    
+    # Can only be founded in very advanced alternate history
+    possible = {
+        has_technology_researched = technology_advanced_game_design
+        has_technology_researched = technology_psychological_theory
+        year >= 1900
+        literacy_rate > 0.8
+        
+        # Must already have at least two gaming companies
+        calc_true_if = {
+            amount > 1
+            has_company = nintendo_company
+            has_company = parker_brothers_company
+            has_company = rpg_publishing_company
+            has_company = wargaming_corporation
+            has_company = chess_publishing_house
+        }
+    }
+    
+    # Creates a major entertainment company
+    on_created = {
+        # Upgrade gaming establishments and chess academies
+        random_scope_state = {
+            limit = {
+                has_building = building_gaming_establishments
+                is_incorporated = yes
+            }
+            
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                }
+                building_scale_level = 3
+            }
+        }
+        
+        random_scope_state = {
+            limit = {
+                has_building = building_chess_academy
+                is_incorporated = yes
+            }
+            
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_chess_academy
+                }
+                building_scale_level = 2
+            }
+        }
+        
+        # Add permanent conglomerate modifier
+        add_modifier = {
+            name = gaming_industrial_complex
+            months = -1
+        }
+    }
+    
+    # Major bonuses from gaming conglomerate
+    country_modifiers = {
+        building_gaming_establishments_throughput_mult = 0.3
+        building_chess_academy_throughput_mult = 0.3
+        country_prestige_add = 20
+        country_innovation_mult = 0.05
+        state_entertainment_add = 10
+        state_education_access_add = 0.05
+    }
+    
+    # Always high priority if possible
+    ai_weight = {
+        base = 1000
+    }
+}
