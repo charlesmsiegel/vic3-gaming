@@ -1,0 +1,146 @@
+# Gaming Establishments building for Victoria 3 Gaming Industry Mod
+
+building_gaming_establishments = {
+    building_group = bg_service
+    texture = "gfx/interface/icons/building_icons/gaming_establishment.dds"
+    
+    # Main outputs
+    produces = {
+        services = 40
+    }
+    
+    # Base workforce
+    employment_scaled = {
+        aristocrats = 2
+        clerks = 8
+        shopkeepers = 4
+        laborers = 6
+    }
+    
+    # Upgrades as the industry matures
+    upgrades = {
+        upgrading_time = 12
+        base_cost = {
+            money = 1000
+        }
+        ramping_cost = 0.5
+        
+        max_level = 5
+        
+        workforce_scaled = {
+            # Cost increases with size
+            goods_input_paper = 5
+            goods_input_wood = 5
+        }
+    }
+    
+    # State modifiers when active
+    city_modifier = {
+        state_entertainment_add = 2
+    }
+    
+    # Can only be built in urban centers
+    possible = {
+        error_check = {
+            severity = fail
+            is_urban = yes
+        }
+    }
+    
+    ai_value = {
+        base = 300
+        
+        if = {
+            limit = { state_has_urbanization = yes }
+            add = 100
+        }
+        
+        # More valuable to countries with higher literacy
+        if = {
+            limit = { owner = { literacy_rate > 0.7 } }
+            add = 200
+        }
+    }
+    
+    # Show in building map mode
+    on_activate = {
+        create_pop = {
+            culture = owner.culture
+            religion = owner.religion
+            size = 500
+            pop_type = clerks
+        }
+    }
+    
+    # Special effects for high level establishments
+    level_scaled = {
+        state_infrastructure_add = 5
+        building_wealth_add = 50
+    }
+}
+
+# Specialized Chess Academy building
+building_chess_academy = {
+    building_group = bg_education
+    texture = "gfx/interface/icons/building_icons/chess_academy.dds"
+    
+    # Smaller scale than general gaming establishments
+    produces = {
+        services = 20
+    }
+    
+    # Higher ratio of academics
+    employment_scaled = {
+        academics = 5
+        clerks = 5
+        shopkeepers = 2
+        laborers = 3
+    }
+    
+    # Upgrades 
+    upgrades = {
+        upgrading_time = 12
+        base_cost = {
+            money = 800
+        }
+        ramping_cost = 0.4
+        
+        max_level = 3
+        
+        workforce_scaled = {
+            goods_input_paper = 3
+            goods_input_wood = 2
+        }
+    }
+    
+    # Educational benefits
+    city_modifier = {
+        state_education_access_add = 1
+        state_entertainment_add = 1
+    }
+    
+    # Can only be built in states with schools and gaming establishments
+    possible = {
+        error_check = {
+            severity = fail
+            is_urban = yes
+            has_building = building_schools
+        }
+    }
+    
+    # More valuable in literate countries
+    ai_value = {
+        base = 200
+        
+        if = {
+            limit = { owner = { literacy_rate > 0.8 } }
+            add = 300
+        }
+    }
+    
+    # Academic enrichment
+    level_scaled = {
+        state_education_access_add = 1
+        state_innovation_add = 5
+    }
+}
