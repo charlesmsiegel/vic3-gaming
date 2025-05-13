@@ -1,0 +1,332 @@
+# Historical figures for Gaming Industry in Victoria 3
+
+# Howard Staunton - Chess player and promoter of the Staunton chess set
+historical_figure_howard_staunton = {
+    first_name = "Howard"
+    last_name = "Staunton"
+    culture = cu:british
+    
+    # Born 1810
+    birth_date = 1810.4.1
+    # Died 1874
+    death_date = 1874.6.22
+    
+    # Position and skills
+    c:GBR = {
+        add_character = scope:character
+        save_scope_as = employer
+    }
+    
+    traits = {
+        trait_chess_master
+        analytical
+        charismatic
+    }
+    
+    # Interest group
+    interest_group = ig_intelligentsia
+    
+    # Special events and modifiers related to Staunton chess set
+    on_created = {
+        # Add modifiers when active
+        trigger_event = {
+            id = gaming_industry_event.10 # Staunton Chess Set Formalization event
+        }
+    }
+}
+
+# Wilhelm von Tschischwitz - Kriegsspiel developer, Prussian officer
+historical_figure_wilhelm_tschischwitz = {
+    first_name = "Wilhelm"
+    last_name = "von Tschischwitz"
+    culture = cu:north_german
+    
+    # Approximate birth and death dates
+    birth_date = 1825.1.1
+    death_date = 1888.12.31
+    
+    # Position as military officer
+    c:PRU = {
+        add_character = scope:character
+        save_scope_as = employer
+    }
+    
+    traits = {
+        trait_game_designer
+        officer
+        analytical
+    }
+    
+    commander = {
+        rank = rank_value:major_general
+        skill = 3
+    }
+    
+    # Interest group
+    interest_group = ig_armed_forces
+    
+    # Special events related to wargaming
+    on_created = {
+        trigger_event = {
+            id = gaming_industry_event.11 # Improved Kriegsspiel event
+        }
+    }
+}
+
+# François Blanc - Casino entrepreneur who developed Monte Carlo
+historical_figure_francois_blanc = {
+    first_name = "François"
+    last_name = "Blanc"
+    culture = cu:french
+    
+    # Born 1806, died 1877
+    birth_date = 1806.12.12
+    death_date = 1877.7.27
+    
+    c:FRA = {
+        add_character = scope:character
+        save_scope_as = employer
+    }
+    
+    traits = {
+        trait_gaming_entrepreneur
+        trait_professional_gambler
+        shrewd_intellect
+        charismatic
+    }
+    
+    # Interest group
+    interest_group = ig_industrialists
+    
+    # Special events related to Monte Carlo
+    on_created = {
+        trigger_event = {
+            id = gaming_industry_event.12 # Monte Carlo Casino Development
+        }
+    }
+}
+
+# Elizabeth Magie - Inventor of "The Landlord's Game" (precursor to Monopoly)
+historical_figure_elizabeth_magie = {
+    first_name = "Elizabeth"
+    last_name = "Magie"
+    culture = cu:yankee
+    female = yes
+    
+    # Born 1866, died 1948
+    birth_date = 1866.5.9
+    death_date = 1948.3.2
+    
+    c:USA = {
+        add_character = scope:character
+        save_scope_as = employer
+    }
+    
+    traits = {
+        trait_game_designer
+        innovative
+        charismatic
+    }
+    
+    # Interest group - Progressive activist
+    interest_group = ig_rural_folk
+    
+    # Special events related to The Landlord's Game
+    on_created = {
+        trigger_event = {
+            id = gaming_industry_event.13 # The Landlord's Game event
+        }
+    }
+}
+
+# H.G. Wells - Author and creator of "Little Wars"
+historical_figure_hg_wells = {
+    first_name = "Herbert"
+    last_name = "Wells"
+    culture = cu:british
+    
+    # Born 1866, died 1946
+    birth_date = 1866.9.21
+    death_date = 1946.8.13
+    
+    c:GBR = {
+        add_character = scope:character
+        save_scope_as = employer
+    }
+    
+    traits = {
+        trait_game_designer
+        innovative
+        charismatic
+    }
+    
+    # Interest group
+    interest_group = ig_intelligentsia
+    
+    # Special events related to Little Wars
+    on_created = {
+        trigger_event = {
+            id = gaming_industry_event.14 # Little Wars Publication event
+        }
+    }
+}
+
+# José Raúl Capablanca - Chess prodigy and world champion
+historical_figure_jose_capablanca = {
+    first_name = "José"
+    last_name = "Capablanca"
+    culture = cu:caribeno
+    
+    # Born 1888, died 1942
+    birth_date = 1888.11.19
+    death_date = 1942.3.8
+    
+    c:SPA = { # Cuba was Spanish territory until 1898
+        add_character = scope:character
+        save_scope_as = employer
+    }
+    
+    traits = {
+        trait_chess_master
+        analytical
+        shrewd_intellect
+    }
+    
+    # Interest group
+    interest_group = ig_intelligentsia
+    
+    # Special events related to chess prodigy
+    on_created = {
+        trigger_event = {
+            id = gaming_industry_event.15 # Chess Prodigy event
+        }
+    }
+}
+
+# Emanuel Lasker - Long-reigning chess world champion
+historical_figure_emanuel_lasker = {
+    first_name = "Emanuel"
+    last_name = "Lasker"
+    culture = cu:north_german
+    
+    # Born 1868, died 1941
+    birth_date = 1868.12.24
+    death_date = 1941.1.11
+    
+    c:PRU = {
+        add_character = scope:character
+        save_scope_as = employer
+    }
+    
+    traits = {
+        trait_chess_master
+        analytical
+        professor
+    }
+    
+    # Interest group
+    interest_group = ig_intelligentsia
+    
+    # Special events related to chess championship
+    on_created = {
+        trigger_event = {
+            id = gaming_industry_event.16 # World Chess Championship
+        }
+    }
+}
+
+# Kawanishi Kinryo - Founder of Nintendo (originally as playing card company)
+historical_figure_kawanishi_kinryo = {
+    first_name = "Fusajiro"
+    last_name = "Yamauchi" # Founder of Nintendo
+    culture = cu:japanese
+    
+    # Born 1859, died 1940 (approximate)
+    birth_date = 1859.11.22
+    death_date = 1940.1.1
+    
+    c:JAP = {
+        add_character = scope:character
+        save_scope_as = employer
+    }
+    
+    traits = {
+        trait_gaming_entrepreneur
+        innovative
+        industrious
+    }
+    
+    # Interest group
+    interest_group = ig_industrialists
+    
+    # Special events related to hanafuda cards
+    on_created = {
+        trigger_event = {
+            id = gaming_industry_event.17 # Hanafuda Card Company
+        }
+    }
+}
+
+# Ganjifa Card Master - Traditional Indian playing card artisan 
+historical_figure_ganjifa_master = {
+    first_name = "Chitaranjan"
+    last_name = "Das"
+    culture = cu:bengali
+    
+    # Approximate dates
+    birth_date = 1830.1.1
+    death_date = 1890.12.31
+    
+    c:BIC = { # British Raj (British India Company)
+        add_character = scope:character
+        save_scope_as = employer
+    }
+    
+    traits = {
+        trait_game_preservationist
+        trait_game_designer
+        industrious
+    }
+    
+    # Interest group
+    interest_group = ig_petty_bourgeoisie
+    
+    # Special events related to traditional card games
+    on_created = {
+        trigger_event = {
+            id = gaming_industry_event.18 # Ganjifa Revival
+        }
+    }
+}
+
+# Mir Sultan Khan - Chess prodigy from British India
+historical_figure_sultan_khan = {
+    first_name = "Sultan"
+    last_name = "Khan"
+    culture = cu:punjabi
+    
+    # Born 1905, died 1966
+    birth_date = 1905.1.1
+    death_date = 1966.4.25
+    
+    c:BIC = { # British Raj
+        add_character = scope:character
+        save_scope_as = employer
+    }
+    
+    traits = {
+        trait_chess_master
+        trait_game_preservationist
+        analytical
+    }
+    
+    # Interest group
+    interest_group = ig_rural_folk
+    
+    # Special events related to Indian chess traditions
+    on_created = {
+        trigger_event = {
+            id = gaming_industry_event.19 # Chaturanga to Chess event
+        }
+    }
+}
