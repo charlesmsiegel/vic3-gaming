@@ -1,0 +1,33 @@
+l_english:
+  # Historical Companies
+  nintendo_company: "Nintendo Koppai"
+  nintendo_company_desc: "Founded in 1889 by Fusajiro Yamauchi, this company specializes in handmade hanafuda playing cards. With its high-quality traditional gaming products, Nintendo has established itself as a prominent gaming company in Japan."
+  
+  upgrade_to_modern_nintendo: "Expand into Modern Gaming"
+  upgrade_to_modern_nintendo_desc: "Expand Nintendo's product line beyond traditional playing cards into modern board games and other gaming innovations."
+  
+  parker_brothers_company: "Parker Brothers"
+  parker_brothers_company_desc: "Founded in 1883 by George S. Parker, this American game company publishes popular parlor games. Known for high-quality family entertainment, Parker Brothers has built a strong reputation for accessible gaming experiences."
+  
+  upgrade_to_modern_parker_brothers: "Diversify Game Portfolio"
+  upgrade_to_modern_parker_brothers_desc: "Expand Parker Brothers' catalog to include more sophisticated board games with complex mechanics and thematic elements."
+  
+  # Alternate History Companies
+  rpg_publishing_company: "Narrative Gaming Guild"
+  rpg_publishing_company_desc: "A pioneering publisher specializing in role-playing games, where players assume the roles of characters in collaborative storytelling adventures. This company is developing an entirely new form of entertainment that blends game mechanics with theatrical improvisation."
+  
+  wargaming_corporation: "Strategic Simulations Ltd."
+  wargaming_corporation_desc: "This company specializes in military simulation games used by both hobbyists and professional military officers. Their detailed battlefield simulations incorporate historical tactics and terrain considerations, making them valuable for both entertainment and training."
+  
+  upgrade_to_advanced_wargaming: "Develop Advanced Military Simulations"
+  upgrade_to_advanced_wargaming_desc: "Invest in creating more sophisticated wargaming systems that incorporate modern game design principles, allowing for both recreational play and professional military training applications."
+  
+  chess_publishing_house: "International Chess Publishers"
+  chess_publishing_house_desc: "A publisher dedicated to chess literature, equipment, and tournament organization. This company produces high-quality chess sets, publishes books on chess strategy, and sponsors competitive events to promote the game globally."
+  
+  gaming_conglomerate: "Universal Gaming Corporation"
+  gaming_conglomerate_desc: "A revolutionary entertainment conglomerate that unites various gaming disciplines under one corporate umbrella. This company has transformed gaming from a casual pastime into a major industry with professional development studios, publishing operations, and organized competition structures."
+  
+  # Modifiers
+  advanced_military_simulation: "Advanced Military Simulations"
+  gaming_industrial_complex: "Gaming Industrial Complex"
