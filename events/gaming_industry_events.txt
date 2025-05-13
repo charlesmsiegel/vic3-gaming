@@ -20,8 +20,7 @@ gaming_industry_event.1 = {
             has_building = building_gaming_establishments
         }
     }
-    
-    immediate = {
+        immediate = {
         # Find a state with both buildings
         random_scope_state = {
             limit = {
@@ -1668,6 +1667,251 @@ gaming_industry_event.17 = {
                 name = gaming_cultural_mecca
                 months = -1 # Permanent
             }
+        }
+    }
+}
+
+# Norse Revival Through Gaming
+gaming_industry_event.101 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.101.t
+    desc = gaming_industry_event.101.d
+    flavor = gaming_industry_event.101.f
+    
+    duration = 3
+    
+    trigger = {
+        has_character = historical_figure_joshua_heath
+        has_technology_researched = technology_advanced_game_design
+        any_scope_building = {
+            is_building_type = building_gaming_establishments
+            has_active_production_method = pm_role_playing_games
+        }
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                any_scope_building = {
+                    is_building_type = building_gaming_establishments
+                    has_active_production_method = pm_role_playing_games
+                }
+            }
+            save_scope_as = rpg_state
+        }
+        
+        # Find Joshua Heath
+        every_scope_character = {
+            limit = {
+                is_character_type = historical_figure_joshua_heath
+            }
+            save_scope_as = joshua_heath
+        }
+    }
+    
+    # Support the cultural revival
+    option = {
+        name = gaming_industry_event.101.a
+        default_option = yes
+        
+        # Cultural benefits
+        add_modifier = {
+            name = norse_gaming_revival
+            months = 60
+        }
+        
+        # Local benefits in the RPG state
+        scope:rpg_state = {
+            add_modifier = {
+                name = mythic_gaming_center
+                months = 48
+            }
+        }
+        
+        # Influence growth for Joshua Heath
+        scope:joshua_heath = {
+            add_modifier = {
+                name = gaming_spiritual_leader
+                months = 72
+            }
+        }
+        
+        # Boost to Animist interest in society
+        random_interest_group = {
+            limit = {
+                OR = {
+                    is_interest_group_type = ig_devout
+                    is_interest_group_type = ig_intelligentsia
+                }
+            }
+            add_modifier = {
+                name = pagan_revival_interest
+                months = 36
+            }
+        }
+    }
+    
+    # Focus on gaming aspects only
+    option = {
+        name = gaming_industry_event.101.b
+        
+        # Innovation and entertainment benefits
+        add_modifier = {
+            name = mythic_storytelling_games
+            months = 48
+        }
+        
+        # Innovation boost
+        scope:rpg_state = {
+            add_innovation = 25
+        }
+        
+        # Gaming industry growth
+        random_scope_building = {
+            limit = {
+                is_building_type = building_gaming_establishments
+                has_active_production_method = pm_role_playing_games
+            }
+            building_scale_level = 1
+        }
+        
+        # Joshua Heath remains focused on game design
+        scope:joshua_heath = {
+            add_modifier = {
+                name = mythic_game_designer
+                months = 60
+            }
+        }
+    }
+}
+
+# Games for Social Change
+gaming_industry_event.102 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.102.t
+    desc = gaming_industry_event.102.d
+    flavor = gaming_industry_event.102.f
+    
+    duration = 3
+    
+    trigger = {
+        has_character = historical_figure_terry_robinson
+        has_technology_researched = technology_advanced_game_design
+        any_scope_building = {
+            is_building_type = building_gaming_establishments
+            has_active_production_method = pm_role_playing_games
+        }
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                has_building = building_university
+                any_scope_building = {
+                    is_building_type = building_gaming_establishments
+                }
+            }
+            save_scope_as = education_state
+        }
+        
+        # Find Terry Robinson
+        every_scope_character = {
+            limit = {
+                is_character_type = historical_figure_terry_robinson
+            }
+            save_scope_as = terry_robinson
+        }
+        
+        # Reference interest groups
+        ig:ig_rural_folk = {
+            save_scope_as = rural_ig
+        }
+        
+        ig:ig_trade_unions = {
+            save_scope_as = union_ig
+        }
+    }
+    
+    # Promote educational gaming
+    option = {
+        name = gaming_industry_event.102.a
+        default_option = yes
+        
+        # Educational benefits
+        add_modifier = {
+            name = educational_gaming_program
+            months = 60
+        }
+        
+        # Local education boost
+        scope:education_state = {
+            add_modifier = {
+                name = cooperative_game_education
+                months = 48
+            }
+        }
+        
+        # Increase approval for Terry Robinson
+        scope:terry_robinson = {
+            add_modifier = {
+                name = educational_gaming_pioneer
+                months = 72
+            }
+        }
+        
+        # Education access improvement
+        random_scope_state = {
+            limit = {
+                has_building = building_school
+            }
+            add_modifier = {
+                name = gaming_curriculum
+                months = 36
+            }
+        }
+    }
+    
+    # Use games for class consciousness
+    option = {
+        name = gaming_industry_event.102.b
+        
+        # Political consciousness benefits
+        add_modifier = {
+            name = class_conscious_gaming
+            months = 48
+        }
+        
+        # Interest group approval
+        scope:rural_ig = {
+            add_modifier = {
+                name = gaming_movement_support
+                months = 60
+            }
+        }
+        
+        scope:union_ig = {
+            add_modifier = {
+                name = gaming_movement_support
+                months = 60
+            }
+        }
+        
+        # Terry Robinson becomes more political
+        scope:terry_robinson = {
+            add_modifier = {
+                name = radical_game_designer
+                months = 72
+            }
+        }
+        
+        # Small radicals increase
+        add_modifier = {
+            name = gaming_political_awakening
+            months = 36
         }
     }
 }
