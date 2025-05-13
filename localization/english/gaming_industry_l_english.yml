@@ -324,3 +324,36 @@ l_english:
   
   # Custom Tooltips
   gaming_conglomerate_opportunity_tt: "This may open the path to creating a #bold gaming conglomerate#! if we meet the necessary conditions."
+
+# Joshua Heath Event
+  gaming_industry_event.101.t: "Norse Revival Through Gaming"
+  gaming_industry_event.101.d: "Joshua Heath, a visionary game designer from New Hampshire, has created a revolutionary role-playing game system that weaves together elements of Norse mythology with collaborative storytelling. His games, featuring runic dice and intricate mythology, have sparked a surprising cultural revival in traditional Nordic spiritual practices. Players find themselves drawn not just to the game mechanics but to the philosophical and spiritual worldview embedded within. Heath himself has emerged as something of a spiritual leader, using gaming as a vehicle for cultural preservation and revival."
+  gaming_industry_event.101.f: "The runes are cast, the saga unfolds, and modern players find themselves walking the ancient paths of their ancestors through play."
+  
+  gaming_industry_event.101.a: "Support this cultural revival"
+  gaming_industry_event.101.b: "Focus on the gaming aspects only"
+  
+  # Terry Robinson Event
+  gaming_industry_event.102.t: "Games for Social Change"
+  gaming_industry_event.102.d: "Terry Robinson, a Catholic game designer from Philadelphia, has developed a series of role-playing games specifically aimed at addressing social inequalities. These cooperative games place players in scenarios where they must work together to overcome systematic challenges, building empathy and understanding across class divides. Education centers and community halls have begun using these games as tools for building social cohesion and raising awareness about labor rights and community organization. Robinson argues that gaming can be a powerful medium for social education and reform."
+  gaming_industry_event.102.f: "Through play, we rehearse the world we wish to create."
+  
+  gaming_industry_event.102.a: "Promote these games in schools and community centers"
+  gaming_industry_event.102.b: "Use these games to build class consciousness"
+  
+  # Modifiers
+  norse_gaming_revival: "Norse Gaming Revival"
+  mythic_gaming_center: "Mythic Gaming Center"
+  gaming_spiritual_leader: "Gaming Spiritual Leader"
+  pagan_revival_interest: "Pagan Revival Interest"
+  mythic_storytelling_games: "Mythic Storytelling Games"
+  mythic_game_designer: "Mythic Game Designer"
+  
+  educational_gaming_program: "Educational Gaming Program"
+  cooperative_game_education: "Cooperative Game Education"
+  educational_gaming_pioneer: "Educational Gaming Pioneer"
+  gaming_curriculum: "Gaming in School Curriculum"
+  class_conscious_gaming: "Class Conscious Gaming"
+  gaming_movement_support: "Gaming Movement Support"
+  radical_game_designer: "Radical Game Designer"
+  gaming_political_awakening: "Gaming Political Awakening"
