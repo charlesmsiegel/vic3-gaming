@@ -1,0 +1,553 @@
+# Game Design Studios
+commercial_game_studio = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+    
+    # Commercial benefits
+    country_prestige_mult = 0.02
+    state_tax_capacity_add = 10
+    state_entertainment_add = 5
+    country_innovation_mult = 0.03
+}
+
+game_design_industry = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+    
+    # Industry benefits
+    state_tax_capacity_add = 15
+    state_employment_add = 2000
+    state_arts_add = 5
+}
+
+experimental_game_studio = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Artistic benefits
+    country_prestige_mult = 0.03
+    state_education_access_add = 0.03
+    country_innovation_mult = 0.05
+    state_arts_add = 10
+}
+
+game_art_movement = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Cultural benefits
+    state_arts_add = 15
+    state_entertainment_add = 5
+    state_tourism_add = 10
+}
+
+game_artistic_hub = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Creative hub benefits
+    state_arts_add = 10
+    state_attractiveness_mult = 0.1
+    state_innovation_capacity_add = 10
+}
+
+# Corporation Modifiers
+advanced_military_simulation = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds"
+    
+    # Military benefits
+    building_barracks_throughput_mult = 0.1
+    state_conscription_rate_add = 0.01
+    state_offense_add = 5
+    state_defense_add = 5
+    country_military_training_rate_mult = 0.05
+}
+
+gaming_industrial_complex = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Major industrial benefits
+    building_gaming_establishments_throughput_mult = 0.2
+    building_chess_academy_throughput_mult = 0.2
+    state_entertainment_add = 10
+    state_tax_capacity_add = 15
+    state_arts_add = 10
+    country_prestige_mult = 0.03
+}
+
+# Journal Entry Modifiers
+established_gaming_industry = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Basic industry benefits
+    country_prestige_add = 10
+    state_entertainment_add = 3
+    state_education_access_add = 0.01
+    building_gaming_establishments_throughput_mult = 0.1
+}
+
+gaming_innovation_leader = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Innovation benefits
+    country_prestige_mult = 0.05
+    country_innovation_mult = 0.05
+    state_entertainment_add = 5
+    state_education_access_add = 0.02
+    building_gaming_establishments_throughput_mult = 0.15
+    building_chess_academy_throughput_mult = 0.15
+}
+
+global_gaming_leader = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Global leader benefits
+    country_prestige_mult = 0.1
+    country_innovation_mult = 0.1
+    state_entertainment_add = 10
+    state_education_access_add = 0.05
+    building_gaming_establishments_throughput_mult = 0.2
+    building_chess_academy_throughput_mult = 0.2
+    state_arts_add = 20
+}
+
+game_theory_department = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # University benefits
+    building_university_throughput_mult = 0.15
+    state_education_access_add = 0.03
+    state_innovation_capacity_add = 15
+}
+
+cultural_trendsetter = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Cultural leadership benefits
+    country_prestige_mult = 0.05
+    country_influence_mult = 0.05
+    state_arts_add = 15
+    state_cultural_understanding_mult = 0.1
+}
+
+# Military modifiers
+kriegsspiel_training = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # Training benefits
+    country_military_goods_cost_mult = -0.05
+    country_offense_mult = 0.05
+    country_military_training_rate_mult = 0.1
+}
+
+traditional_military_training = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds"
+    
+    # Traditional military focus
+    state_conscription_rate_mult = 0.05
+    country_military_training_rate_mult = -0.05
+}
+
+# Literary and cultural modifiers
+little_wars_popularity = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Cultural impact
+    country_prestige_mult = 0.02
+    country_influence_mult = 0.02
+    state_entertainment_add = 1
+}
+
+pacifist_literature_censored = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+    
+    # Censorship impacts
+    country_radicals_from_conquest_mult = 0.2
+    country_influence_mult = -0.02
+    state_expected_sol_from_literacy_mult = -0.02
+}
+
+# Economic game modifiers
+property_trading_game = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+    
+    # Economic education benefit
+    state_education_access_add = 0.01
+    state_bureaucracy_mult = 0.05
+    country_innovation_mult = 0.01
+}
+
+anti_capitalist_critique = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds"
+    
+    # Political impacts
+    state_radicals_from_sol_change_mult = 0.1
+    interest_group_ig_trade_unions_approval_add = 0.2
+    interest_group_ig_rural_folk_approval_add = 0.1
+}
+
+# Casino modifiers
+famous_casino = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+    
+    # Tourism benefits
+    state_tax_capacity_add = 20
+    state_infrastructure_add = 2
+    state_tourism_add = 20
+    state_standard_of_living_add = 1
+}
+
+# Chess and tournament modifiers
+standardized_chess = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Chess prestige benefits
+    country_prestige_mult = 0.01
+    state_cultural_understanding_mult = 0.05
+    state_education_access_add = 0.01
+}
+
+traditional_chess_preference = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds"
+    
+    # Traditional preference impacts
+    country_prestige_mult = -0.01
+    state_cultural_understanding_mult = 0.03
+}
+
+international_chess_tournament = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Tournament benefits
+    country_prestige_mult = 0.03
+    country_influence_mult = 0.02
+    state_tourism_add = 5
+}
+
+domestic_chess_focus = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # Domestic benefits
+    state_education_access_add = 0.02
+    interest_group_ig_intelligentsia_approval_add = 0.2
+}
+
+chess_tourism = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Tourism benefits
+    state_tourism_add = 10
+    state_tax_capacity_add = 5
+    state_building_entertainment_complex_throughput_mult = 0.1
+}
+
+chess_prodigy = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Prodigy benefits
+    country_prestige_mult = 0.02
+    state_education_access_add = 0.01
+    state_attracted_diplomas_add = 5
+}
+
+state_supported_chess = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # State support benefits
+    country_prestige_mult = 0.03
+    state_education_access_add = 0.02
+    state_attracted_diplomas_add = 10
+    country_expense_mult = 0.01
+}
+
+# Traditional games modifiers
+traditional_games_revival = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Cultural benefits
+    country_authority_mult = 0.05
+    state_cultural_understanding_mult = 0.1
+    state_radicals_from_conquest_mult = -0.1
+}
+
+modernization_focus = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds"
+    
+    # Modernization benefits
+    country_innovation_mult = 0.05
+    state_assimilation_rate_mult = 0.1
+    state_education_access_add = 0.02
+}
+
+cultural_modernization = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds"
+    
+    # Cultural transition
+    state_cultural_understanding_mult = -0.05
+    state_education_access_add = 0.03
+    state_innovation_capacity_add = 5
+}
+
+# Gambling modifiers
+gambling_tourism = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+    
+    # Economic benefits
+    state_tourism_add = 15
+    state_tax_capacity_add = 10
+    state_crime_add = 2
+}
+
+gambling_restricted = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds"
+    
+    # Moral legislation impacts
+    state_crime_mult = -0.1
+    state_tax_capacity_add = -5
+    interest_group_ig_devout_approval_add = 0.1
+}
+
+gambling_moral_outrage = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+    
+    # Religious outrage
+    interest_group_approval_add = -1
+    interest_group_pop_attraction_mult = 0.05
+}
+
+gambling_business_opportunity = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+    
+    # Business enthusiasm
+    interest_group_approval_add = 1
+    interest_group_pop_attraction_mult = 0.02
+}
+
+gambling_moral_victory = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
+    
+    # Religious satisfaction
+    interest_group_approval_add = 1
+    interest_group_pop_attraction_mult = 0.02
+}
+
+gambling_business_restricted = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds"
+    
+    # Business disappointment
+    interest_group_approval_add = -1
+    interest_group_pop_attraction_mult = -0.02
+}
+
+# Mathematical game theory modifiers
+mathematical_game_theory = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # Lasker's mathematical contributions
+    country_innovation_mult = 0.05
+    state_university_throughput_mult = 0.1
+    country_tech_spread_mult = 0.1
+}
+
+game_theory_research = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # Academic research benefits
+    state_education_access_add = 0.02
+    state_innovation_capacity_add = 10
+    building_university_throughput_mult = 0.1
+}
+
+chess_champion_prestige = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Chess champion benefits
+    country_prestige_mult = 0.02
+    state_tourism_add = 5
+}
+
+# East-West exchange modifiers
+east_west_game_exchange = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Cultural exchange benefits
+    country_prestige_mult = 0.02
+    state_cultural_understanding_mult = 0.1
+    state_education_access_add = 0.01
+}
+
+traditional_go_preservation = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Cultural preservation benefits
+    country_authority_mult = 0.03
+    state_cultural_understanding_mult = 0.05
+}
+
+comparative_game_studies = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # Academic exchange benefits
+    state_education_access_add = 0.02
+    state_innovation_capacity_add = 5
+    state_cultural_understanding_mult = 0.1
+}
+
+# Professional gaming tournament modifiers
+international_gaming_tournaments = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Tournament benefits
+    country_prestige_mult = 0.03
+    country_influence_mult = 0.02
+    state_tourism_add = 10
+}
+
+tournament_tourism = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Tourism benefits
+    state_tourism_add = 15
+    state_tax_capacity_add = 10
+    state_entertainment_add = 2
+}
+
+professional_gaming_leagues = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # Professional structure benefits
+    country_prestige_mult = 0.02
+    country_innovation_mult = 0.01
+    building_gaming_establishments_throughput_mult = 0.1
+    building_chess_academy_throughput_mult = 0.1
+}
+
+professional_gaming_economy = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+    
+    # Economic benefits
+    state_tax_capacity_add = 5
+    state_urbanization_mult = 0.02
+    state_entertainment_add = 3
+}_mult = 0.02
+    state_entertainment_add = 3
+}
+
+# Alternative History Modifiers
+
+# Modern Board Games
+modern_board_game_revolution = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # Cultural and innovation benefits
+    country_prestige_mult = 0.03
+    country_innovation_mult = 0.05
+    state_education_access_add = 0.02
+}
+
+educational_board_games = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # Educational benefits
+    state_education_access_add = 0.05
+    country_innovation_mult = 0.03
+    state_expected_sol_from_literacy_mult = 0.05
+}
+
+educational_gaming_center = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Local educational benefits
+    state_education_access_add = 0.03
+    state_innovation_capacity_add = 10
+    state_attractiveness_mult = 0.1
+}
+
+academic_gaming_interest = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Interest group benefits
+    interest_group_approval_add = 1
+    interest_group_pop_attraction_mult = 0.05
+}
+
+# Role-Playing Games
+role_playing_revolution = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Creativity and innovation benefits
+    country_prestige_mult = 0.05
+    country_innovation_mult = 0.10
+    state_education_access_add = 0.03
+    country_influence_mult = 0.05
+}
+
+narrative_gaming_center = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Local creative benefits
+    state_education_access_add = 0.05
+    state_innovation_capacity_add = 15
+    state_arts_add = 10
+}
+
+therapeutic_role_playing = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # Psychological benefits
+    state_education_access_add = 0.03
+    state_radicals_from_sol_change_mult = -0.2
+    country_prestige_mult = 0.02
+}
+
+psychological_gaming_research = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # Academic benefits
+    state_education_access_add = 0.05
+    state_innovation_capacity_add = 20
+    building_university_throughput_mult = 0.1
+}
+
+# Game Design Studios
+commercial_game_studio = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+    
+    # Commercial benefits
+    country_prestige_mult = 0.02
+    state_tax_capacity_add = 10
+    state_entertainment_add = 5
+    country_innovation_mult = 0.03
+}
+
+game_design_industry = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+    
+    # Industry benefits
+    state_tax_capacity_add = 15
+    state_employment_add = 2000
+    state_arts_add = 5
+}
+
+experimental_game_studio = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Artistic benefits
+    country_prestige_mult = 0.03
+    state_education_access_add = 0.03
+    country_innovation_mult = 0.05
+    state_arts_add = 10
+}
+
+game_art_movement = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Cultural benefits
+    state_arts_add = 15
+    state_entertainment_add = 5
+    state_tourism_add = 10
+}
+
+game_artistic_hub = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Creative hub benefits
+    state_arts_add = 10
+    state_attractiveness_mult = 0.1
+    state_innovation_capacity_add = 10
+}
