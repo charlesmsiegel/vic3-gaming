@@ -551,3 +551,127 @@ game_artistic_hub = {
     state_attractiveness_mult = 0.1
     state_innovation_capacity_add = 10
 }
+
+# Joshua Heath Event Modifiers
+norse_gaming_revival = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Cultural revival benefits
+    country_prestige_mult = 0.02
+    country_authority_mult = 0.03
+    country_innovation_mult = 0.02
+    state_cultural_understanding_mult = 0.1
+}
+
+mythic_gaming_center = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Local cultural center benefits
+    state_entertainment_add = 3
+    state_arts_add = 5
+    state_radicals_from_sol_change_mult = -0.1
+}
+
+gaming_spiritual_leader = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Leadership benefits
+    character_influence_add = 15
+    character_prestige_add = 10
+}
+
+pagan_revival_interest = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
+    
+    # Interest group benefits
+    interest_group_approval_add = 1
+    interest_group_pop_attraction_mult = 0.05
+}
+
+mythic_storytelling_games = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # Gaming industry benefits
+    building_gaming_establishments_throughput_mult = 0.15
+    state_entertainment_add = 5
+    country_innovation_mult = 0.03
+}
+
+mythic_game_designer = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Designer benefits
+    character_influence_add = 10
+    character_prestige_add = 5
+}
+
+# Terry Robinson Event Modifiers
+educational_gaming_program = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # Educational benefits
+    state_education_access_add = 0.03
+    building_school_throughput_mult = 0.1
+    country_innovation_mult = 0.02
+}
+
+cooperative_game_education = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # Local educational benefits
+    state_education_access_add = 0.05
+    state_cultural_understanding_mult = 0.1
+    state_radicals_from_sol_change_mult = -0.15
+}
+
+educational_gaming_pioneer = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Pioneer benefits
+    character_influence_add = 15
+    character_prestige_add = 10
+}
+
+gaming_curriculum = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # School benefits
+    building_school_throughput_mult = 0.15
+    state_education_access_add = 0.02
+    state_expected_sol_from_literacy_mult = 0.05
+}
+
+class_conscious_gaming = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
+    
+    # Political consciousness benefits
+    country_authority_mult = 0.02
+    interest_group_ig_rural_folk_approval_add = 0.2
+    interest_group_ig_trade_unions_approval_add = 0.2
+    state_radicals_mult = 0.1
+}
+
+gaming_movement_support = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
+    
+    # Political movement benefits
+    interest_group_approval_add = 1
+    interest_group_pop_attraction_mult = 0.1
+}
+
+radical_game_designer = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds"
+    
+    # Radical leader benefits
+    character_influence_add = 20
+    character_political_strength_add = 10
+}
+
+gaming_political_awakening = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
+    
+    # Political consciousness benefits
+    country_radicals_mult = 0.05
+    interest_group_ig_rural_folk_pop_attraction_mult = 0.05
+    interest_group_ig_trade_unions_pop_attraction_mult = 0.05
+}
