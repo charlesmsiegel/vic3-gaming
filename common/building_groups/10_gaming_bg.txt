@@ -1,0 +1,27 @@
+# Building Groups for Gaming Industry in Victoria 3
+
+bg_gaming = {
+    category = urban
+    always_possible = yes
+    economy_of_scale = 0.8
+    is_subsistence = no
+    auto_place = no
+    subsidized = yes
+    capped_by_resources = no
+    discoverable_resource = no
+    depletable_resource = no
+    can_use_slaves = no
+    
+    # Default production methods
+    default_building_pmg_variation_00 = pmg_gaming_type
+    default_building_pmg_variation_01 = pmg_regional_gaming
+    
+    texture = "gfx/interface/icons/building_groups/bg_gaming.dds"
+}
+
+# Add Chess Academy to education building group as a subtype
+bg_education = {
+    # Chess Academy specific methods
+    default_building_chess_academy_pmg_variation_00 = pmg_chess_sets
+    default_building_chess_academy_pmg_variation_01 = pmg_chess_events
+}
