@@ -1,0 +1,536 @@
+# Production Methods for Gaming Establishments in Victoria 3 Gaming Industry Mod
+
+# Gaming Establishment Base Production Methods
+pm_traditional_gaming = {
+    texture = "gfx/interface/icons/production_method_icons/traditional_gaming.dds"
+    
+    building_modifiers = {
+        workforce_scaled = {
+            # Input goods
+            goods_input_paper = 5
+            goods_input_wood = 5
+        }
+        
+        level_scaled = {
+            building_employment_laborers_add = 5
+        }
+    }
+    
+    country_modifiers = {
+        # Small increase in cultural authority
+        country_authority_add = 1
+    }
+    
+    ai_weight = {
+        weight = 100
+    }
+}
+
+pm_parlor_games = {
+    texture = "gfx/interface/icons/production_method_icons/parlor_gaming.dds"
+    
+    unlocking_technologies = {
+        publishing_industry
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            # Input goods
+            goods_input_paper = 10
+            goods_input_wood = 10
+            goods_input_fabric = 5
+        }
+        
+        level_scaled = {
+            building_employment_clerks_add = 5
+            building_employment_shopkeepers_add = 2
+        }
+    }
+    
+    country_modifiers = {
+        # Socialization benefit
+        country_prestige_add = 3
+    }
+    
+    ai_weight = {
+        weight = 200
+        
+        # More valuable for market economies
+        if = {
+            limit = {
+                owner = { 
+                    has_law = law_type:law_laissez_faire
+                }
+            }
+            add = 100
+        }
+    }
+}
+
+pm_wargaming = {
+    texture = "gfx/interface/icons/production_method_icons/wargaming.dds"
+    
+    unlocking_technologies = {
+        military_staff_system
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            # Input goods
+            goods_input_paper = 15
+            goods_input_lead = 5
+            goods_input_dye = 5
+        }
+        
+        level_scaled = {
+            building_employment_academics_add = 2
+            building_employment_officers_add = 2
+        }
+    }
+    
+    state_modifiers = {
+        # Military benefit
+        state_conscription_rate_add = 0.01
+        state_offense_add = 2
+    }
+    
+    ai_weight = {
+        weight = 200
+        
+        # More valuable for military-focused nations
+        if = {
+            limit = {
+                owner = { has_strategy = ai_strategy_armed_deterrence }
+            }
+            add = 300
+        }
+    }
+}
+
+pm_gambling_houses = {
+    texture = "gfx/interface/icons/production_method_icons/gambling.dds"
+    
+    unlocking_technologies = {
+        gambling_halls
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            # Input goods
+            goods_input_paper = 10
+            goods_input_fabric = 10
+            goods_input_liquor = 10
+        }
+        
+        level_scaled = {
+            building_employment_aristocrats_add = 2
+            building_employment_laborers_add = 5
+        }
+    }
+    
+    # Both positive and negative effects
+    state_modifiers = {
+        state_poor_standard_of_living_add = 0.5
+        state_crime_add = 1
+        state_tax_capacity_add = 5
+    }
+    
+    ai_weight = {
+        weight = 300
+        
+        # Less likely for highly religious countries
+        if = {
+            limit = {
+                owner = { 
+                    has_law = law_type:law_state_religion
+                }
+            }
+            add = -200
+        }
+    }
+}
+
+# Chess-specific Production Methods
+pm_traditional_chess_sets = {
+    texture = "gfx/interface/icons/production_method_icons/traditional_chess.dds"
+    
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_wood = 10
+            goods_input_ivory = 2
+        }
+        
+        level_scaled = {
+            building_employment_artisans_add = 3
+        }
+    }
+    
+    country_modifiers = {
+        country_prestige_add = 1
+    }
+    
+    ai_weight = {
+        weight = 100
+    }
+}
+
+pm_staunton_chess_sets = {
+    texture = "gfx/interface/icons/production_method_icons/staunton_chess.dds"
+    
+    unlocking_technologies = {
+        manufactories
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_wood = 15
+            goods_input_tools = 5
+        }
+        
+        level_scaled = {
+            building_employment_machinists_add = 2
+            building_employment_artisans_add = 2
+        }
+    }
+    
+    country_modifiers = {
+        country_prestige_add = 2
+    }
+    
+    ai_weight = {
+        weight = 200
+        
+        # Preferred by industrialized nations
+        if = {
+            limit = {
+                owner = { 
+                    has_technology_researched = mechanical_tools
+                }
+            }
+            add = 100
+        }
+    }
+}
+
+pm_international_chess_tournaments = {
+    texture = "gfx/interface/icons/production_method_icons/chess_tournament.dds"
+    
+    unlocking_technologies = {
+        risk_management
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_services = 10
+            goods_input_paper = 5
+        }
+        
+        level_scaled = {
+            building_employment_clerks_add = 3
+            building_employment_academics_add = 1
+        }
+    }
+    
+    state_modifiers = {
+        state_prestige_add = 5
+        state_tourism_add = 5
+    }
+    
+    # Increased weight if research is progressing well
+    ai_weight = {
+        weight = 300
+        
+        if = {
+            limit = {
+                owner = { literacy_rate > 0.6 }
+            }
+            add = 200
+        }
+    }
+}
+
+# Regional Gaming Specializations
+pm_mahjong_parlors = {
+    texture = "gfx/interface/icons/production_method_icons/mahjong_parlors.dds"
+    
+    unlocking_technologies = {
+        technology_modern_gaming
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_porcelain = 5
+            goods_input_paper = 5
+            goods_input_tea = 5
+        }
+        
+        level_scaled = {
+            building_employment_shopkeepers_add = 3
+        }
+    }
+    
+    # Cultural connection
+    country_modifiers = {
+        country_authority_add = 2
+    }
+    
+    ai_weight = {
+        weight = 150
+        
+        # Much more appealing to East Asian cultures
+        if = {
+            limit = {
+                owner = { 
+                    OR = {
+                        has_discrimination_trait = east_asian_heritage
+                        primary_culture = {
+                            OR = {
+                                has_discrimination_trait = east_asian_heritage
+                                is_discrimination_trait = east_asian_heritage
+                            }
+                        }
+                    }
+                }
+            }
+            add = 500
+        }
+    }
+}
+
+pm_carrom_houses = {
+    texture = "gfx/interface/icons/production_method_icons/carrom_houses.dds"
+    
+    unlocking_technologies = {
+        modern_gaming
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_wood = 10
+            goods_input_dye = 2
+        }
+        
+        level_scaled = {
+            building_employment_laborers_add = 3
+            building_employment_shopkeepers_add = 1
+        }
+    }
+    
+    ai_weight = {
+        weight = 150
+        
+        # More common in South Asian nations
+        if = {
+            limit = {
+                owner = { 
+                    OR = {
+                        has_discrimination_trait = south_asian_heritage
+                        primary_culture = {
+                            OR = {
+                                has_discrimination_trait = south_asian_heritage
+                                is_discrimination_trait = south_asian_heritage
+                            }
+                        }
+                    }
+                }
+            }
+            add = 500
+        }
+    }
+}
+
+pm_mancala_variations = {
+    texture = "gfx/interface/icons/production_method_icons/mancala_gaming.dds"
+    
+    # Available from start (ancient game)
+    
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_wood = 5
+            goods_input_fruits = 2
+        }
+        
+        level_scaled = {
+            building_employment_laborers_add = 2
+        }
+    }
+    
+    # Cultural significance
+    country_modifiers = {
+        country_cultural_understanding_add = 2
+    }
+    
+    ai_weight = {
+        weight = 150
+        
+        # More common in African and Middle Eastern nations
+        if = {
+            limit = {
+                owner = { 
+                    OR = {
+                        has_discrimination_trait = african_heritage
+                        has_discrimination_trait = middle_eastern_heritage
+                        primary_culture = {
+                            OR = {
+                                has_discrimination_trait = african_heritage
+                                is_discrimination_trait = african_heritage
+                                has_discrimination_trait = middle_eastern_heritage
+                                is_discrimination_trait = middle_eastern_heritage
+                            }
+                        }
+                    }
+                }
+            }
+            add = 500
+        }
+    }
+}
+
+# Gaming Type Production Methods Group
+pmg_gaming_type = {
+    texture = "gfx/interface/icons/generic_icons/mixed_icon_entertainment.dds"
+    
+    production_methods = {
+        pm_traditional_gaming
+        pm_parlor_games
+        pm_wargaming
+        pm_gambling_houses
+    }
+}
+
+# Regional Specialization Production Methods Group
+pmg_regional_gaming = {
+    texture = "gfx/interface/icons/generic_icons/mixed_icon_culture.dds"
+    
+    production_methods = {
+        pm_traditional_gaming # Default option
+        pm_mahjong_parlors
+        pm_carrom_houses
+        pm_mancala_variations
+    }
+}
+
+# Chess-specific Production Methods Group
+pmg_chess_sets = {
+    texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+    
+    production_methods = {
+        pm_traditional_chess_sets
+        pm_staunton_chess_sets
+    }
+}
+
+# Chess Tournament Options Group
+pmg_chess_events = {
+    texture = "gfx/interface/icons/generic_icons/mixed_icon_services.dds"
+    
+    production_methods = {
+        pm_no_special_events
+        pm_international_chess_tournaments
+    }
+}
+
+# Default "no special events" option for chess academies
+pm_no_special_events = {
+    texture = "gfx/interface/icons/production_method_icons/no_special_events.dds"
+    
+    ai_weight = {
+        weight = 50
+    }
+}
+
+# Advanced Gaming Methods - Alternative History
+pm_modern_board_games = {
+    texture = "gfx/interface/icons/production_method_icons/modern_board_games.dds"
+    
+    unlocking_technologies = {
+        technology_advanced_game_design
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            # Input goods
+            goods_input_paper = 20
+            goods_input_furniture = 5
+            goods_input_dye = 10
+        }
+        
+        level_scaled = {
+            building_employment_clerks_add = 5
+            building_employment_academics_add = 2
+        }
+    }
+    
+    country_modifiers = {
+        # Cultural and educational benefits
+        country_prestige_add = 5
+        country_innovation_mult = 0.02
+    }
+    
+    state_modifiers = {
+        # Educational benefits
+        state_education_access_add = 0.02
+        state_entertainment_add = 3
+    }
+    
+    ai_weight = {
+        weight = 500
+        
+        # More appealing for advanced countries
+        if = {
+            limit = {
+                owner = { literacy_rate > 0.7 }
+            }
+            add = 500
+        }
+    }
+}
+
+pm_role_playing_games = {
+    texture = "gfx/interface/icons/production_method_icons/role_playing_games.dds"
+    
+    unlocking_technologies = {
+        technology_advanced_game_design
+        technology_psychological_theory
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            # Input goods
+            goods_input_paper = 25
+            goods_input_lead = 5 # For miniature figures
+            goods_input_dye = 10
+        }
+        
+        level_scaled = {
+            building_employment_clerks_add = 3
+            building_employment_academics_add = 5
+            building_employment_artists_add = 2
+        }
+    }
+    
+    country_modifiers = {
+        # Creativity and storytelling benefits
+        country_prestige_add = 5
+        country_innovation_mult = 0.05
+    }
+    
+    state_modifiers = {
+        # Literacy and creativity benefits
+        state_education_access_add = 0.03
+        state_entertainment_add = 5
+        state_innovation_capacity_add = 10
+    }
+    
+    ai_weight = {
+        weight = 500
+        
+        # Highly appealing for literate countries
+        if = {
+            limit = {
+                owner = { literacy_rate > 0.8 }
+            }
+            add = 1000
+        }
+    }
+}
