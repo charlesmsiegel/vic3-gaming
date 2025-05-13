@@ -1,0 +1,20 @@
+l_english:
+  # Journal Entries
+  je_develop_gaming_industry: "Develop Gaming Industry"
+  je_develop_gaming_industry_desc: "Gaming has been a part of human culture for millennia, but recent innovations in manufacturing and social organization present an opportunity to formalize and develop a proper gaming industry. By establishing gaming establishments, chess academies, and gaming companies, we can create cultural and economic benefits for our society."
+  je_develop_gaming_industry_goal: "Develop a gaming industry with at least:\n- 3 Gaming Establishments\n- 1 Chess Academy\n- 1 Gaming Company"
+  
+  je_gaming_innovation: "Gaming Innovation"
+  je_gaming_innovation_desc: "With our gaming industry established, we have an opportunity to push the boundaries of game design far beyond traditional forms. By investing in advanced game design principles and encouraging innovation, we could revolutionize gaming decades before similar developments would otherwise occur."
+  je_gaming_innovation_goal: "Lead gaming innovation by:\n- Researching Advanced Game Design\n- Implementing Modern Board Games or Role-Playing Games\n- Establishing at least 2 advanced gaming companies"
+  
+  je_gaming_conglomerate: "Create Gaming Conglomerate"
+  je_gaming_conglomerate_desc: "Our revolutionary advancements in gaming have created an opportunity to establish the world's first major gaming conglomerate - a corporate entity that unites various gaming disciplines under one umbrella organization. This would transform gaming from scattered hobbyist pursuits into a major cultural industry."
+  je_gaming_conglomerate_goal: "Create the Universal Gaming Corporation conglomerate"
+  
+  # Journal Entry Modifiers
+  established_gaming_industry: "Established Gaming Industry"
+  gaming_innovation_leader: "Gaming Innovation Leader"
+  global_gaming_leader: "Global Gaming Leader"
+  game_theory_department: "Game Theory Department"
+  cultural_trendsetter: "Cultural Trendsetter"
