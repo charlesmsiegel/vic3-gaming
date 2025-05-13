@@ -1,0 +1,169 @@
+# Character traits for Gaming Industry in Victoria 3
+
+# Gaming Entrepreneur trait
+trait_gaming_entrepreneur = {
+    icon = "gfx/interface/icons/character_traits/entrepreneur.dds"
+    
+    # Complementary traits
+    compatible_traits = {
+        shrewd_intellect
+        charismatic
+        innovative
+    }
+    
+    # Conflicting traits
+    incompatible_traits = {
+        luddite
+        pious
+        traditionalist
+    }
+    
+    # Gives bonus to gaming establishment buildings
+    building_group_ig_attraction_mult = {
+        building_group = bg_gaming
+        value = 0.2
+    }
+    
+    # Improves the production of gaming establishments
+    building_group_throughput_mult = {
+        building_group = bg_gaming
+        value = 0.1
+    }
+    
+    # Cultural significance
+    country_modifier = {
+        country_prestige_add = 5
+    }
+}
+
+# Game Designer trait
+trait_game_designer = {
+    icon = "gfx/interface/icons/character_traits/innovative.dds"
+    
+    # Complementary traits
+    compatible_traits = {
+        innovative
+        analytical
+        meticulous
+    }
+    
+    # Conflicting traits
+    incompatible_traits = {
+        wastrel
+        impulsive
+    }
+    
+    # Improves efficiency
+    building_group_throughput_mult = {
+        building_group = bg_gaming
+        value = 0.15
+    }
+    
+    # Innovation bonus
+    country_modifier = {
+        country_innovation_add = 5
+    }
+}
+
+# Chess Master trait
+trait_chess_master = {
+    icon = "gfx/interface/icons/character_traits/chess_master.dds"
+    
+    # Complementary traits
+    compatible_traits = {
+        analytical
+        meticulous
+        shrewd_intellect
+    }
+    
+    # Conflicting traits
+    incompatible_traits = {
+        impulsive
+        substance_abuser
+    }
+    
+    # Improves the effectiveness of chess academies
+    building_throughput_mult = {
+        building_type = building_chess_academy
+        value = 0.2
+    }
+    
+    # Military improvement as chess is often considered strategic training
+    military_modifier = {
+        army_offense_add = 2
+        army_defense_add = 2
+    }
+    
+    # Diplomatic benefit
+    character_modifier = {
+        character_prestige_add = 10
+    }
+}
+
+# Professional Gambler trait
+trait_professional_gambler = {
+    icon = "gfx/interface/icons/character_traits/gambler.dds"
+    
+    # Complementary traits
+    compatible_traits = {
+        shrewd_intellect
+        charismatic
+        expensive_tastes
+    }
+    
+    # Conflicting traits
+    incompatible_traits = {
+        pious
+        honest
+    }
+    
+    # Improves gambling houses specifically
+    production_method_throughput_mult = {
+        production_method = pm_gambling_houses
+        value = 0.15
+    }
+    
+    # Risky character
+    character_modifier = {
+        character_prestige_add = 5
+    }
+    
+    # Can cause economic volatility
+    country_modifier = {
+        country_prestige_add = 5
+        country_bureaucracy_add = -5
+    }
+}
+
+# Traditional Game Preservationist
+trait_game_preservationist = {
+    icon = "gfx/interface/icons/character_traits/traditionalist.dds"
+    
+    # Complementary traits
+    compatible_traits = {
+        traditionalist
+        charismatic
+        pious
+    }
+    
+    # Conflicting traits
+    incompatible_traits = {
+        innovative
+    }
+    
+    # Improves traditional gaming methods
+    production_method_throughput_mult = {
+        production_method = pm_traditional_gaming
+        value = 0.2
+    }
+    
+    production_method_throughput_mult = {
+        production_method = pm_mancala_variations
+        value = 0.2
+    }
+    
+    # Cultural authority
+    country_modifier = {
+        country_authority_add = 10
+    }
+}
