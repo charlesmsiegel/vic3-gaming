@@ -1,0 +1,352 @@
+# Journal entries for Gaming Industry in Victoria 3
+
+je_develop_gaming_industry = {
+    icon = "gfx/interface/icons/journal_entries/je_gaming_industry.dds"
+    
+    group = je_group_industry
+    
+    is_shown_when_inactive = {
+        has_technology_researched = technology_traditional_gaming
+        NOT = { has_variable = gaming_industry_developed }
+    }
+    
+    possible = {
+        has_technology_researched = technology_traditional_gaming
+    }
+    
+    immediate = {
+        set_variable = gaming_industry_development_level
+        set_variable = {
+            name = gaming_industry_development_level
+            value = 0
+        }
+    }
+    
+    complete = {
+        # Complete when at least 3 gaming establishments and 1 chess academy are built
+        calc_true_if = {
+            amount >= 3
+            any_scope_state = {
+                has_building = building_gaming_establishments
+            }
+        }
+        calc_true_if = {
+            amount >= 1
+            any_scope_state = {
+                has_building = building_chess_academy
+            }
+        }
+        # Also need a gaming company to complete
+        OR = {
+            has_company = nintendo_company
+            has_company = parker_brothers_company
+            has_company = wargaming_corporation
+            has_company = chess_publishing_house
+        }
+    }
+    
+    on_complete = {
+        add_modifier = {
+            name = established_gaming_industry
+            months = 60
+        }
+        set_variable = gaming_industry_developed
+        
+        # Grant prestige and tech points
+        add_prestige = 50
+        add_technology_progress = {
+            technology = technology_professional_gaming
+            progress = 0.25
+        }
+    }
+    
+    on_monthly = {
+        effect = {
+            # Check development level and update if needed
+            if = {
+                limit = {
+                    var:gaming_industry_development_level < 1
+                    calc_true_if = {
+                        amount >= 2
+                        any_scope_state = {
+                            has_building = building_gaming_establishments
+                        }
+                    }
+                }
+                set_variable = {
+                    name = gaming_industry_development_level
+                    value = 1
+                }
+                add_journal_entry_progress = 33
+            }
+            else_if = {
+                limit = {
+                    var:gaming_industry_development_level < 2
+                    calc_true_if = {
+                        amount >= 1
+                        any_scope_state = {
+                            has_building = building_chess_academy
+                        }
+                    }
+                }
+                set_variable = {
+                    name = gaming_industry_development_level
+                    value = 2
+                }
+                add_journal_entry_progress = 33
+            }
+            else_if = {
+                limit = {
+                    var:gaming_industry_development_level < 3
+                    OR = {
+                        has_company = nintendo_company
+                        has_company = parker_brothers_company
+                        has_company = wargaming_corporation
+                        has_company = chess_publishing_house
+                    }
+                }
+                set_variable = {
+                    name = gaming_industry_development_level
+                    value = 3
+                }
+                add_journal_entry_progress = 34
+            }
+        }
+    }
+    
+    fail = {
+        # Cannot fail once started
+    }
+    
+    weight = 100
+}
+
+je_gaming_innovation = {
+    icon = "gfx/interface/icons/journal_entries/je_advanced_gaming.dds"
+    
+    group = je_group_industry
+    
+    is_shown_when_inactive = {
+        has_variable = gaming_industry_developed
+        has_technology_researched = technology_professional_gaming
+        NOT = { has_variable = gaming_innovation_completed }
+    }
+    
+    possible = {
+        has_variable = gaming_industry_developed
+        has_technology_researched = technology_professional_gaming
+    }
+    
+    immediate = {
+        set_variable = gaming_innovation_level
+        set_variable = {
+            name = gaming_innovation_level
+            value = 0
+        }
+    }
+    
+    complete = {
+        # Need advanced gaming technologies
+        has_technology_researched = technology_advanced_game_design
+        
+        # Need advanced production methods
+        any_scope_building = {
+            is_building_type = building_gaming_establishments
+            OR = {
+                has_active_production_method = pm_modern_board_games
+                has_active_production_method = pm_role_playing_games
+            }
+        }
+        
+        # Need advanced gaming companies
+        calc_true_if = {
+            amount >= 2
+            has_company = nintendo_company
+            has_company = parker_brothers_company
+            has_company = wargaming_corporation
+            has_company = rpg_publishing_company
+            has_company = chess_publishing_house
+        }
+    }
+    
+    on_complete = {
+        add_modifier = {
+            name = gaming_innovation_leader
+            months = -1 # Permanent
+        }
+        set_variable = gaming_innovation_completed
+        
+        # Grant prestige and tech progress
+        add_prestige = 100
+        add_technology_progress = {
+            technology = mass_communication
+            progress = 0.25
+        }
+        
+        # Spread innovation through society
+        random_scope_state = {
+            limit = {
+                has_building = building_university
+                is_incorporated = yes
+            }
+            add_modifier = {
+                name = game_theory_department
+                months = -1 # Permanent
+            }
+        }
+        
+        # Trigger event for gaming conglomerate potential
+        trigger_event = { id = gaming_industry_event.16 }
+    }
+    
+    on_monthly = {
+        effect = {
+            # Check innovation level and update if needed
+            if = {
+                limit = {
+                    var:gaming_innovation_level < 1
+                    has_technology_researched = technology_advanced_game_design
+                }
+                set_variable = {
+                    name = gaming_innovation_level
+                    value = 1
+                }
+                add_journal_entry_progress = 33
+            }
+            else_if = {
+                limit = {
+                    var:gaming_innovation_level < 2
+                    any_scope_building = {
+                        is_building_type = building_gaming_establishments
+                        OR = {
+                            has_active_production_method = pm_modern_board_games
+                            has_active_production_method = pm_role_playing_games
+                        }
+                    }
+                }
+                set_variable = {
+                    name = gaming_innovation_level
+                    value = 2
+                }
+                add_journal_entry_progress = 33
+            }
+            else_if = {
+                limit = {
+                    var:gaming_innovation_level < 3
+                    calc_true_if = {
+                        amount >= 2
+                        has_company = nintendo_company
+                        has_company = parker_brothers_company
+                        has_company = wargaming_corporation
+                        has_company = rpg_publishing_company
+                        has_company = chess_publishing_house
+                    }
+                }
+                set_variable = {
+                    name = gaming_innovation_level
+                    value = 3
+                }
+                add_journal_entry_progress = 34
+            }
+        }
+    }
+    
+    fail = {
+        # Cannot fail once started
+    }
+    
+    weight = 100
+}
+
+je_gaming_conglomerate = {
+    icon = "gfx/interface/icons/journal_entries/je_gaming_conglomerate.dds"
+    
+    group = je_group_industry
+    
+    is_shown_when_inactive = {
+        has_variable = gaming_innovation_completed
+        NOT = { has_company = gaming_conglomerate }
+    }
+    
+    possible = {
+        has_variable = gaming_innovation_completed
+    }
+    
+    immediate = {
+        set_variable = conglomerate_progress
+        set_variable = {
+            name = conglomerate_progress
+            value = 0
+        }
+    }
+    
+    complete = {
+        # Create a gaming conglomerate
+        has_company = gaming_conglomerate
+    }
+    
+    on_complete = {
+        add_modifier = {
+            name = global_gaming_leader
+            months = -1 # Permanent
+        }
+        
+        # Major prestige boost
+        add_prestige = 200
+        
+        # Innovation and cultural boost
+        if = {
+            limit = {
+                has_technology_researched = mass_communication
+            }
+            add_modifier = {
+                name = cultural_trendsetter
+                months = -1 # Permanent
+            }
+        }
+        
+        # Trigger special event
+        trigger_event = { id = gaming_industry_event.17 }
+    }
+    
+    on_monthly = {
+        effect = {
+            # Increase progress slowly as time passes if qualified
+            if = {
+                limit = {
+                    has_technology_researched = technology_advanced_game_design
+                    has_technology_researched = technology_psychological_theory
+                    year >= 1900
+                    literacy_rate > 0.8
+                    calc_true_if = {
+                        amount > 1
+                        has_company = nintendo_company
+                        has_company = parker_brothers_company
+                        has_company = rpg_publishing_company
+                        has_company = wargaming_corporation
+                        has_company = chess_publishing_house
+                    }
+                }
+                change_variable = {
+                    name = conglomerate_progress
+                    add = 1
+                }
+                if = {
+                    limit = {
+                        var:conglomerate_progress >= 100
+                    }
+                    # Auto-create conglomerate when progress bar fills
+                    create_company = gaming_conglomerate
+                }
+                
+                add_journal_entry_progress = 1
+            }
+        }
+    }
+    
+    fail = {
+        # Cannot fail once started
+    }
+    
+    weight = 100
+}
