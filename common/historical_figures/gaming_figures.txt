@@ -330,3 +330,109 @@ historical_figure_sultan_khan = {
         }
     }
 }
+
+# Joshua Heath - Pioneering RPG designer and Animist spiritual leader
+historical_figure_joshua_heath = {
+    first_name = "Joshua"
+    last_name = "Heath"
+    culture = cu:yankee
+    
+    # Born in alternate history timeline
+    birth_date = 1855.6.15
+    
+    # Position and background
+    c:USA = {
+        add_character = scope:character
+        save_scope_as = employer
+    }
+    
+    # State origin (New Hampshire)
+    state = STATE_NEW_HAMPSHIRE
+    
+    # Religion
+    religion = rel:animist
+    
+    # Traits combining gaming innovation and spiritual leadership
+    traits = {
+        trait_game_designer
+        innovative
+        charismatic
+        meticulous
+    }
+    
+    # Progressive ideology and interest group
+    ideology = ideology_radical
+    interest_group = ig_intelligentsia
+    
+    ig_leader = {
+        interest_group = ig_intelligentsia
+    }
+    
+    # Special events related to RPG development and religious revival
+    on_created = {
+        trigger_event = {
+            id = gaming_industry_event.101 # Norse Revival Through Gaming
+        }
+    }
+    
+    # Custom abilities showing combination of gaming and spiritual influence
+    character_modifier = {
+        interest_group_ig_intelligentsia_approval_add = 2
+        interest_group_ig_devout_approval_add = 1
+        state_innovation_add = 10
+        character_influence_add = 15
+    }
+}
+
+# Terry Robinson - RPG designer and Catholic social reformer
+historical_figure_terry_robinson = {
+    first_name = "Terry"
+    last_name = "Robinson"
+    culture = cu:yankee
+    
+    # Born in alternate history timeline
+    birth_date = 1860.9.23
+    
+    # Position and background
+    c:USA = {
+        add_character = scope:character
+        save_scope_as = employer
+    }
+    
+    # State origin (Pennsylvania/Philadelphia)
+    state = STATE_PENNSYLVANIA
+    
+    # Religion
+    religion = rel:catholic
+    
+    # Traits combining gaming innovation and social reform
+    traits = {
+        trait_game_designer
+        trait_chess_master
+        analytical
+        charismatic
+    }
+    
+    # Progressive ideology and interest group
+    ideology = ideology_radical
+    interest_group = ig_rural_folk
+    
+    ig_leader = {
+        interest_group = ig_rural_folk
+    }
+    
+    # Special events related to using games for social reform
+    on_created = {
+        trigger_event = {
+            id = gaming_industry_event.102 # Games for Social Change
+        }
+    }
+    
+    # Custom abilities showing combination of gaming and social reform
+    character_modifier = {
+        interest_group_ig_rural_folk_approval_add = 2
+        interest_group_ig_trade_unions_approval_add = 1
+        state_education_access_add = 0.03
+        character_influence_add = 10
+    }
+}
