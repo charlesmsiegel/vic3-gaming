@@ -1,0 +1,1673 @@
+# Events for Gaming Industry in Victoria 3
+
+namespace = gaming_industry_event
+
+# Introduction of Kriegsspiel
+gaming_industry_event.1 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.1.t
+    desc = gaming_industry_event.1.d
+    flavor = gaming_industry_event.1.f
+    
+    duration = 3
+    
+    trigger = {
+        has_technology_researched = military_staff_system
+        any_scope_state = {
+            has_building = building_barracks
+            has_building = building_gaming_establishments
+        }
+    }
+    
+    immediate = {
+        # Find a state with both buildings
+        random_scope_state = {
+            limit = {
+                has_building = building_barracks
+                has_building = building_gaming_establishments
+            }
+            save_scope_as = kriegsspiel_state
+        }
+    }
+    
+    option = {
+        name = gaming_industry_event.1.a
+        default_option = yes
+        
+        # Military benefits
+        add_modifier = {
+            name = kriegsspiel_training
+            months = 48
+        }
+        
+        # Generate character if Wilhelm von Tschischwitz doesn't exist
+        if = {
+            limit = {
+                NOT = { has_character = historical_figure_wilhelm_tschischwitz }
+            }
+            create_character = {
+                first_name = random
+                last_name = random
+                culture = cu:north_german
+                female = no
+                age = { min = 35 max = 60 }
+                commander = {
+                    rank = rank_value:brigadier
+                    skill = 2
+                }
+                ideology = ideology_moderate
+                traits = { trait_gaming_entrepreneur officer }
+            }
+        }
+        
+        # Activate wargaming in a random gaming establishment
+        scope:kriegsspiel_state = {
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                }
+                activate_production_method = pm_wargaming
+            }
+        }
+    }
+    
+    option = {
+        name = gaming_industry_event.1.b
+        
+        # Reject it as frivolous
+        add_modifier = {
+            name = traditional_military_training
+            months = 24
+        }
+    }
+}
+
+# H.G. Wells' Little Wars Publication
+gaming_industry_event.2 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.2.t
+    desc = gaming_industry_event.2.d
+    flavor = gaming_industry_event.2.f
+    
+    duration = 3
+    
+    trigger = {
+        year >= 1913
+        has_technology_researched = technology_modern_gaming
+        OR = {
+            is_country_type = recognised
+            is_country_type = colonial
+        }
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                has_building = building_gaming_establishments
+            }
+            save_scope_as = wargaming_state
+        }
+    }
+    
+    option = {
+        name = gaming_industry_event.2.a
+        default_option = yes
+        
+        # Cultural benefits
+        add_modifier = {
+            name = little_wars_popularity
+            months = 36
+        }
+        
+        # Increase sales in gaming establishments
+        scope:wargaming_state = {
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                }
+                building_scale_level = 1
+            }
+        }
+        
+        # Generate character if HG Wells doesn't exist
+        if = {
+            limit = {
+                NOT = { has_character = historical_figure_hg_wells }
+            }
+            create_character = {
+                first_name = "Herbert"
+                last_name = "Wells"
+                culture = cu:british
+                female = no
+                age = { min = 40 max = 50 }
+                ideology = ideology_moderate
+                traits = { trait_game_designer innovative }
+                interest_group = ig_intelligentsia 
+            }
+        }
+    }
+    
+    option = {
+        name = gaming_industry_event.2.b
+        
+        # View it as pacifist propaganda
+        add_modifier = {
+            name = pacifist_literature_censored
+            months = 24
+        }
+    }
+}
+
+# Monopoly-Like Game Invented
+gaming_industry_event.3 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.3.t
+    desc = gaming_industry_event.3.d
+    flavor = gaming_industry_event.3.f
+    
+    duration = 3
+    
+    trigger = {
+        year >= 1903
+        has_technology_researched = technology_modern_gaming
+        OR = {
+            has_law = law_type:law_free_trade
+            has_law = law_type:law_laissez_faire
+        }
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                has_building = building_gaming_establishments
+            }
+            save_scope_as = monopoly_state
+        }
+    }
+    
+    option = {
+        name = gaming_industry_event.3.a
+        default_option = yes
+        
+        # Economic literacy
+        add_modifier = {
+            name = property_trading_game
+            months = 60
+        }
+        
+        # Generate character if Elizabeth Magie doesn't exist
+        if = {
+            limit = {
+                NOT = { has_character = historical_figure_elizabeth_magie }
+            }
+            create_character = {
+                first_name = "Elizabeth"
+                last_name = "Magie" 
+                culture = cu:yankee
+                female = yes
+                age = { min = 30 max = 45 }
+                trait = trait_game_designer
+                ideology = ideology_radical
+                interest_group = ig_intelligentsia
+            }
+        }
+        
+        # Increase popularity of parlor games
+        scope:monopoly_state = {
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                }
+                activate_production_method = pm_parlor_games
+            }
+        }
+    }
+    
+    option = {
+        name = gaming_industry_event.3.b
+        
+        # Critique it as capitalist propaganda
+        add_modifier = {
+            name = anti_capitalist_critique
+            months = 24
+        }
+    }
+}
+
+# Opening of Monte Carlo Casino
+gaming_industry_event.4 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.4.t
+    desc = gaming_industry_event.4.d
+    flavor = gaming_industry_event.4.f
+    
+    duration = 3
+    
+    trigger = {
+        owns_entire_state_region = STATE_PROVENCE
+        has_technology_researched = technology_gambling_halls
+        NOT = { has_variable = monte_carlo_built }
+    }
+    
+    immediate = {
+        set_variable = monte_carlo_built
+    }
+    
+    option = {
+        name = gaming_industry_event.4.a
+        default_option = yes
+        
+        # Tourism boost
+        random_scope_state = {
+            limit = {
+                state_region = s:STATE_PROVENCE
+            }
+            add_modifier = {
+                name = famous_casino
+                months = -1 # Permanent
+            }
+            
+            # Add luxury casino
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                }
+                building_scale_level = 3
+                activate_production_method = pm_gambling_houses
+            }
+        }
+        
+        # Generate character if François Blanc doesn't exist
+        if = {
+            limit = {
+                NOT = { has_character = historical_figure_francois_blanc }
+            }
+            create_character = {
+                first_name = "François"
+                last_name = "Blanc"
+                culture = cu:french
+                female = no
+                age = { min = 50 max = 65 }
+                traits = { trait_gaming_entrepreneur trait_professional_gambler }
+                interest_group = ig_industrialists
+            }
+        }
+    }
+}
+
+# Staunton Chess Set Formalization
+gaming_industry_event.5 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.5.t
+    desc = gaming_industry_event.5.d
+    flavor = gaming_industry_event.5.f
+    
+    duration = 3
+    
+    trigger = {
+        year >= 1849
+        year <= 1852
+        OR = {
+            country_has_primary_culture = cu:british
+            any_neighboring_country = { country_has_primary_culture = cu:british }
+        }
+        has_technology_researched = technology_traditional_gaming
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                is_incorporated = yes
+                is_capital = yes
+            }
+            save_scope_as = chess_state
+        }
+    }
+    
+    option = {
+        name = gaming_industry_event.5.a
+        default_option = yes
+        
+        # Cultural benefits
+        add_modifier = {
+            name = standardized_chess
+            months = 120 # Long-lasting impact
+        }
+        
+        # Generate Howard Staunton if he doesn't exist
+        if = {
+            limit = {
+                NOT = { has_character = historical_figure_howard_staunton }
+            }
+            create_character = {
+                first_name = "Howard"
+                last_name = "Staunton"
+                culture = cu:british
+                female = no
+                age = { min = 40 max = 45 }
+                traits = { trait_chess_master analytical }
+                interest_group = ig_intelligentsia
+            }
+        }
+        
+        # Unlock chess academy potential
+        scope:chess_state = {
+            trigger_event = { 
+                id = gaming_industry_event.6
+                days = 30
+            }
+        }
+    }
+    
+    option = {
+        name = gaming_industry_event.5.b
+        
+        # Keep traditional chess sets
+        add_modifier = {
+            name = traditional_chess_preference
+            months = 60
+        }
+    }
+}
+
+# First International Chess Tournament
+gaming_industry_event.6 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.6.t
+    desc = gaming_industry_event.6.d
+    flavor = gaming_industry_event.6.f
+    
+    duration = 3
+    
+    trigger = {
+        year >= 1851
+        has_technology_researched = technology_chess_academy
+        OR = {
+            country_rank >= rank_value:major_power
+            AND = {
+                country_rank >= rank_value:minor_power
+                any_scope_state = {
+                    has_building = building_chess_academy
+                }
+            }
+        }
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                is_incorporated = yes
+                is_capital = yes
+            }
+            save_scope_as = tournament_state
+        }
+    }
+    
+    option = {
+        name = gaming_industry_event.6.a
+        default_option = yes
+        
+        # International prestige
+        add_modifier = {
+            name = international_chess_tournament
+            months = 24
+        }
+        
+        # Tourism and economy boost
+        scope:tournament_state = {
+            add_modifier = {
+                name = chess_tourism
+                months = 12
+            }
+            
+            # Build chess academy if none exists
+            if = {
+                limit = {
+                    NOT = { has_building = building_chess_academy }
+                }
+                add_building = {
+                    building_type = building_chess_academy
+                    level = 1
+                }
+            }
+            else = {
+                random_scope_building = {
+                    limit = {
+                        is_building_type = building_chess_academy
+                    }
+                    building_scale_level = 1
+                }
+            }
+        }
+        
+        # Improved diplomatic relations
+        every_country = {
+            limit = {
+                this != root
+                relations:root >= relations_threshold:amicable
+            }
+            change_relations = {
+                country = root
+                value = 10
+            }
+        }
+    }
+    
+    option = {
+        name = gaming_industry_event.6.b
+        
+        # Focus on domestic chess instead
+        add_modifier = {
+            name = domestic_chess_focus
+            months = 24
+        }
+        
+        # Still build a chess academy
+        scope:tournament_state = {
+            if = {
+                limit = {
+                    NOT = { has_building = building_chess_academy }
+                }
+                add_building = {
+                    building_type = building_chess_academy
+                    level = 1
+                }
+            }
+        }
+    }
+}
+
+# Chess Prodigy Emerges
+gaming_industry_event.7 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.7.t
+    desc = gaming_industry_event.7.d
+    flavor = gaming_industry_event.7.f
+    
+    duration = 3
+    
+    trigger = {
+        any_scope_state = {
+            has_building = building_chess_academy
+        }
+        has_technology_researched = technology_professional_gaming
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                has_building = building_chess_academy
+            }
+            save_scope_as = chess_state
+        }
+    }
+    
+    option = {
+        name = gaming_industry_event.7.a
+        default_option = yes
+        
+        # International prestige
+        add_modifier = {
+            name = chess_prodigy
+            months = 48
+        }
+        
+        # Create a chess prodigy character
+        create_character = {
+            first_name = random
+            last_name = random
+            culture = root.culture
+            female = yes # Intentionally include female prodigies
+            age = { min = 10 max = 18 }
+            traits = { trait_chess_master analytical }
+            interest_group = ig_intelligentsia
+        }
+        
+        # Enhance chess academy
+        scope:chess_state = {
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_chess_academy
+                }
+                activate_production_method = pm_international_chess_tournaments
+            }
+        }
+    }
+    
+    option = {
+        name = gaming_industry_event.7.b
+        
+        # Support the prodigy with state funds
+        add_modifier = {
+            name = state_supported_chess
+            months = 36
+        }
+        
+        # Create a chess prodigy character and fund them
+        create_character = {
+            first_name = random
+            last_name = random
+            culture = root.culture
+            female = random # Either gender
+            age = { min = 10 max = 18 }
+            traits = { trait_chess_master shrewd_intellect }
+            interest_group = ig_intelligentsia
+        }
+        
+        # Higher prestige but costs money
+        change_treasury = -5000
+    }
+}
+
+# Traditional Games Revival
+gaming_industry_event.8 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.8.t
+    desc = gaming_industry_event.8.d
+    flavor = gaming_industry_event.8.f
+    
+    duration = 3
+    
+    trigger = {
+        has_technology_researched = technology_traditional_gaming
+        any_scope_state = {
+            has_building = building_gaming_establishments
+        }
+        # More likely for non-Western nations
+        OR = {
+            has_discrimination_trait = african_heritage
+            has_discrimination_trait = asian_heritage
+            has_discrimination_trait = middle_eastern_heritage
+        }
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                has_building = building_gaming_establishments
+            }
+            save_scope_as = traditional_games_state
+        }
+    }
+    
+    option = {
+        name = gaming_industry_event.8.a
+        default_option = yes
+        
+        # Cultural preservation
+        add_modifier = {
+            name = traditional_games_revival
+            months = 36
+        }
+        
+        # Generate a preserver character
+        create_character = {
+            first_name = random
+            last_name = random
+            culture = root.culture
+            female = random
+            age = { min = 40 max = 70 }
+            traits = { trait_game_preservationist charismatic }
+            interest_group = ig_devout
+        }
+        
+        # Use appropriate regional game method
+        scope:traditional_games_state = {
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                }
+                
+                if = {
+                    limit = {
+                        owner = { 
+                            OR = {
+                                has_discrimination_trait = east_asian_heritage
+                                primary_culture = {
+                                    OR = {
+                                        has_discrimination_trait = east_asian_heritage
+                                        is_discrimination_trait = east_asian_heritage
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    activate_production_method = pm_mahjong_parlors
+                }
+                else_if = {
+                    limit = {
+                        owner = { 
+                            OR = {
+                                has_discrimination_trait = south_asian_heritage
+                                primary_culture = {
+                                    OR = {
+                                        has_discrimination_trait = south_asian_heritage
+                                        is_discrimination_trait = south_asian_heritage
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    activate_production_method = pm_carrom_houses
+                }
+                else_if = {
+                    limit = {
+                        owner = { 
+                            OR = {
+                                has_discrimination_trait = african_heritage
+                                has_discrimination_trait = middle_eastern_heritage
+                                primary_culture = {
+                                    OR = {
+                                        has_discrimination_trait = african_heritage
+                                        is_discrimination_trait = african_heritage
+                                        has_discrimination_trait = middle_eastern_heritage
+                                        is_discrimination_trait = middle_eastern_heritage
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    activate_production_method = pm_mancala_variations
+                }
+                else = {
+                    activate_production_method = pm_traditional_gaming
+                }
+            }
+        }
+    }
+    
+    option = {
+        name = gaming_industry_event.8.b
+        
+        # Modernize instead
+        add_modifier = {
+            name = modernization_focus
+            months = 36
+        }
+        
+        # Boost literacy
+        scope:traditional_games_state = {
+            add_modifier = {
+                name = cultural_modernization
+                months = 24
+            }
+        }
+    }
+}
+
+# Gambling Reform Debate
+gaming_industry_event.9 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.9.t
+    desc = gaming_industry_event.9.d
+    flavor = gaming_industry_event.9.f
+    
+    duration = 3
+    
+    trigger = {
+        any_scope_state = {
+            any_scope_building = {
+                is_building_type = building_gaming_establishments
+                has_active_production_method = pm_gambling_houses
+            }
+        }
+        has_technology_researched = technology_gambling_halls
+        # More likely after 1880 when moral reform movements grew
+        year >= 1880
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                any_scope_building = {
+                    is_building_type = building_gaming_establishments
+                    has_active_production_method = pm_gambling_houses
+                }
+            }
+            save_scope_as = gambling_state
+        }
+        
+        ig:ig_devout = {
+            save_scope_as = religious_ig
+        }
+        
+        ig:ig_industrialists = {
+            save_scope_as = business_ig
+        }
+    }
+    
+    # Support gambling for economic reasons
+    option = {
+        name = gaming_industry_event.9.a
+        
+        # Economic benefits but moral costs
+        add_modifier = {
+            name = gambling_tourism
+            months = 48
+        }
+        
+        # Religious groups upset
+        scope:religious_ig = {
+            add_modifier = {
+                name = gambling_moral_outrage
+                months = 24
+            }
+        }
+        
+        # Business benefits
+        scope:business_ig = {
+            add_modifier = {
+                name = gambling_business_opportunity
+                months = 24
+            }
+        }
+        
+        # Expand gambling in the state
+        scope:gambling_state = {
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                    has_active_production_method = pm_gambling_houses
+                }
+                building_scale_level = 1
+            }
+        }
+    }
+    
+    # Restrict gambling for moral reasons
+    option = {
+        name = gaming_industry_event.9.b
+        default_option = yes
+        
+        # Moral improvement but economic decline
+        add_modifier = {
+            name = gambling_restricted
+            months = 36
+        }
+        
+        # Religious groups pleased
+        scope:religious_ig = {
+            add_modifier = {
+                name = gambling_moral_victory
+                months = 24
+            }
+        }
+        
+        # Business impact
+        scope:business_ig = {
+            add_modifier = {
+                name = gambling_business_restricted
+                months = 24
+            }
+        }
+        
+        # Restrict gambling in this state
+        scope:gambling_state = {
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                    has_active_production_method = pm_gambling_houses
+                }
+                activate_production_method = pm_traditional_gaming
+            }
+        }
+    }
+}
+
+# Emanuel Lasker's Mathematical Contributions
+gaming_industry_event.10 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.10.t
+    desc = gaming_industry_event.10.d
+    flavor = gaming_industry_event.10.f
+    
+    duration = 3
+    
+    trigger = {
+        year >= 1900
+        has_technology_researched = technology_professional_gaming
+        OR = {
+            has_technology_researched = analytical_philosophy
+            has_technology_researched = empiricism
+        }
+        any_scope_state = {
+            has_building = building_university
+        }
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                has_building = building_university
+            }
+            save_scope_as = university_state
+        }
+    }
+    
+    # Support Lasker's research
+    option = {
+        name = gaming_industry_event.10.a
+        default_option = yes
+        
+        # Research benefits
+        add_modifier = {
+            name = mathematical_game_theory
+            months = 60 # Long-lasting impact
+        }
+        
+        # Generate Emanuel Lasker if he doesn't exist
+        if = {
+            limit = {
+                NOT = { has_character = historical_figure_emanuel_lasker }
+            }
+            create_character = {
+                first_name = "Emanuel"
+                last_name = "Lasker"
+                culture = cu:north_german
+                female = no
+                age = { min = 32 max = 40 }
+                traits = { 
+                    trait_chess_master 
+                    analytical
+                    professor
+                }
+                interest_group = ig_intelligentsia
+            }
+        }
+        
+        # Add research bonus
+        scope:university_state = {
+            add_modifier = {
+                name = game_theory_research
+                months = 48
+            }
+            
+            # Boost innovation
+            add_innovation = 200
+        }
+    }
+    
+    # Focus on chess achievements only
+    option = {
+        name = gaming_industry_event.10.b
+        
+        # Chess focus
+        add_modifier = {
+            name = chess_champion_prestige
+            months = 36
+        }
+        
+        # Generate Emanuel Lasker focused on chess only
+        if = {
+            limit = {
+                NOT = { has_character = historical_figure_emanuel_lasker }
+            }
+            create_character = {
+                first_name = "Emanuel"
+                last_name = "Lasker"
+                culture = cu:north_german
+                female = no
+                age = { min = 32 max = 40 }
+                traits = { 
+                    trait_chess_master 
+                    analytical
+                }
+                interest_group = ig_intelligentsia
+            }
+        }
+        
+        # Add prestige
+        add_prestige = 10
+    }
+}
+
+# Japanese Go Masters and European Chess Integration
+gaming_industry_event.11 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.11.t
+    desc = gaming_industry_event.11.d
+    flavor = gaming_industry_event.11.f
+    
+    duration = 3
+    
+    trigger = {
+        has_technology_researched = technology_chess_academy
+        OR = {
+            country_has_primary_culture = cu:japanese
+            any_neighboring_country = { country_has_primary_culture = cu:japanese }
+        }
+        year >= 1880
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                has_building = building_university
+            }
+            save_scope_as = go_state
+        }
+    }
+    
+    # Embrace both traditions
+    option = {
+        name = gaming_industry_event.11.a
+        default_option = yes
+        
+        # Cultural exchange benefits
+        add_modifier = {
+            name = east_west_game_exchange
+            months = 48
+        }
+        
+        # Create Go master character
+        create_character = {
+            first_name = random
+            last_name = random
+            culture = cu:japanese
+            female = no
+            age = { min = 40 max = 60 }
+            traits = { 
+                trait_chess_master 
+                trait_game_preservationist
+            }
+            interest_group = ig_intelligentsia
+        }
+        
+        # Research benefits
+        scope:go_state = {
+            add_modifier = {
+                name = comparative_game_studies
+                months = 36
+            }
+            
+            # If there's no chess academy, build one
+            if = {
+                limit = {
+                    NOT = { has_building = building_chess_academy }
+                }
+                add_building = {
+                    building_type = building_chess_academy
+                    level = 1
+                }
+            }
+        }
+    }
+    
+    # Preserve Go tradition exclusively
+    option = {
+        name = gaming_industry_event.11.b
+        
+        # Cultural preservation
+        add_modifier = {
+            name = traditional_go_preservation
+            months = 36
+        }
+        
+        # Cultural authority
+        add_authority = 5
+    }
+}
+
+# The Rise of Competitive Gaming Tournaments
+gaming_industry_event.12 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.12.t
+    desc = gaming_industry_event.12.d
+    flavor = gaming_industry_event.12.f
+    
+    duration = 3
+    
+    trigger = {
+        has_technology_researched = technology_professional_gaming
+        year >= 1890
+        any_scope_state = {
+            has_building = building_chess_academy
+        }
+        # More developed nations more likely
+        literacy_rate > 0.5
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                has_building = building_chess_academy
+            }
+            save_scope_as = tournament_state
+        }
+    }
+    
+    # International tournaments
+    option = {
+        name = gaming_industry_event.12.a
+        default_option = yes
+        
+        # Prestige benefits
+        add_modifier = {
+            name = international_gaming_tournaments
+            months = 36
+        }
+        
+        # Boost tourism
+        scope:tournament_state = {
+            add_modifier = {
+                name = tournament_tourism
+                months = 24
+            }
+            
+            # Enhance chess academy
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_chess_academy
+                }
+                activate_production_method = pm_international_chess_tournaments
+            }
+        }
+        
+        # Add prestige
+        add_prestige = 15
+    }
+    
+    # Professional gaming leagues
+    option = {
+        name = gaming_industry_event.12.b
+        
+        # Create professional structure
+        add_modifier = {
+            name = professional_gaming_leagues
+            months = 48
+        }
+        
+        # Economic benefits
+        scope:tournament_state = {
+            add_modifier = {
+                name = professional_gaming_economy
+                months = 36
+            }
+        }
+        
+        # Generate a gaming entrepreneur
+        create_character = {
+            first_name = random
+            last_name = random
+            culture = root.culture
+            female = random
+            age = { min = 30 max = 45 }
+            traits = { 
+                trait_gaming_entrepreneur 
+                industrious
+            }
+            interest_group = ig_industrialists
+        }
+    }
+}
+
+# Alternative History Events
+
+# Modern Board Game Revolution
+gaming_industry_event.13 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.13.t
+    desc = gaming_industry_event.13.d
+    flavor = gaming_industry_event.13.f
+    
+    duration = 3
+    
+    trigger = {
+        has_technology_researched = technology_advanced_game_design
+        any_scope_state = {
+            has_building = building_gaming_establishments
+        }
+        # This would normally be too early in history, but if tech is researched...
+        year < 1920
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                has_building = building_gaming_establishments
+                is_capital = yes
+            }
+            save_scope_as = board_game_state
+        }
+    }
+    
+    # Support the game design revolution
+    option = {
+        name = gaming_industry_event.13.a
+        default_option = yes
+        
+        # Innovation benefits
+        add_modifier = {
+            name = modern_board_game_revolution
+            months = 60
+        }
+        
+        # Activate modern board games in capital
+        scope:board_game_state = {
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                }
+                activate_production_method = pm_modern_board_games
+            }
+            
+            # Add innovation
+            add_innovation = 50
+        }
+        
+        # Generate game designer character
+        create_character = {
+            first_name = random
+            last_name = random
+            culture = root.culture
+            female = random
+            age = { min = 25 max = 40 }
+            traits = { 
+                trait_game_designer 
+                innovative
+            }
+            interest_group = ig_intelligentsia
+        }
+    }
+    
+    # Focus on educational aspects
+    option = {
+        name = gaming_industry_event.13.b
+        
+        # Educational focus
+        add_modifier = {
+            name = educational_board_games
+            months = 60
+        }
+        
+        # Activate modern board games and educational focus
+        scope:board_game_state = {
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                }
+                activate_production_method = pm_modern_board_games
+            }
+            
+            # Educational boost
+            add_modifier = {
+                name = educational_gaming_center
+                months = 48
+            }
+        }
+        
+        # Academic interest boost
+        interest_group:ig_intelligentsia = {
+            add_modifier = {
+                name = academic_gaming_interest
+                months = 36
+            }
+        }
+    }
+}
+
+# Role-Playing Game Innovation
+gaming_industry_event.14 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.14.t
+    desc = gaming_industry_event.14.d
+    flavor = gaming_industry_event.14.f
+    
+    duration = 3
+    
+    trigger = {
+        has_technology_researched = technology_advanced_game_design
+        has_technology_researched = technology_psychological_theory
+        any_scope_state = {
+            has_building = building_university
+            has_building = building_gaming_establishments
+        }
+        # This would be decades ahead of actual RPG development
+        year < 1925
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                has_building = building_university
+                has_building = building_gaming_establishments
+            }
+            save_scope_as = rpg_state
+        }
+    }
+    
+    # Enthusiastically embrace RPGs
+    option = {
+        name = gaming_industry_event.14.a
+        default_option = yes
+        
+        # Creativity benefits
+        add_modifier = {
+            name = role_playing_revolution
+            months = 72
+        }
+        
+        # Activate RPGs in university town
+        scope:rpg_state = {
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                }
+                activate_production_method = pm_role_playing_games
+            }
+            
+            # Educational and innovation boost
+            add_modifier = {
+                name = narrative_gaming_center
+                months = 60
+            }
+            
+            # Add significant innovation
+            add_innovation = 100
+        }
+        
+        # Generate visionary game designer
+        create_character = {
+            first_name = random
+            last_name = random
+            culture = root.culture
+            female = random
+            age = { min = 25 max = 35 }
+            traits = { 
+                trait_game_designer 
+                innovative
+                charismatic
+            }
+            interest_group = ig_intelligentsia
+        }
+    }
+    
+    # Focus on psychological applications
+    option = {
+        name = gaming_industry_event.14.b
+        
+        # Psychological and therapeutic focus
+        add_modifier = {
+            name = therapeutic_role_playing
+            months = 72
+        }
+        
+        # Activate RPGs with academic focus
+        scope:rpg_state = {
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                }
+                activate_production_method = pm_role_playing_games
+            }
+            
+            # Innovative research
+            add_modifier = {
+                name = psychological_gaming_research
+                months = 60
+            }
+            
+            # Add innovation to university
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_university
+                }
+                building_scale_level = 1
+            }
+        }
+        
+        # Academic character with psychological focus
+        create_character = {
+            first_name = random
+            last_name = random
+            culture = root.culture
+            female = random
+            age = { min = 30 max = 45 }
+            traits = { 
+                trait_game_designer 
+                analytical
+                professor
+            }
+            interest_group = ig_intelligentsia
+        }
+    }
+}
+
+# Game Design Studio Development
+gaming_industry_event.15 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.15.t
+    desc = gaming_industry_event.15.d
+    flavor = gaming_industry_event.15.f
+    
+    duration = 3
+    
+    trigger = {
+        has_technology_researched = technology_advanced_game_design
+        has_technology_researched = mass_communication
+        any_scope_state = {
+            OR = {
+                has_active_production_method = {
+                    building_type = building_gaming_establishments
+                    production_method = pm_modern_board_games
+                }
+                has_active_production_method = {
+                    building_type = building_gaming_establishments
+                    production_method = pm_role_playing_games
+                }
+            }
+        }
+        # Must have advanced games already
+        year < 1930
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                OR = {
+                    has_active_production_method = {
+                        building_type = building_gaming_establishments
+                        production_method = pm_modern_board_games
+                    }
+                    has_active_production_method = {
+                        building_type = building_gaming_establishments
+                        production_method = pm_role_playing_games
+                    }
+                }
+            }
+            save_scope_as = studio_state
+        }
+    }
+    
+    # Commercial studio
+    option = {
+        name = gaming_industry_event.15.a
+        default_option = yes
+        
+        # Commercial success
+        add_modifier = {
+            name = commercial_game_studio
+            months = 72
+        }
+        
+        # Economic benefits in state
+        scope:studio_state = {
+            add_modifier = {
+                name = game_design_industry
+                months = 60
+            }
+            
+            # Expand gaming establishments
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                }
+                building_scale_level = 2
+            }
+        }
+        
+        # Business character
+        create_character = {
+            first_name = random
+            last_name = random
+            culture = root.culture
+            female = random
+            age = { min = 30 max = 50 }
+            traits = { 
+                trait_gaming_entrepreneur 
+                shrewd_intellect
+                industrious
+            }
+            interest_group = ig_industrialists
+        }
+    }
+    
+    # Artistic and experimental studio
+    option = {
+        name = gaming_industry_event.15.b
+        
+        # Artistic innovation
+        add_modifier = {
+            name = experimental_game_studio
+            months = 72
+        }
+        
+        # Cultural benefits in state
+        scope:studio_state = {
+            add_modifier = {
+                name = game_art_movement
+                months = 60
+            }
+            
+            # Add artists and innovation
+            add_modifier = {
+                name = game_artistic_hub
+                months = 48
+            }
+        }
+        
+        # Artistic character
+        create_character = {
+            first_name = random
+            last_name = random
+            culture = root.culture
+            female = random
+            age = { min = 25 max = 40 }
+            traits = { 
+                trait_game_designer 
+                charismatic
+                innovative
+            }
+            interest_group = ig_intelligentsia
+        }
+    }
+}
+
+# Gaming Conglomerate Potential
+gaming_industry_event.16 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.16.t
+    desc = gaming_industry_event.16.d
+    flavor = gaming_industry_event.16.f
+    
+    duration = 3
+    
+    # This is triggered by journal entry completion
+    
+    on_created_soundeffect = "event:/SFX/UI/Notifications/notification_success"
+    
+    # Industry consolidation
+    option = {
+        name = gaming_industry_event.16.a
+        default_option = yes
+        
+        custom_tooltip = gaming_conglomerate_opportunity_tt
+        
+        # Add prestige
+        add_prestige = 50
+        
+        # Start conglomerate journal entry if eligible
+        if = {
+            limit = {
+                has_technology_researched = technology_advanced_game_design
+                has_technology_researched = technology_psychological_theory
+                year >= 1900
+                literacy_rate > 0.8
+                calc_true_if = {
+                    amount > 1
+                    has_company = nintendo_company
+                    has_company = parker_brothers_company
+                    has_company = rpg_publishing_company
+                    has_company = wargaming_corporation
+                    has_company = chess_publishing_house
+                }
+            }
+            add_journal_entry = je_gaming_conglomerate
+        }
+    }
+    
+    # Focus on multiple companies
+    option = {
+        name = gaming_industry_event.16.b
+        
+        # Add innovation bonus
+        add_modifier = {
+            name = gaming_innovation_ecosystem
+            months = 60
+        }
+        
+        # Create a new gaming company if we don't have enough
+        if = {
+            limit = {
+                calc_true_if = {
+                    amount < 2
+                    has_company = nintendo_company
+                    has_company = parker_brothers_company
+                    has_company = rpg_publishing_company
+                    has_company = wargaming_corporation
+                    has_company = chess_publishing_house
+                }
+            }
+            
+            # Create most appropriate company
+            if = {
+                limit = {
+                    NOT = { has_company = rpg_publishing_company }
+                    any_scope_building = {
+                        is_building_type = building_gaming_establishments
+                        has_active_production_method = pm_role_playing_games
+                    }
+                }
+                create_company = rpg_publishing_company
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_company = wargaming_corporation }
+                    any_scope_building = {
+                        is_building_type = building_gaming_establishments
+                        has_active_production_method = pm_wargaming
+                    }
+                }
+                create_company = wargaming_corporation
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_company = chess_publishing_house }
+                    any_scope_building = {
+                        is_building_type = building_chess_academy
+                    }
+                }
+                create_company = chess_publishing_house
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_company = parker_brothers_company }
+                }
+                create_company = parker_brothers_company
+            }
+            else = {
+                create_company = nintendo_company
+            }
+        }
+    }
+}
+
+# Gaming Conglomerate Establishment
+gaming_industry_event.17 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.17.t
+    desc = gaming_industry_event.17.d
+    flavor = gaming_industry_event.17.f
+    
+    duration = 3
+    
+    # This is triggered by journal entry completion
+    
+    on_created_soundeffect = "event:/SFX/UI/Notifications/notification_success"
+    
+    # Embrace global leadership
+    option = {
+        name = gaming_industry_event.17.a
+        default_option = yes
+        
+        # Add major research boost
+        add_technology_progress = {
+            technology = mass_communication
+            progress = 0.5
+        }
+        
+        # International benefits
+        every_country = {
+            limit = {
+                this != root
+                relations:root >= relations_threshold:amicable
+            }
+            change_relations = {
+                country = root
+                value = 20
+            }
+        }
+        
+        # Major innovation bonus
+        add_modifier = {
+            name = gaming_innovation_pioneer
+            months = -1 # Permanent
+        }
+    }
+    
+    # Focus on cultural power
+    option = {
+        name = gaming_industry_event.17.b
+        
+        # Cultural power
+        add_modifier = {
+            name = cultural_soft_power
+            months = -1 # Permanent
+        }
+        
+        # Boost tourism and arts
+        random_scope_state = {
+            limit = {
+                is_capital = yes
+            }
+            add_modifier = {
+                name = gaming_cultural_mecca
+                months = -1 # Permanent
+            }
+        }
+    }
+}
