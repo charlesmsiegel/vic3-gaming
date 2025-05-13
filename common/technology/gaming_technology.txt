@@ -1,0 +1,239 @@
+# Technology tree additions for Gaming Industry in Victoria 3
+
+# New Technology: Traditional Gaming Heritage
+technology_traditional_gaming = {
+    era = era_1
+    texture = "gfx/interface/icons/technology/traditional_gaming.dds"
+    category = society
+    
+    # Basic gaming establishments become available
+    unlock_building = building_gaming_establishments
+    
+    modifier = {
+        state_entertainment_add = 1
+    }
+    
+    # More appealing to certain cultures
+    ai_weight = {
+        base = 2
+        
+        modifier = {
+            factor = 1.5
+            OR = {
+                country_has_primary_culture = cu:british
+                country_has_primary_culture = cu:north_german
+                country_has_primary_culture = cu:japanese
+                country_has_primary_culture = cu:persian
+                country_has_primary_culture = cu:egyptian
+            }
+        }
+    }
+}
+
+# New Technology: Modern Gaming
+technology_modern_gaming = {
+    era = era_2
+    texture = "gfx/interface/icons/technology/modern_gaming.dds"
+    category = society
+    
+    # Requires traditional gaming first
+    unlocking_technologies = {
+        technology_traditional_gaming
+    }
+    
+    # Unlocks regional specialization methods
+    unlocks_production_method = pm_mahjong_parlors
+    unlocks_production_method = pm_carrom_houses
+    
+    modifier = {
+        state_education_access_add = 0.01
+        state_entertainment_add = 1
+    }
+    
+    ai_weight = {
+        base = 3
+        
+        # More appealing to countries with good literacy
+        modifier = {
+            factor = 1.5
+            literacy_rate > 0.4
+        }
+    }
+}
+
+# New Technology: Gambling Halls
+technology_gambling_halls = {
+    era = era_2
+    texture = "gfx/interface/icons/technology/gambling_halls.dds"
+    category = society
+    
+    unlocking_technologies = {
+        technology_modern_gaming
+    }
+    
+    # Unlocks gambling houses production method
+    unlocks_production_method = pm_gambling_houses
+    
+    modifier = {
+        state_rich_standard_of_living_add = 0.5
+        state_tax_capacity_add = 10
+    }
+    
+    ai_weight = {
+        base = 2
+        
+        # More appealing to countries with strong tax authority
+        modifier = {
+            factor = 1.5
+            country_has_attribute = efficient_taxation
+        }
+        
+        # Less appealing to pious countries
+        modifier = {
+            factor = 0.5
+            OR = {
+                has_law = law_type:law_state_religion
+                has_law = law_type:law_religious_schools
+            }
+        }
+    }
+}
+
+# New Technology: Chess Academy
+technology_chess_academy = {
+    era = era_2
+    texture = "gfx/interface/icons/technology/chess_academy.dds"
+    category = society
+    
+    unlocking_technologies = {
+        technology_traditional_gaming
+    }
+    
+    # Unlocks chess academy building
+    unlock_building = building_chess_academy
+    
+    modifier = {
+        state_education_access_add = 0.02
+    }
+    
+    ai_weight = {
+        base = 3
+        
+        # More appealing to countries with higher literacy
+        modifier = {
+            factor = 2
+            literacy_rate > 0.5
+        }
+    }
+}
+
+# Expansion: Professional Gaming
+technology_professional_gaming = {
+    era = era_3
+    texture = "gfx/interface/icons/technology/professional_gaming.dds"
+    category = society
+    
+    unlocking_technologies = {
+        technology_modern_gaming
+        technology_chess_academy
+    }
+    
+    # Unlocks tournament production methods
+    unlocks_production_method = pm_international_chess_tournaments
+    
+    modifier = {
+        state_prestige_add = 5
+        country_diplomatic_plays_add = 1
+    }
+    
+    ai_weight = {
+        base = 3
+        
+        # More appealing to prestigious countries
+        modifier = {
+            factor = 1.5
+            country_rank >= rank_value:major_power
+        }
+    }
+}
+
+# Advanced Game Design - Alternative History Technology
+technology_advanced_game_design = {
+    era = era_4
+    texture = "gfx/interface/icons/technology/advanced_game_design.dds"
+    category = society
+    
+    unlocking_technologies = {
+        technology_professional_gaming
+        mass_culture
+    }
+    
+    # Unlocks modern board games
+    unlocks_production_method = pm_modern_board_games
+    
+    modifier = {
+        state_education_access_add = 0.02
+        state_entertainment_add = 2
+        country_innovation_mult = 0.03
+    }
+    
+    # More valuable for advanced countries
+    ai_weight = {
+        base = 4
+        
+        modifier = {
+            factor = 2
+            literacy_rate > 0.7
+        }
+        
+        modifier = {
+            factor = 1.5
+            has_technology_researched = mass_communication
+        }
+    }
+}
+
+# Psychological Theory - Required for Role-Playing Games
+technology_psychological_theory = {
+    era = era_4
+    texture = "gfx/interface/icons/technology/psychological_theory.dds"
+    category = society
+    
+    unlocking_technologies = {
+        dialectics
+        empiricism
+    }
+    
+    # These technologies would normally be late-game
+    # But if researched earlier, can unlock RPGs
+    
+    modifier = {
+        state_education_access_add = 0.02
+        country_innovation_mult = 0.02
+        state_political_strength_from_wealth_mult = 0.05
+    }
+    
+    # More valuable for innovative countries
+    ai_weight = {
+        base = 3
+        
+        modifier = {
+            factor = 2
+            literacy_rate > 0.8
+        }
+    }
+}
+
+# Modify existing technologies to reference gaming industry
+
+# Add to existing tech: Military Staff System
+# In the existing military_staff_system technology, we'd add:
+# unlocks_production_method = pm_wargaming
+
+# Add to existing tech: Publishing Industry
+# In the existing publishing_industry technology, we'd add:
+# unlocks_production_method = pm_parlor_games
+
+# Add to existing tech: Manufactories  
+# In the existing manufactories technology, we'd add:
+# unlocks_production_method = pm_staunton_chess_sets
