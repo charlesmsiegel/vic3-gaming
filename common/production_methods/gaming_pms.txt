@@ -534,3 +534,393 @@ pm_role_playing_games = {
         }
     }
 }
+
+# common/production_methods/gaming_pms.txt
+# New production methods for intermediate technologies and regional specializations
+
+# Intermediate Technology Production Methods
+pm_standardized_rules = {
+    texture = "gfx/interface/icons/production_method_icons/standardized_rules.dds"
+    
+    unlocking_technologies = {
+        technology_recreational_codification
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_paper = 8
+            goods_input_wood = 5
+        }
+        level_scaled = {
+            building_employment_clerks_add = 3
+            building_profit_add = 5
+        }
+    }
+    
+    ai_weight = {
+        weight = 150
+        
+        if = {
+            limit = {
+                owner = { literacy_rate > 0.4 }
+            }
+            add = 100
+        }
+    }
+}
+
+pm_tournament_circuits = {
+    texture = "gfx/interface/icons/production_method_icons/tournament_circuits.dds"
+    
+    unlocking_technologies = {
+        technology_game_systemization
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_paper = 10
+            goods_input_services = 5
+        }
+        level_scaled = {
+            building_employment_clerks_add = 2
+            building_prestige_add = 3
+            state_tourism_add = 2
+        }
+    }
+    
+    ai_weight = {
+        weight = 200
+        
+        if = {
+            limit = {
+                owner = { literacy_rate > 0.6 }
+            }
+            add = 100
+        }
+    }
+}
+
+pm_storytelling_games = {
+    texture = "gfx/interface/icons/production_method_icons/storytelling_games.dds"
+    
+    unlocking_technologies = {
+        technology_narrative_mechanics
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_paper = 15
+            goods_input_furniture = 5
+        }
+        level_scaled = {
+            building_employment_academics_add = 2
+            building_employment_artists_add = 2
+            state_arts_add = 3
+        }
+    }
+    
+    ai_weight = {
+        weight = 300
+        
+        if = {
+            limit = {
+                owner = { literacy_rate > 0.7 }
+            }
+            add = 200
+        }
+    }
+}
+
+# Regional Gaming Production Methods
+pm_xiangqi_houses = {
+    texture = "gfx/interface/icons/production_method_icons/xiangqi_houses.dds"
+    
+    unlocking_technologies = {
+        technology_chess_academy
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_paper = 5
+            goods_input_wood = 10
+        }
+        level_scaled = {
+            building_employment_shopkeepers_add = 2
+            state_cultural_understanding_mult = 0.02
+        }
+    }
+    
+    country_modifiers = {
+        country_prestige_add = 2
+    }
+    
+    ai_weight = {
+        weight = 150
+        
+        # More common in Chinese cultural regions
+        if = {
+            limit = {
+                owner = { 
+                    OR = {
+                        country_has_primary_culture = cu:han
+                        primary_culture = {
+                            OR = {
+                                country_has_primary_culture = cu:han
+                                is_discrimination_trait = east_asian_heritage
+                            }
+                        }
+                    }
+                }
+            }
+            add = 500
+        }
+    }
+}
+
+pm_backgammon_houses = {
+    texture = "gfx/interface/icons/production_method_icons/backgammon_houses.dds"
+    
+    unlocking_technologies = {
+        technology_traditional_gaming
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_wood = 10
+            goods_input_ivory = 2
+        }
+        level_scaled = {
+            building_employment_shopkeepers_add = 2
+            state_cultural_understanding_mult = 0.02
+        }
+    }
+    
+    ai_weight = {
+        weight = 150
+        
+        # More common in Mediterranean and Middle Eastern regions
+        if = {
+            limit = {
+                owner = { 
+                    OR = {
+                        has_discrimination_trait = mediterranean_heritage
+                        has_discrimination_trait = middle_eastern_heritage
+                        primary_culture = {
+                            OR = {
+                                has_discrimination_trait = mediterranean_heritage
+                                is_discrimination_trait = mediterranean_heritage
+                                has_discrimination_trait = middle_eastern_heritage
+                                is_discrimination_trait = middle_eastern_heritage
+                            }
+                        }
+                    }
+                }
+            }
+            add = 500
+        }
+    }
+}
+
+pm_tafl_gaming = {
+    texture = "gfx/interface/icons/production_method_icons/tafl_gaming.dds"
+    
+    unlocking_technologies = {
+        technology_traditional_gaming
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_wood = 8
+        }
+        level_scaled = {
+            building_employment_laborers_add = 2
+            state_cultural_understanding_mult = 0.02
+        }
+    }
+    
+    ai_weight = {
+        weight = 150
+        
+        # More common in Scandinavian regions
+        if = {
+            limit = {
+                owner = { 
+                    OR = {
+                        country_has_primary_culture = cu:swedish
+                        country_has_primary_culture = cu:norwegian
+                        country_has_primary_culture = cu:danish
+                        primary_culture = {
+                            OR = {
+                                is_discrimination_trait = scandinavian_heritage
+                            }
+                        }
+                    }
+                }
+            }
+            add = 500
+        }
+    }
+}
+
+# Trade-dependent Production Methods
+pm_luxury_chess_sets = {
+    texture = "gfx/interface/icons/production_method_icons/luxury_chess_sets.dds"
+    
+    unlocking_technologies = {
+        technology_chess_academy
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            # Exotic materials
+            goods_input_wood = 10
+            goods_input_ivory = 5
+            goods_input_gold = 1
+            goods_input_silk = 2
+        }
+        
+        level_scaled = {
+            building_employment_aristocrats_add = 1
+            building_employment_artisans_add = 3
+            # Higher prestige and profit
+            building_prestige_add = 5
+            building_profit_add = 10
+        }
+    }
+    
+    country_modifiers = {
+        country_prestige_add = 5
+    }
+    
+    # Only available if luxury goods are accessible
+    possible = {
+        error_check = {
+            severity = fail
+            has_trade_route_with_goods = goods_silk
+            has_trade_route_with_goods = goods_ivory
+            has_trade_route_with_goods = goods_gold
+        }
+    }
+    
+    ai_weight = {
+        weight = 100
+        
+        # Preferred by wealthy nations
+        if = {
+            limit = {
+                owner = { 
+                    gdp > 1000000
+                }
+            }
+            add = 200
+        }
+    }
+}
+
+pm_luxury_casino = {
+    texture = "gfx/interface/icons/production_method_icons/luxury_casino.dds"
+    
+    unlocking_technologies = {
+        technology_gambling_halls
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            # Luxury materials
+            goods_input_furniture = 10
+            goods_input_fine_art = 5
+            goods_input_luxury_clothes = 5
+            goods_input_liquor = 10
+        }
+        
+        level_scaled = {
+            building_employment_aristocrats_add = 3
+            building_employment_shopkeepers_add = 3
+            # High tourism and prestige
+            state_tourism_add = 15
+            state_prestige_add = 10
+        }
+    }
+    
+    # Only available if luxury goods are accessible
+    possible = {
+        error_check = {
+            severity = fail
+            has_trade_route_with_goods = goods_fine_art
+            has_trade_route_with_goods = goods_luxury_clothes
+            has_trade_route_with_goods = goods_liquor
+        }
+    }
+    
+    ai_weight = {
+        weight = 150
+        
+        # Preferred by tourist destinations
+        if = {
+            limit = {
+                OR = {
+                    has_modifier = famous_resort
+                    is_coastal = yes
+                    is_capital = yes
+                }
+            }
+            add = 300
+        }
+    }
+}
+
+pm_hanafuda_parlors = {
+    texture = "gfx/interface/icons/production_method_icons/hanafuda_parlors.dds"
+    
+    unlocking_technologies = {
+        technology_modern_gaming
+    }
+    
+    building_modifiers = {
+        workforce_scaled = {
+            goods_input_paper = 10
+            goods_input_dye = 5
+            goods_input_silk = 3
+        }
+        
+        level_scaled = {
+            building_employment_shopkeepers_add = 3
+            state_cultural_understanding_mult = 0.03
+        }
+    }
+    
+    # Needs access to Japanese trade or culture
+    possible = {
+        error_check = {
+            severity = fail
+            OR = {
+                has_trade_route_with_country = c:JAP
+                owner = { country_has_primary_culture = cu:japanese }
+            }
+        }
+    }
+    
+    ai_weight = {
+        weight = 150
+        
+        # Much more appealing to countries with Japanese relations
+        if = {
+            limit = {
+                owner = { 
+                    OR = {
+                        has_diplomatic_pact = {
+                            who = c:JAP
+                            type = alliance
+                        }
+                        country_has_primary_culture = cu:japanese
+                    }
+                }
+            }
+            add = 500
+        }
+    }
+}
+
+# Add to Production Method Groups
+# These should be added to the existing PMGs or create new ones
+# as needed in your mod structure

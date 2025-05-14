@@ -1,0 +1,224 @@
+# Gaming-specific decisions for direct player actions
+
+# Host International Chess Championship
+host_international_chess_championship = {
+    icon = "gfx/interface/icons/decision_icons/host_chess_championship.dds"
+    
+    is_shown = {
+        has_technology_researched = technology_professional_gaming
+        NOT = { has_modifier = international_chess_championship_cooldown }
+    }
+    
+    possible = {
+        has_building = building_chess_academy
+        treasury > 5000
+    }
+    
+    when_taken = {
+        treasury = -5000
+        add_modifier = {
+            name = international_chess_championship_cooldown
+            months = 24
+        }
+        
+        add_modifier = {
+            name = recent_chess_championship
+            months = 12
+        }
+        
+        trigger_event = gaming_industry_event.25
+    }
+    
+    ai_chance = {
+        base = 25
+        
+        modifier = {
+            add = 25
+            has_journal_entry = je_gaming_diplomacy
+        }
+        
+        modifier = {
+            add = 25
+            country_rank >= rank_value:major_power
+        }
+    }
+}
+
+# Ban Problematic Gaming
+ban_problematic_gaming = {
+    icon = "gfx/interface/icons/decision_icons/ban_problematic_gaming.dds"
+    
+    is_shown = {
+        OR = {
+            has_character = historical_figure_viktor_roth
+            has_character = historical_figure_edmund_blackwood
+            any_scope_state = {
+                has_modifier = racial_hierarchy_games
+            }
+        }
+    }
+    
+    possible = {
+        NOT = { has_modifier = gaming_censorship_active }
+    }
+    
+    when_taken = {
+        add_modifier = {
+            name = gaming_censorship_active
+            months = 24
+        }
+        
+        # Remove problematic gaming
+        if = {
+            limit = {
+                any_scope_state = {
+                    has_modifier = racial_hierarchy_games
+                }
+            }
+            random_scope_state = {
+                limit = {
+                    has_modifier = racial_hierarchy_games
+                }
+                remove_modifier = racial_hierarchy_games
+            }
+        }
+        
+        # Religious approval
+        ig:ig_devout = {
+            add_approval = 1
+        }
+        
+        # Intellectual approval
+        ig:ig_intelligentsia = {
+            add_approval = 1
+        }
+    }
+    
+    ai_chance = {
+        base = 10
+        
+        modifier = {
+            add = 20
+            has_powerful_ig = ig_intelligentsia
+        }
+        
+        modifier = {
+            add = 20
+            has_law = law_type:law_protected_rights
+        }
+    }
+}
+
+# Establish Gaming School
+establish_gaming_school = {
+    icon = "gfx/interface/icons/decision_icons/establish_gaming_school.dds"
+    
+    is_shown = {
+        has_technology_researched = technology_chess_academy
+        any_scope_state = {
+            has_building = building_schools
+            has_building = building_gaming_establishments
+            NOT = { has_building = building_gaming_school }
+        }
+    }
+    
+    possible = {
+        treasury > 2000
+    }
+    
+    when_taken = {
+        treasury = -2000
+        
+        random_scope_state = {
+            limit = {
+                has_building = building_schools
+                has_building = building_gaming_establishments
+                NOT = { has_building = building_gaming_school }
+                is_capital = yes
+            }
+            add_building = {
+                building_type = building_gaming_school
+                level = 1
+            }
+        }
+        
+        add_modifier = {
+            name = strategic_education_initiative
+            months = 36
+        }
+    }
+    
+    ai_chance = {
+        base = 20
+        
+        modifier = {
+            add = 30
+            literacy_rate > 0.7
+        }
+        
+        modifier = {
+            add = 20
+            has_powerful_ig = ig_intelligentsia
+        }
+    }
+}
+
+# Sponsor Champion Gamer
+sponsor_champion_gamer = {
+    icon = "gfx/interface/icons/decision_icons/sponsor_champion.dds"
+    
+    is_shown = {
+        has_technology_researched = technology_professional_gaming
+        any_scope_character = {
+            OR = {
+                has_trait = trait_chess_prodigy
+                has_trait = trait_chess_master
+                has_trait = trait_gaming_celebrity
+            }
+        }
+        NOT = { has_modifier = gaming_sponsorship_active }
+    }
+    
+    possible = {
+        treasury > 3000
+    }
+    
+    when_taken = {
+        treasury = -3000
+        
+        add_modifier = {
+            name = gaming_sponsorship_active
+            months = 36
+        }
+        
+        random_scope_character = {
+            limit = {
+                OR = {
+                    has_trait = trait_chess_prodigy
+                    has_trait = trait_chess_master
+                    has_trait = trait_gaming_celebrity
+                }
+            }
+            add_modifier = {
+                name = state_sponsored_champion
+                months = 48
+            }
+        }
+        
+        add_prestige = 25
+    }
+    
+    ai_chance = {
+        base = 15
+        
+        modifier = {
+            add = 25
+            country_rank >= rank_value:major_power
+        }
+        
+        modifier = {
+            add = 15
+            has_journal_entry = je_gaming_diplomacy
+        }
+    }
+}

@@ -237,3 +237,95 @@ technology_psychological_theory = {
 # Add to existing tech: Manufactories  
 # In the existing manufactories technology, we'd add:
 # unlocks_production_method = pm_staunton_chess_sets
+
+# common/technology/gaming_technology.txt
+# New intermediate technologies for better technology pacing
+
+# New technology between Traditional Gaming and Modern Gaming
+technology_recreational_codification = {
+    era = era_1
+    texture = "gfx/interface/icons/technology/recreational_codification.dds"
+    category = society
+    
+    unlocking_technologies = {
+        technology_traditional_gaming
+    }
+    
+    # Bridge between traditional and modern gaming
+    unlocks_production_method = pm_standardized_rules
+    
+    modifier = {
+        state_entertainment_add = 1
+        state_education_access_add = 0.01
+    }
+    
+    ai_weight = {
+        base = 2
+        
+        modifier = {
+            factor = 1.5
+            OR = {
+                country_has_primary_culture = cu:british
+                country_has_primary_culture = cu:north_german
+                country_has_primary_culture = cu:japanese
+            }
+        }
+    }
+}
+
+# Bridge between Chess Academy and Professional Gaming
+technology_game_systemization = {
+    era = era_2
+    texture = "gfx/interface/icons/technology/game_systemization.dds"
+    category = society
+    
+    unlocking_technologies = {
+        technology_modern_gaming
+        technology_chess_academy
+    }
+    
+    # Unlocks formalized tournament structures
+    unlocks_production_method = pm_tournament_circuits
+    
+    modifier = {
+        state_education_access_add = 0.01
+        country_prestige_add = 3
+    }
+    
+    ai_weight = {
+        base = 3
+        
+        modifier = {
+            factor = 1.5
+            literacy_rate > 0.5
+        }
+    }
+}
+
+# Bridge between Advanced Game Design and Role-Playing Games
+technology_narrative_mechanics = {
+    era = era_4
+    texture = "gfx/interface/icons/technology/narrative_mechanics.dds"
+    category = society
+    
+    unlocking_technologies = {
+        technology_advanced_game_design
+    }
+    
+    # Foundation for RPGs without full psychological theory
+    unlocks_production_method = pm_storytelling_games
+    
+    modifier = {
+        state_arts_add = 5
+        state_innovation_capacity_add = 5
+    }
+    
+    ai_weight = {
+        base = 3
+        
+        modifier = {
+            factor = 2
+            literacy_rate > 0.7
+        }
+    }
+}

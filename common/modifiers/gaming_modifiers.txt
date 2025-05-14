@@ -675,3 +675,572 @@ gaming_political_awakening = {
     interest_group_ig_rural_folk_pop_attraction_mult = 0.05
     interest_group_ig_trade_unions_pop_attraction_mult = 0.05
 }
+
+# common/modifiers/gaming_modifiers.txt
+# Interest Group reaction modifiers and other new modifiers
+
+# Interest Group Reaction Modifiers
+ig_devout_gaming_opposition = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+    
+    interest_group_ig_devout_approval_add = -2
+    interest_group_ig_devout_pop_attraction_mult = 0.05
+    state_religious_opposition_add = 5
+}
+
+ig_industrialists_gaming_support = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+    
+    interest_group_ig_industrialists_approval_add = 2
+    interest_group_ig_industrialists_pop_attraction_mult = 0.03
+    state_capitalism_add = 5
+}
+
+ig_intelligentsia_gaming_support = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    interest_group_ig_intelligentsia_approval_add = 2
+    interest_group_ig_intelligentsia_pop_attraction_mult = 0.03
+    state_education_access_add = 0.02
+}
+
+ig_armed_forces_wargaming_support = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds"
+    
+    interest_group_ig_armed_forces_approval_add = 3
+    interest_group_ig_armed_forces_pop_attraction_mult = 0.03
+    country_military_training_rate_mult = 0.05
+}
+
+ig_rural_folk_traditional_gaming = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    interest_group_ig_rural_folk_approval_add = 2
+    interest_group_ig_rural_folk_pop_attraction_mult = 0.03
+    state_cultural_understanding_mult = 0.05
+}
+
+# Colonial Gaming Modifiers
+appropriated_indigenous_games = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds"
+    
+    country_prestige_add = 5
+    state_colonial_exploitation_mult = 0.05
+    state_radicals_from_conquest_mult = 0.1
+}
+
+exotic_gaming_trend = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    state_arts_add = 5
+    state_entertainment_add = 3
+    state_prestige_add = 3
+}
+
+cultural_exploitation = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds"
+    
+    state_colonial_exploitation_mult = 0.1
+    state_radicals_from_conquest_mult = 0.15
+    state_cultural_power_projection_mult = -0.1
+}
+
+gaming_cultural_exchange = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    country_prestige_add = 3
+    state_cultural_power_projection_mult = 0.05
+    state_colonial_exploitation_mult = -0.05
+}
+
+multicultural_gaming = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    state_cultural_understanding_mult = 0.1
+    state_arts_add = 3
+    state_entertainment_add = 2
+}
+
+cultural_recognition = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    state_radicals_from_conquest_mult = -0.1
+    state_cultural_power_projection_mult = 0.05
+}
+
+gaming_cultural_suppression = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+    
+    state_cultural_power_projection_mult = 0.1
+    state_radicals_from_conquest_mult = 0.2
+    country_authority_add = 5
+}
+
+cultural_resistance = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+    
+    state_radicals_mult = 0.1
+    state_radicals_from_conquest_mult = 0.2
+}
+
+# Educational Gaming Modifiers
+strategic_education_initiative = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    state_education_access_add = 0.03
+    country_innovation_mult = 0.02
+    country_military_training_rate_mult = 0.01
+}
+
+strategic_thinking_education = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    state_education_access_add = 0.02
+    state_innovation_capacity_add = 5
+    country_bureaucracy_mult = 0.02
+}
+
+gaming_curriculum = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    building_university_throughput_mult = 0.1
+    state_education_access_add = 0.02
+    state_innovation_capacity_add = 10
+}
+
+military_gaming_program = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds"
+    
+    country_military_training_rate_mult = 0.05
+    state_offense_add = 5
+    country_military_goods_cost_mult = -0.02
+}
+
+officer_strategic_training = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds"
+    
+    country_military_training_rate_mult = 0.05
+    state_offense_add = 3
+    state_defense_add = 3
+}
+
+# Diplomatic Tournament Modifiers
+diplomatic_chess_championship = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    country_prestige_mult = 0.03
+    country_influence_mult = 0.02
+    country_diplomatic_play_cost_mult = -0.05
+}
+
+international_tournament_host = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    state_tourism_add = 10
+    state_prestige_add = 5
+    state_cultural_power_projection_mult = 0.05
+}
+
+alliance_chess_tournament = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    country_prestige_mult = 0.02
+    country_influence_mult = 0.03
+    country_diplomatic_play_cost_mult = -0.1
+}
+
+exclusive_tournament_host = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    state_tourism_add = 5
+    state_prestige_add = 10
+    state_cultural_power_projection_mult = 0.02
+}
+
+chess_diplomacy_initiative = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    country_prestige_mult = 0.01
+    country_influence_mult = 0.03
+    country_diplomatic_play_cost_mult = -0.1
+}
+
+chess_diplomacy_venue = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    state_tourism_add = 5
+    state_prestige_add = 3
+    state_cultural_power_projection_mult = 0.03
+}
+
+east_west_game_summit = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    country_prestige_mult = 0.02
+    country_influence_mult = 0.03
+    state_cultural_understanding_mult = 0.1
+}
+
+east_west_championship = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    country_prestige_mult = 0.03
+    country_influence_mult = 0.02
+    state_offense_add = 3
+}
+
+eastern_strategic_principles = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds"
+    
+    country_military_training_rate_mult = 0.03
+    state_offense_add = 5
+    state_defense_add = 5
+}
+
+# Celebrity Gaming Modifiers
+national_chess_champion = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    country_prestige_mult = 0.03
+    country_influence_mult = 0.01
+    state_cultural_power_projection_mult = 0.05
+}
+
+champion_home_state = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    state_prestige_add = 5
+    state_tourism_add = 5
+    state_cultural_power_projection_mult = 0.02
+}
+
+state_sponsored_champion = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    character_prestige_add = 10
+    character_influence_add = 10
+}
+
+expensive_chess_program = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds"
+    
+    country_prestige_mult = 0.02
+    country_expense_mult = 0.01
+}
+
+chess_brain_drain = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds"
+    
+    country_prestige_mult = -0.01
+    country_innovation_mult = -0.01
+    state_cultural_power_projection_mult = -0.02
+}
+
+# Underground Gaming Modifiers
+gambling_crackdown = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+    
+    state_crime_mult = -0.1
+    state_entertainment_add = -2
+    interest_group_ig_devout_approval_add = 1
+}
+
+underground_resistance = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds"
+    
+    state_radicals_mult = 0.05
+    interest_group_ig_industrialists_approval_add = -1
+}
+
+corrupt_gambling_oversight = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+    
+    state_tax_capacity_add = 5
+    state_crime_mult = 0.1
+    interest_group_ig_devout_approval_add = -1
+}
+
+organized_crime_gambling = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds"
+    
+    state_crime_mult = 0.2
+    state_tax_capacity_add = 10
+    state_radicals_mult = 0.05
+}
+
+gaming_legalization_transition = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    state_crime_mult = -0.05
+    state_entertainment_add = 1
+    interest_group_ig_devout_approval_add = -1
+    interest_group_ig_industrialists_approval_add = 1
+}
+
+chess_modernization_society = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    country_innovation_mult = 0.03
+    state_education_access_add = 0.01
+    state_radicals_from_sol_change_mult = -0.05
+}
+
+traditional_gaming_preservation = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    country_authority_mult = 0.05
+    state_cultural_understanding_mult = 0.05
+    state_radicals_from_sol_change_mult = -0.05
+}
+
+cultural_protectionism = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
+    
+    country_authority_mult = 0.02
+    country_prestige_add = 5
+    state_cultural_power_projection_mult = 0.05
+}
+
+# Trade Route Modifiers
+exotic_gaming_imports = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    country_prestige_mult = 0.02
+    state_arts_add = 5
+    state_tourism_add = 5
+}
+
+luxury_game_components = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    building_gaming_establishments_throughput_mult = 0.15
+    state_prestige_add = 3
+    state_arts_add = 3
+}
+
+exotic_chess_materials = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    building_chess_academy_throughput_mult = 0.15
+    state_prestige_add = 5
+    country_prestige_add = 2
+}
+
+premium_gaming_materials = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    building_gaming_establishments_throughput_mult = 0.1
+    state_prestige_add = 2
+    state_entertainment_add = 2
+}
+
+domestic_craftsmanship = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    country_prestige_add = 3
+    state_arts_add = 5
+}
+
+local_artisan_support = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    state_employment_qualifications_mult = 0.05
+    state_arts_add = 3
+    state_standard_of_living_add = 0.5
+}
+
+# Militaristic Gaming Modifiers
+ultranationalist_gaming = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds"
+    
+    # Militaristic benefits
+    country_offense_mult = 0.05
+    country_military_training_rate_mult = 0.05
+    state_radicals_mult = 0.05
+}
+
+military_gaming_enthusiasm = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds"
+    
+    # Military interest group benefits
+    interest_group_ig_armed_forces_approval_add = 1
+    interest_group_ig_armed_forces_pop_attraction_mult = 0.05
+}
+
+nationalist_gaming_theorist = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
+    
+    # Character benefits
+    character_influence_add = 15
+    character_prestige_add = 10
+}
+
+militaristic_gaming_center = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds"
+    
+    # State militarism
+    state_offense_add = 5
+    state_conscription_rate_mult = 0.05
+    state_radicals_mult = 0.05
+}
+
+educational_wargaming = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # Educational focus
+    country_military_training_rate_mult = 0.03
+    state_education_access_add = 0.01
+}
+
+marginalized_theorist = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds"
+    
+    # Character marginalization
+    character_influence_add = -10
+    character_prestige_add = -5
+}
+
+professional_military_gaming = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds"
+    
+    # Professional approach
+    interest_group_ig_armed_forces_approval_add = 1
+    country_military_training_rate_mult = 0.03
+}
+
+gaming_militarization_program = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds"
+    
+    # Extreme militarization
+    country_offense_mult = 0.1
+    country_military_training_rate_mult = 0.1
+    state_radicals_mult = 0.1
+    interest_group_ig_intelligentsia_approval_add = -2
+}
+
+gaming_propaganda_minister = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds"
+    
+    # Propaganda leader
+    character_influence_add = 25
+    character_prestige_add = 15
+}
+
+military_ideological_control = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds"
+    
+    # Military dominance
+    interest_group_ig_armed_forces_approval_add = 2
+    interest_group_ig_armed_forces_pop_attraction_mult = 0.1
+    interest_group_ig_armed_forces_political_strength_mult = 0.1
+}
+
+# Occult Gaming Modifiers
+occult_gaming_curiosity = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Cultural curiosity
+    state_arts_add = 5
+    state_entertainment_add = 2
+}
+
+eccentric_game_designer = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Eccentric reputation
+    character_prestige_add = 5
+    character_influence_add = -5
+}
+
+traditional_mystical_gaming = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Traditional benefits
+    country_authority_mult = 0.03
+    interest_group_ig_devout_approval_add = 1
+    interest_group_ig_landowners_approval_add = 1
+    interest_group_ig_intelligentsia_approval_add = -1
+}
+
+traditionalist_thought_leader = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Traditional leader
+    character_influence_add = 15
+    character_prestige_add = 10
+}
+
+occult_gaming_ban = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds"
+    
+    # Gaming restriction
+    state_entertainment_add = -2
+    interest_group_ig_devout_approval_add = 1
+}
+
+suppressed_occultist = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds"
+    
+    # Suppressed character
+    character_influence_add = -15
+    character_prestige_add = -10
+}
+
+# Racial Gaming Modifiers
+supremacist_gaming_themes = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+    
+    # Racial entrenchment
+    country_authority_mult = 0.05
+    state_discrimination_mult = 0.1
+    state_radicals_from_discrimination_mult = 0.1
+}
+
+racial_hierarchy_games = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+    
+    # Local racial politics
+    state_discrimination_mult = 0.1
+    state_radicals_from_conquest_mult = 0.1
+}
+
+gaming_cultural_resistance = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds"
+    
+    # Cultural resistance
+    state_radicals_mult = 0.15
+    state_political_strength_from_discrimination_mult = 0.1
+}
+
+abstract_strategy_focus = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # Neutral approach
+    state_education_access_add = 0.02
+    building_chess_academy_throughput_mult = 0.1
+}
+
+chess_club_emphasis = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds"
+    
+    # Chess focus
+    building_gaming_establishments_throughput_mult = 0.1
+    state_education_access_add = 0.01
+}
+
+egalitarian_gaming_movement = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds"
+    
+    # Progressive benefits
+    interest_group_ig_intelligentsia_approval_add = 1
+    state_cultural_understanding_mult = 0.05
+    state_radicals_from_discrimination_mult = -0.05
+}
+
+gaming_social_controversy = {
+    icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+    
+    # Social tension
+    state_radicals_mult = 0.05
+    interest_group_ig_landowners_approval_add = -1
+}

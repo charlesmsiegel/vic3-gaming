@@ -1,0 +1,70 @@
+# common/historical_figures/gaming_figures_extension.txt
+# New Historical Figures for Regressive Gaming Elements
+
+# Viktor Roth - proto-fascist game designer
+historical_figure_viktor_roth = {
+    first_name = "Viktor"
+    last_name = "Roth"
+    culture = cu:north_german
+    
+    # Approximate dates
+    birth_date = 1880.6.15
+    death_date = 1940.3.21
+    
+    c:PRU = {
+        add_character = scope:character
+        save_scope_as = employer
+    }
+    
+    traits = {
+        trait_game_designer
+        trait_nationalist_game_designer
+        charismatic
+        bigoted
+    }
+    
+    # Fascist ideology
+    ideology = ideology_ultranationalist
+    interest_group = ig_armed_forces
+    
+    # Special events related to militaristic gaming
+    on_created = {
+        trigger_event = {
+            id = gaming_industry_event.31 # Militaristic Gaming Ideology
+        }
+    }
+}
+
+# Edmund Blackwood - occult gaming promoter
+historical_figure_edmund_blackwood = {
+    first_name = "Edmund"
+    last_name = "Blackwood"
+    culture = cu:british
+    
+    # Approximate dates
+    birth_date = 1875.10.31
+    death_date = 1942.4.13
+    
+    c:GBR = {
+        add_character = scope:character
+        save_scope_as = employer
+    }
+    
+    traits = {
+        trait_game_designer
+        mystical
+        charismatic
+        reclusive
+    }
+    
+    # Conservative reactionary
+    ideology = ideology_reactionary
+    interest_group = ig_landowners
+    
+    # Special events related to occult gaming
+    on_created = {
+        trigger_event = {
+            id = gaming_industry_event.32 # Occult Gaming Society
+        }
+    }
+}

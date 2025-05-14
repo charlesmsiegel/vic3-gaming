@@ -1,0 +1,134 @@
+# Localization for all final additions to the Gaming Industry mod
+
+l_english:
+  # Decisions
+  host_international_chess_championship: "Host International Chess Championship"
+  host_international_chess_championship_desc: "Organize a prestigious international chess tournament, inviting players from around the world to compete in our capital."
+  international_chess_championship_cooldown: "Recent Chess Championship"
+  recent_chess_championship: "International Chess Championship"
+  
+  ban_problematic_gaming: "Ban Problematic Gaming"
+  ban_problematic_gaming_desc: "Prohibit games that promote harmful ideologies or racial hierarchies, focusing instead on games of pure strategy and skill."
+  gaming_censorship_active: "Gaming Censorship Active"
+  
+  establish_gaming_school: "Establish Gaming School"
+  establish_gaming_school_desc: "Found a specialized educational institution dedicated to strategic thinking through gaming, combining recreational activities with academic benefits."
+  
+  sponsor_champion_gamer: "Sponsor Champion Gamer"
+  sponsor_champion_gamer_desc: "Provide state support to a talented gaming figure, enhancing their abilities while increasing national prestige through their achievements."
+  gaming_sponsorship_active: "Active Gaming Sponsorship"
+  
+  # Goods
+  chess_sets: "Chess Sets"
+  chess_sets_desc: "Finely crafted chess sets are both recreational equipment and status symbols, often made from exotic woods, ivory, or even precious metals."
+  
+  gaming_tables: "Gaming Tables"
+  gaming_tables_desc: "Specialized tables for various games, featuring felt surfaces, intricate inlays, or built-in boards, essential for parlor games and gambling establishments."
+  
+  game_manuals: "Game Manuals"
+  game_manuals_desc: "Rulebooks and strategy guides for various games, becoming increasingly sophisticated with standardized rules and advanced game design theories."
+  
+  # Ideologies
+  gaming_progressive: "Gaming Progressive"
+  gaming_progressive_desc: "Believes games should be used as tools for education, cultural exchange, and social progress."
+  
+  gaming_traditional: "Gaming Traditionalist"
+  gaming_traditional_desc: "Believes traditional games should be preserved and protected from foreign or modern influences."
+  
+  gaming_militarist: "Gaming Militarist"
+  gaming_militarist_desc: "Sees games primarily as tools for strategic training, national competition, and promoting military values."
+  
+  gaming_occultist: "Gaming Occultist"
+  gaming_occultist_desc: "Incorporates mystical themes and esoteric symbolism into games, seeing them as vehicles for traditionalist worldviews and hidden knowledge."
+
+  # AI Strategies
+  ai_strategy_gaming_cultural_power: "Gaming Cultural Powerhouse"
+  ai_strategy_gaming_cultural_power_desc: "Focus on developing gaming as a tool of cultural influence and diplomatic soft power."
+  
+  ai_strategy_gaming_economic_power: "Gaming Economic Powerhouse"
+  ai_strategy_gaming_economic_power_desc: "Emphasize the commercial aspects of gaming as a luxury export industry and tourism draw."
+  
+  ai_strategy_gaming_military_power: "Gaming Military Powerhouse"
+  ai_strategy_gaming_military_power_desc: "Develop gaming primarily as a tool for military training, strategic thinking, and nationalist ideology."
+  
+  # Phase Events - Early Game
+  gaming_phase_event.1.t: "Revival of Traditional Games"
+  gaming_phase_event.1.d: "As our society begins to modernize, scholars at our universities have taken an interest in documenting and preserving traditional games that have been played for generations. These games, often transmitted orally or through informal practice, risk being lost without proper documentation. The scholars propose various approaches: we could create a formal archive of traditional games for academic study, focus on promoting local gaming traditions in communities, or use this knowledge as a foundation for developing more modern, standardized games."
+  gaming_phase_event.1.f: "The ancient wooden pieces hold centuries of wisdom in their worn surfaces."
+  gaming_phase_event.1.a: "Create a formal academic archive of traditional games"
+  gaming_phase_event.1.b: "Focus on preserving local gaming traditions in communities"
+  gaming_phase_event.1.c: "Use this knowledge to develop more modern games"
+  
+  # Phase Events - Mid Game
+  gaming_phase_event.2.t: "Industrial Gaming Production"
+  gaming_phase_event.2.d: "The industrialization sweeping our nation has now reached the gaming sector. What was once a cottage industry of artisans crafting individual game sets has the potential to become a standardized manufacturing process. We could establish factories for mass-producing affordable gaming equipment for domestic consumption, focus on high-end luxury exports for the international market, or develop a network of entertainment venues centered around gambling and gaming."
+  gaming_phase_event.2.f: "The rhythmic clatter of machines replaces the careful chisel of the artisan."
+  gaming_phase_event.2.a: "Mass produce gaming equipment for the domestic market"
+  gaming_phase_event.2.b: "Focus on luxury gaming exports for the international market"
+  gaming_phase_event.2.c: "Develop gambling and entertainment venues"
+  
+  # Phase Events - Late Game
+  gaming_phase_event.3.t: "Mass Market Gaming"
+  gaming_phase_event.3.d: "Gaming has evolved from an elite pastime or traditional cultural practice into a widespread social phenomenon. With rising literacy, leisure time, and disposable income, citizens from all walks of life are embracing various forms of gaming. We could promote gaming as a mainstream cultural activity accessible to all citizens, develop national competitions to showcase talent and build patriotic spirit, or focus on the academic applications of advanced gaming theory in education and military strategy."
+  gaming_phase_event.3.f: "From royal courts to working-class homes, the language of play unites the nation."
+  gaming_phase_event.3.a: "Promote gaming as mainstream culture for all citizens"
+  gaming_phase_event.3.b: "Establish national gaming competitions as patriotic events"
+  gaming_phase_event.3.c: "Develop advanced gaming theory for education and strategy"
+  
+  # Special World Championship Event
+  gaming_phase_event.4.t: "The Gaming World Championship"
+  gaming_phase_event.4.d: "With our nation recognized as a global leader in gaming culture and our National Gaming Academy established as a prestigious institution, we have the unique opportunity to host the first-ever Gaming World Championship. This unprecedented event would bring together the finest players from around the world to compete in various gaming disciplines, from chess to other strategic games. As the inaugural host, we would set the standards for this competition and establish a lasting legacy in global gaming culture."
+  gaming_phase_event.4.f: "Champions from six continents gather beneath our flag, united by the universal language of play."
+  gaming_phase_event.4.a: "Let the games begin!"
+  
+  # Phase Event Modifiers - Early Game
+  academic_traditional_games_revival: "Academic Traditional Games Revival"
+  traditional_games_archive: "Traditional Games Archive"
+  local_gaming_traditions: "Local Gaming Traditions"
+  regional_solidarity: "Regional Solidarity Through Traditional Games"
+  gaming_modernization: "Gaming Modernization"
+  gaming_education_initiative: "Early Gaming Education Initiative"
+  
+  # Phase Event Modifiers - Mid Game
+  industrial_gaming_production: "Industrial Gaming Production"
+  gaming_manufacturing_center: "Gaming Manufacturing Center"
+  gaming_industrial_employment: "Gaming Industrial Employment"
+  luxury_gaming_exports: "Luxury Gaming Exports"
+  luxury_gaming_craftsmanship: "Luxury Gaming Craftsmanship"
+  elite_gaming_culture: "Elite Gaming Culture"
+  gambling_entertainment_industry: "Gambling Entertainment Industry"
+  entertainment_district: "Gaming Entertainment District"
+  
+  # Phase Event Modifiers - Late Game
+  mass_gaming_culture: "Mass Gaming Culture"
+  gaming_district: "Urban Gaming District"
+  gaming_national_identity: "Gaming National Identity"
+  national_gaming_competitions: "National Gaming Competitions"
+  gaming_media_coverage: "Gaming Media Coverage"
+  gaming_celebrity_culture: "Gaming Celebrity Culture"
+  advanced_gaming_theory: "Advanced Gaming Theory"
+  gaming_theory_department: "Gaming Theory Department"
+  strategic_simulation: "Strategic Simulation Program"
+  
+  # World Championship Modifiers
+  inaugural_gaming_championship_host: "Inaugural Gaming Championship Host"
+  world_championship_venue: "World Championship Venue"
+  regular_championship_host: "Regular Championship Host"
+  
+  # GUI Requirements
+  decision_icons: "Gaming Decision Icons"
+  law_icons: "Gaming Law Icons"
+  gaming_ideologies: "Gaming Ideology Icons"
+  gaming_strategy_icons: "Gaming Strategy Icons"
+  
+  # Other Modifiers from Earlier Files with Missing Localization
+  regulated_gambling: "Regulated Gambling"
+  religious_gaming_oversight: "Religious Gaming Oversight"
+  unrestricted_gambling: "Unrestricted Gambling"
+  xiangqi_tournament: "Xiangqi Tournament"
+  western_chess_focus: "Western Chess Focus"
+  gaming_innovation_ecosystem: "Gaming Innovation Ecosystem"
+  gaming_legalization_transition: "Gaming Legalization Transition"
+  gaming_innovation_pioneer: "Gaming Innovation Pioneer"
+  cultural_soft_power: "Cultural Soft Power"
+  gaming_cultural_mecca: "Gaming Cultural Mecca"

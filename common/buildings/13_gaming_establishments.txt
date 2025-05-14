@@ -9,12 +9,12 @@ building_gaming_establishments = {
         services = 40
     }
     
-    # Base workforce
+    # Revised workforce scaling
     employment_scaled = {
-        aristocrats = 2
-        clerks = 8
+        aristocrats = 1
+        clerks = 6
         shopkeepers = 4
-        laborers = 6
+        laborers = 9
     }
     
     # Upgrades as the industry matures
@@ -72,10 +72,11 @@ building_gaming_establishments = {
         }
     }
     
-    # Special effects for high level establishments
+    # Better scaling with lower initial values
     level_scaled = {
-        state_infrastructure_add = 5
-        building_wealth_add = 50
+        state_infrastructure_add = 3 # Down from 5
+        building_wealth_add = 25 # Down from 50
+        state_entertainment_add = 1 # New dynamic scaling
     }
 }
 
@@ -142,5 +143,74 @@ building_chess_academy = {
     level_scaled = {
         state_education_access_add = 1
         state_innovation_add = 5
+    }
+}
+
+# New specialized building
+building_gaming_school = {
+    building_group = bg_education
+    texture = "gfx/interface/icons/building_icons/gaming_school.dds"
+    
+    # Educational outputs with gaming focus
+    produces = {
+        services = 20
+    }
+    
+    # Higher ratio of academics
+    employment_scaled = {
+        academics = 6
+        clerks = 4
+        shopkeepers = 2
+        laborers = 2
+    }
+    
+    # Upgrades 
+    upgrades = {
+        upgrading_time = 12
+        base_cost = {
+            money = 1000
+        }
+        ramping_cost = 0.4
+        
+        max_level = 3
+        
+        workforce_scaled = {
+            goods_input_paper = 5
+            goods_input_wood = 3
+        }
+    }
+    
+    # Specialized educational benefits
+    city_modifier = {
+        state_education_access_add = 2
+        state_innovation_capacity_add = 5
+    }
+    
+    # Build in states with schools and gaming establishments
+    possible = {
+        error_check = {
+            severity = fail
+            is_urban = yes
+            has_building = building_schools
+            has_building = building_gaming_establishments
+        }
+    }
+    
+    # Better for literate countries
+    ai_value = {
+        base = 300
+        
+        if = {
+            limit = { owner = { literacy_rate > 0.7 } }
+            add = 300
+        }
+    }
+    
+    # Strategic thinking benefits
+    level_scaled = {
+        state_education_access_add = 1
+        state_innovation_capacity_add = 10
+        state_offense_add = 1
+        state_bureaucracy_mult = 0.03
     }
 }

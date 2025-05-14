@@ -1,0 +1,53 @@
+# Tooltips for all gaming features
+
+l_english:
+  # Modifier Tooltips
+  modifier_tooltip_gaming_prestige: "Increases national prestige through gaming achievements"
+  modifier_tooltip_gaming_education: "Enhances education access through strategic game training"
+  modifier_tooltip_gaming_innovation: "Fosters innovation through complex game design principles"
+  modifier_tooltip_gaming_tourism: "Attracts tourists interested in gaming culture and tournaments"
+  modifier_tooltip_gaming_military: "Improves military training through strategic simulation games"
+  modifier_tooltip_gaming_cultural: "Enhances cultural understanding through shared gaming traditions"
+
+  # Production Method Effect Tooltips
+  tooltip_pm_traditional_gaming_effects: "Traditional games use simple materials and provide modest entertainment with cultural significance."
+  tooltip_pm_parlor_games_effects: "Parlor games are popular among the middle and upper classes, providing higher entertainment value and social prestige."
+  tooltip_pm_wargaming_effects: "Military wargaming develops strategic thinking and provides training benefits for officers and academics."
+  tooltip_pm_gambling_houses_effects: "Gambling houses generate substantial tax revenue but may increase crime and moral opposition."
+  tooltip_pm_chess_tournament_effects: "International tournaments attract tourism, generate prestige, and foster diplomatic relations."
+  tooltip_pm_modern_board_games_effects: "Advanced board games provide superior entertainment, education benefits, and innovation potential."
+  tooltip_pm_role_playing_games_effects: "Narrative role-playing games offer unique creative and psychological benefits alongside entertainment value."
+  tooltip_pm_standardized_rules_effects: "Standardized rulebooks ensure consistent play experiences and broaden market appeal through accessibility."
+  tooltip_pm_tournament_circuits_effects: "Organized competition circuits attract prestigious participants and spectators while generating tourism revenue."
+  tooltip_pm_storytelling_games_effects: "Narrative-focused games blend strategic play with creative storytelling, enhancing both entertainment and artistic value."
+  tooltip_pm_xiangqi_houses_effects: "Venues focused on Chinese Chess build cultural prestige and strategic thinking skills."
+  tooltip_pm_backgammon_houses_effects: "Centers for this ancient game of strategy and chance appeal particularly to Mediterranean and Middle Eastern cultures."
+  tooltip_pm_tafl_gaming_effects: "Nordic battle simulation games foster strategic thinking and cultural identity."
+  tooltip_pm_luxury_chess_sets_effects: "Exquisite chess equipment using precious materials provides high prestige and profit margins."
+  tooltip_pm_luxury_casino_effects: "Opulent gambling establishments attract wealthy patrons and significant tourism."
+  tooltip_pm_hanafuda_parlors_effects: "Traditional Japanese card gaming venues enhance cultural exchange and artistic appreciation."
+
+  # Building Effect Tooltips
+  tooltip_building_gaming_establishments_effects: "Gaming establishments provide entertainment, modest employment, and cultural benefits that scale with technology and urbanization."
+  tooltip_building_chess_academy_effects: "Chess academies enhance education access, innovation, and diplomatic prestige while employing academics and clerks."
+  tooltip_building_gaming_school_effects: "Gaming schools integrate strategic thinking into education, boosting literacy, innovation, and administration skills."
+
+  # Technology Tooltips  
+  tooltip_tech_traditional_gaming: "Unlocks basic gaming establishments and traditional gaming methods."
+  tooltip_tech_modern_gaming: "Enables standardized gaming rules and access to regional gaming specializations."
+  tooltip_tech_gambling_halls: "Permits establishment of commercial gambling operations with significant economic impacts."
+  tooltip_tech_chess_academy: "Enables construction of specialized chess institutions for education and competition."
+  tooltip_tech_professional_gaming: "Establishes formal tournament structures and professional gaming careers."
+  tooltip_tech_advanced_game_design: "Revolutionizes gaming with complex design principles decades ahead of historical timeline."
+  tooltip_tech_psychological_theory: "Provides psychological frameworks needed for narrative role-playing games."
+  tooltip_tech_recreational_codification: "Systematizes recreational gaming through formal rule documentation and standardization."
+  tooltip_tech_game_systemization: "Creates organized competition structures for professional gaming development."
+  tooltip_tech_narrative_mechanics: "Integrates storytelling principles with game mechanics for enhanced player engagement."
+
+  # Law Tooltips
+  tooltip_law_gaming_regulation: "Balances gaming freedoms with oversight, providing moderate economic benefits with minimal social disruption."
+  tooltip_law_gaming_prohibition: "Forbids gambling and many games of chance, pleasing religious interests but increasing crime through illicit gaming."
+  tooltip_law_state_gaming_monopoly: "Government controls all commercial gaming, maximizing tax revenue but limiting private enterprise."
+
+  # Great Building Tooltips
+  tooltip_great_building_national_gaming_academy: "A prestigious national institution dedicated to gaming excellence, providing educational, cultural, and diplomatic benefits."

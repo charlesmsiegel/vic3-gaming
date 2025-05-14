@@ -1,0 +1,263 @@
+# Custom AI strategies for gaming-focused nations
+
+# Gaming Cultural Power
+ai_strategy_gaming_cultural_power = {
+    icon = "gfx/interface/icons/ai_strategy_icons/cultural_power.dds"
+    
+    possible = {
+        has_variable = gaming_industry_developed
+        any_scope_building = {
+            is_building_type = building_chess_academy
+            building_level >= 2
+        }
+    }
+    
+    weight = {
+        value = 25
+        
+        # More likely with existing cultural investment
+        if = {
+            limit = {
+                any_scope_state = {
+                    has_modifier = international_tournament_host
+                }
+            }
+            add = 25
+        }
+        
+        # More likely with high literacy
+        if = {
+            limit = {
+                literacy_rate > 0.8
+            }
+            add = 25
+        }
+        
+        # More likely with completed journal entries
+        if = {
+            limit = {
+                has_variable = gaming_diplomacy_completed
+            }
+            add = 25
+        }
+    }
+    
+    # Building priorities
+    building_group_prio_add = {
+        building_group = bg_service
+        value = 50
+    }
+    
+    building_group_prio_add = {
+        building_group = bg_education
+        value = 25
+    }
+    
+    # Law preferences
+    law_stance = {
+        law = law_gaming_regulation
+        stance = strongly_favor
+    }
+    
+    # Tech research priorities
+    technology_priority = {
+        technology = technology_professional_gaming
+        prioritize = yes
+    }
+    
+    technology_priority = {
+        technology = technology_advanced_game_design
+        prioritize = yes
+    }
+    
+    # Diplomatic behavior
+    attitude = {
+        value = cordial
+        target_country = {
+            any_scope_building = {
+                is_building_type = building_chess_academy
+            }
+        }
+    }
+}
+
+# Gaming Economic Strategy
+ai_strategy_gaming_economic_power = {
+    icon = "gfx/interface/icons/ai_strategy_icons/economic_power.dds"
+    
+    possible = {
+        has_variable = gaming_industry_developed
+        any_scope_building = {
+            is_building_type = building_gaming_establishments
+            OR = {
+                has_active_production_method = pm_luxury_chess_sets
+                has_active_production_method = pm_luxury_casino
+                has_active_production_method = pm_modern_board_games
+            }
+        }
+    }
+    
+    weight = {
+        value = 25
+        
+        # More likely with existing economic investment
+        if = {
+            limit = {
+                any_scope_state = {
+                    has_modifier = famous_casino
+                }
+            }
+            add = 25
+        }
+        
+        # More likely with completed journal entries
+        if = {
+            limit = {
+                has_variable = luxury_gaming_completed
+            }
+            add = 25
+        }
+        
+        # More likely with active companies
+        if = {
+            limit = {
+                has_company = gaming_conglomerate
+            }
+            add = 50
+        }
+    }
+    
+    # Building priorities
+    building_group_prio_add = {
+        building_group = bg_service
+        value = 75
+    }
+    
+    building_group_prio_add = {
+        building_group = bg_trade
+        value = 50
+    }
+    
+    # Law preferences
+    law_stance = {
+        law = law_gambling_houses
+        stance = strongly_favor
+    }
+    
+    law_stance = {
+        law = law_laissez_faire
+        stance = favor
+    }
+    
+    # Tech research priorities
+    technology_priority = {
+        technology = technology_gambling_halls
+        prioritize = yes
+    }
+    
+    # Trade priorities - prefer luxury goods
+    goods_prio_add = {
+        goods = goods_ivory
+        value = 50
+    }
+    
+    goods_prio_add = {
+        goods = goods_silk
+        value = 50
+    }
+    
+    goods_prio_add = {
+        goods = goods_gold
+        value = 25
+    }
+    
+    # Expansion priorities - favor states with ports
+    state_prio_add = {
+        target_state = {
+            has_port = yes
+        }
+        value = 25
+    }
+}
+
+# Gaming Military Strategy
+ai_strategy_gaming_military_power = {
+    icon = "gfx/interface/icons/ai_strategy_icons/military_power.dds"
+    
+    possible = {
+        has_variable = gaming_industry_developed
+        any_scope_state = {
+            has_building = building_barracks
+            any_scope_building = {
+                is_building_type = building_gaming_establishments
+                has_active_production_method = pm_wargaming
+            }
+        }
+    }
+    
+    weight = {
+        value = 25
+        
+        # More likely with existing militaristic gaming
+        if = {
+            limit = {
+                any_scope_state = {
+                    has_modifier = kriegsspiel_training
+                }
+            }
+            add = 25
+        }
+        
+        # More likely with ultranationalist characters
+        if = {
+            limit = {
+                any_scope_character = {
+                    has_trait = trait_nationalist_game_designer
+                }
+            }
+            add = 25
+        }
+        
+        # More likely with militaristic government
+        if = {
+            limit = {
+                has_powerful_ig = ig_armed_forces
+            }
+            add = 25
+        }
+    }
+    
+    # Building priorities
+    building_group_prio_add = {
+        building_group = bg_arms_industry
+        value = 50
+    }
+    
+    building_prio_add = {
+        building = building_barracks
+        value = 50
+    }
+    
+    # Law preferences
+    law_stance = {
+        law = law_professional_army
+        stance = strongly_favor
+    }
+    
+    # Tech research priorities
+    technology_priority = {
+        technology = technology_modern_gaming
+        prioritize = yes
+    }
+    
+    # Character prioritization
+    character_role_priority = {
+        role = general
+        value = 50
+    }
+    
+    # More likely to declare wars
+    wargoal_maneuvers = {
+        value = 1.5
+    }
+}

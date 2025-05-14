@@ -1,0 +1,395 @@
+# New journal entries for improved Gaming Industry mod
+
+# Gaming Diplomacy Journal Entry
+je_gaming_diplomacy = {
+    icon = "gfx/interface/icons/journal_entries/je_gaming_diplomacy.dds"
+    
+    group = je_group_diplomacy
+    
+    is_shown_when_inactive = {
+        has_building = building_chess_academy
+        has_technology_researched = technology_professional_gaming
+        NOT = { has_variable = gaming_diplomacy_completed }
+        country_rank >= rank_value:minor_power
+    }
+    
+    possible = {
+        has_building = building_chess_academy
+        has_technology_researched = technology_professional_gaming
+    }
+    
+    immediate = {
+        set_variable = gaming_diplomacy_level
+        set_variable = {
+            name = gaming_diplomacy_level
+            value = 0
+        }
+    }
+    
+    complete = {
+        # Need to host multiple international tournaments
+        has_modifier = diplomatic_chess_championship
+        
+        # Build international relations through gaming
+        calc_true_if = {
+            amount >= 3
+            any_country = {
+                NOT = { this = root }
+                has_diplomatic_pact = {
+                    who = root
+                    type = alliance
+                }
+                relations:root >= 50
+            }
+        }
+        
+        # Need National Gaming Academy Great Building
+        any_scope_building = {
+            is_building_type = great_building_national_gaming_academy
+        }
+    }
+    
+    on_complete = {
+        add_modifier = {
+            name = gaming_diplomatic_prestige
+            months = -1 # Permanent
+        }
+        set_variable = gaming_diplomacy_completed
+        
+        # Grant prestige and diplo progress
+        add_prestige = 100
+        
+        # Improve diplomatic relations with multiple powers
+        every_country = {
+            limit = {
+                country_rank >= rank_value:minor_power
+                relations:root >= relations_threshold:cordial
+            }
+            change_relations = {
+                country = root
+                value = 15
+            }
+        }
+    }
+    
+    on_monthly = {
+        effect = {
+            # Track progress
+            if = {
+                limit = {
+                    var:gaming_diplomacy_level < 1
+                    has_modifier = diplomatic_chess_championship
+                }
+                set_variable = {
+                    name = gaming_diplomacy_level
+                    value = 1
+                }
+                add_journal_entry_progress = 33
+            }
+            else_if = {
+                limit = {
+                    var:gaming_diplomacy_level < 2
+                    calc_true_if = {
+                        amount >= 2
+                        any_country = {
+                            NOT = { this = root }
+                            relations:root >= 30
+                            relations:root < 30 # This was the previous value
+                        }
+                    }
+                }
+                set_variable = {
+                    name = gaming_diplomacy_level
+                    value = 2
+                }
+                add_journal_entry_progress = 33
+            }
+            else_if = {
+                limit = {
+                    var:gaming_diplomacy_level < 3
+                    any_scope_building = {
+                        is_building_type = great_building_national_gaming_academy
+                    }
+                }
+                set_variable = {
+                    name = gaming_diplomacy_level
+                    value = 3
+                }
+                add_journal_entry_progress = 34
+            }
+        }
+    }
+    
+    weight = 100
+}
+
+# Regional Gaming Traditions Journal Entry
+je_regional_gaming_traditions = {
+    icon = "gfx/interface/icons/journal_entries/je_regional_gaming.dds"
+    
+    group = je_group_industry
+    
+    is_shown_when_inactive = {
+        has_variable = gaming_industry_developed
+        NOT = { has_variable = regional_gaming_completed }
+    }
+    
+    possible = {
+        has_variable = gaming_industry_developed
+        has_technology_researched = technology_modern_gaming
+    }
+    
+    immediate = {
+        set_variable = regional_gaming_level
+        set_variable = {
+            name = regional_gaming_level
+            value = 0
+        }
+    }
+    
+    complete = {
+        # Need multiple regional specializations
+        calc_true_if = {
+            amount >= 3
+            any_scope_building = {
+                is_building_type = building_gaming_establishments
+                OR = {
+                    has_active_production_method = pm_xiangqi_houses
+                    has_active_production_method = pm_backgammon_houses
+                    has_active_production_method = pm_tafl_gaming
+                    has_active_production_method = pm_mahjong_parlors
+                    has_active_production_method = pm_carrom_houses
+                    has_active_production_method = pm_mancala_variations
+                    has_active_production_method = pm_hanafuda_parlors
+                }
+            }
+        }
+        
+        # Cultural understanding modifier
+        calc_true_if = {
+            amount >= 1
+            has_modifier = east_west_game_summit
+            has_modifier = multicultural_gaming
+            has_modifier = gaming_cultural_exchange
+        }
+        
+        # Must have hosted cultural exchange events
+        calc_true_if = {
+            amount >= 1
+            any_scope_state = {
+                has_modifier = xiangqi_tournament
+            }
+        }
+    }
+    
+    on_complete = {
+        add_modifier = {
+            name = global_gaming_diversity
+            months = -1 # Permanent
+        }
+        set_variable = regional_gaming_completed
+        
+        # Grant cultural benefits
+        add_prestige = 50
+        
+        # Cultural exchange benefits
+        random_scope_state = {
+            limit = {
+                is_capital = yes
+            }
+            add_modifier = {
+                name = cultural_gaming_capital
+                months = -1 # Permanent
+            }
+        }
+    }
+    
+    on_monthly = {
+        effect = {
+            # Track progress
+            if = {
+                limit = {
+                    var:regional_gaming_level < 1
+                    calc_true_if = {
+                        amount >= 2
+                        any_scope_building = {
+                            is_building_type = building_gaming_establishments
+                            OR = {
+                                has_active_production_method = pm_xiangqi_houses
+                                has_active_production_method = pm_backgammon_houses
+                                has_active_production_method = pm_tafl_gaming
+                                has_active_production_method = pm_mahjong_parlors
+                                has_active_production_method = pm_carrom_houses
+                                has_active_production_method = pm_mancala_variations
+                                has_active_production_method = pm_hanafuda_parlors
+                            }
+                        }
+                    }
+                }
+                set_variable = {
+                    name = regional_gaming_level
+                    value = 1
+                }
+                add_journal_entry_progress = 33
+            }
+            else_if = {
+                limit = {
+                    var:regional_gaming_level < 2
+                    calc_true_if = {
+                        amount >= 1
+                        has_modifier = east_west_game_summit
+                        has_modifier = multicultural_gaming
+                        has_modifier = gaming_cultural_exchange
+                    }
+                }
+                set_variable = {
+                    name = regional_gaming_level
+                    value = 2
+                }
+                add_journal_entry_progress = 33
+            }
+            else_if = {
+                limit = {
+                    var:regional_gaming_level < 3
+                    calc_true_if = {
+                        amount >= 1
+                        any_scope_state = {
+                            has_modifier = xiangqi_tournament
+                        }
+                    }
+                }
+                set_variable = {
+                    name = regional_gaming_level
+                    value = 3
+                }
+                add_journal_entry_progress = 34
+            }
+        }
+    }
+    
+    weight = 100
+}
+
+# Luxury Gaming Trade Journal Entry
+je_luxury_gaming_trade = {
+    icon = "gfx/interface/icons/journal_entries/je_luxury_gaming.dds"
+    
+    group = je_group_trade
+    
+    is_shown_when_inactive = {
+        has_variable = gaming_industry_developed
+        has_building = building_port
+        NOT = { has_variable = luxury_gaming_completed }
+    }
+    
+    possible = {
+        has_variable = gaming_industry_developed
+        has_building = building_port
+    }
+    
+    immediate = {
+        set_variable = luxury_gaming_level
+        set_variable = {
+            name = luxury_gaming_level
+            value = 0
+        }
+    }
+    
+    complete = {
+        # Need trade relationships for luxury materials
+        OR = {
+            has_trade_route_with_goods = goods_ivory
+            has_trade_route_with_goods = goods_silk
+            has_trade_route_with_goods = goods_gold
+        }
+        
+        # Must have luxury production
+        calc_true_if = {
+            amount >= 1
+            any_scope_building = {
+                OR = {
+                    has_active_production_method = pm_luxury_chess_sets
+                    has_active_production_method = pm_luxury_casino
+                }
+            }
+        }
+        
+        # Must have exotic gaming imports
+        has_modifier = exotic_gaming_imports
+    }
+    
+    on_complete = {
+        add_modifier = {
+            name = luxury_gaming_exporter
+            months = -1 # Permanent
+        }
+        set_variable = luxury_gaming_completed
+        
+        # Economic benefits
+        add_treasury = 10000
+        
+        # Trade benefits
+        random_scope_state = {
+            limit = {
+                has_building = building_port
+            }
+            add_modifier = {
+                name = exotic_gaming_port
+                months = -1 # Permanent
+            }
+        }
+    }
+    
+    on_monthly = {
+        effect = {
+            # Track progress
+            if = {
+                limit = {
+                    var:luxury_gaming_level < 1
+                    OR = {
+                        has_trade_route_with_goods = goods_ivory
+                        has_trade_route_with_goods = goods_silk
+                        has_trade_route_with_goods = goods_gold
+                    }
+                }
+                set_variable = {
+                    name = luxury_gaming_level
+                    value = 1
+                }
+                add_journal_entry_progress = 33
+            }
+            else_if = {
+                limit = {
+                    var:luxury_gaming_level < 2
+                    calc_true_if = {
+                        amount >= 1
+                        any_scope_building = {
+                            OR = {
+                                has_active_production_method = pm_luxury_chess_sets
+                                has_active_production_method = pm_luxury_casino
+                            }
+                        }
+                    }
+                }
+                set_variable = {
+                    name = luxury_gaming_level
+                    value = 2
+                }
+                add_journal_entry_progress = 33
+            }
+            else_if = {
+                limit = {
+                    var:luxury_gaming_level < 3
+                    has_modifier = exotic_gaming_imports
+                }
+                set_variable = {
+                    name = luxury_gaming_level
+                    value = 3
+                }
+                add_journal_entry_progress = 34
+            }
+        }
+    }
+    
+    weight = 100
+}

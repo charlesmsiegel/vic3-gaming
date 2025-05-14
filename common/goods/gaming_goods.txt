@@ -1,0 +1,131 @@
+# Add gaming-specific goods to enhance economic integration
+
+# Chess Sets (Luxury Good)
+chess_sets = {
+    texture = "gfx/interface/icons/goods_icons/chess_sets.dds"
+    
+    # High-value luxury good
+    cost = 80
+    category = luxury
+    
+    prestige_factor = 5
+    
+    # Trading rules
+    traded_quantity = 20
+    convoy_cost_multiplier = 2
+    
+    # Supply and demand
+    supply_consumption_ratio = 0.8
+    
+    # AI Trading
+    ai_value = 15
+    
+    # Activated by production methods
+    activated_by = {
+        pm_luxury_chess_sets
+        pm_staunton_chess_sets
+    }
+}
+
+# Gaming Tables (Consumer Good)
+gaming_tables = {
+    texture = "gfx/interface/icons/goods_icons/gaming_tables.dds"
+    
+    # Medium-value consumer good
+    cost = 40
+    category = luxury
+    
+    prestige_factor = 2
+    
+    # Trading rules
+    traded_quantity = 35
+    convoy_cost_multiplier = 1.5
+    
+    # Supply and demand
+    supply_consumption_ratio = 0.7
+    
+    # AI Trading
+    ai_value = 10
+    
+    # Activated by production methods
+    activated_by = {
+        pm_parlor_games
+        pm_gambling_houses
+        pm_luxury_casino
+    }
+}
+
+# Strategic Game Manuals (Consumer Good)
+game_manuals = {
+    texture = "gfx/interface/icons/goods_icons/game_manuals.dds"
+    
+    # Lower-value consumer good
+    cost = 30
+    category = services
+    
+    prestige_factor = 1
+    
+    # Trading rules
+    traded_quantity = 50
+    convoy_cost_multiplier = 1
+    
+    # Supply and demand
+    supply_consumption_ratio = 0.6
+    
+    # AI Trading
+    ai_value = 8
+    
+    # Activated by production methods
+    activated_by = {
+        pm_standardized_rules
+        pm_modern_board_games
+        pm_storytelling_games
+    }
+}
+
+# Input requirements for production methods
+# These would be added to the production methods in gaming_pms.txt
+
+# Example addition to pm_luxury_chess_sets
+# building_modifiers = {
+#     workforce_scaled = {
+#         # Updated inputs including custom goods
+#         goods_input_wood = 10
+#         goods_input_ivory = 5
+#         goods_input_gold = 1
+#         goods_input_silk = 2
+#     }
+#     
+#     level_scaled = {
+#         # Now produces chess sets
+#         goods_output_chess_sets = 20
+#     }
+# }
+
+# Example addition to pm_parlor_games
+# building_modifiers = {
+#     workforce_scaled = {
+#         # Input goods
+#         goods_input_paper = 10
+#         goods_input_wood = 10
+#         goods_input_fabric = 5
+#     }
+#     
+#     level_scaled = {
+#         # Produces gaming tables
+#         goods_output_gaming_tables = 15
+#     }
+# }
+
+# Example addition to pm_standardized_rules
+# building_modifiers = {
+#     workforce_scaled = {
+#         goods_input_paper = 8
+#         goods_input_wood = 5
+#     }
+#     
+#     level_scaled = {
+#         # Produces game manuals
+#         goods_output_game_manuals = 25
+#     }
+# }

@@ -1,0 +1,87 @@
+# common/laws/gaming_laws.txt
+# New Laws for Gaming Regulation
+
+# Law Group for Gaming Regulation
+law_group_gaming_regulation = {
+    law_types = {
+        law_gaming_regulation
+        law_gaming_prohibition
+        law_state_gaming_monopoly
+    }
+}
+
+# Standard Gaming Regulation Law
+law_type:law_gaming_regulation = {
+    law_group = lawgroup_gaming_regulation
+    texture = "gfx/interface/icons/law_icons/gaming_regulation.dds"
+    
+    modifier = {
+        # Balanced approach
+        building_gaming_establishments_throughput_mult = 0.1
+        state_tax_waste_mult = 0.02
+    }
+    
+    unlocking_technologies = {
+        technology_traditional_gaming
+    }
+    
+    ai_will_do = {
+        always = yes
+    }
+}
+
+# Gaming Prohibition Law
+law_type:law_gaming_prohibition = {
+    law_group = lawgroup_gaming_regulation
+    texture = "gfx/interface/icons/law_icons/gaming_prohibition.dds"
+    
+    modifier = {
+        # Prohibits gambling houses, increases crime
+        state_crime_mult = 0.1
+        interest_group_ig_devout_approval_add = 2
+    }
+    
+    unlocking_technologies = {
+        technology_traditional_gaming
+    }
+    
+    ai_will_do = {
+        base = -5
+        
+        modifier = {
+            add = 5
+            has_powerful_ig = ig_devout
+        }
+    }
+    
+    # Cannot use gambling houses
+    disallowing_laws = {
+        law_type:law_gambling_houses
+    }
+}
+
+# State Gaming Monopoly Law
+law_type:law_state_gaming_monopoly = {
+    law_group = lawgroup_gaming_regulation
+    texture = "gfx/interface/icons/law_icons/state_gaming_monopoly.dds"
+    
+    modifier = {
+        # State-controlled gaming
+        state_tax_capacity_mult = 0.05
+        building_gaming_establishments_throughput_mult = -0.1
+        interest_group_ig_industrialists_approval_add = -1
+    }
+    
+    unlocking_technologies = {
+        technology_gambling_halls
+    }
+    
+    ai_will_do = {
+        base = 0
+        
+        modifier = {
+            add = 5
+            has_law = law_type:law_command_economy
+        }
+    }
+}

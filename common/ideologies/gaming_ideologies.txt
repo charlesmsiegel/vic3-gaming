@@ -1,0 +1,208 @@
+# Political ideologies related to gaming
+
+# Gaming Progressive
+gaming_progressive = {
+    icon = "gfx/interface/icons/ideology_icons/gaming_progressive.dds"
+    
+    character_ideology = yes
+    
+    lawgroup_citizenship = {
+        law_multicultural = strongly_approve
+        law_racial_segregation = strongly_disapprove
+    }
+    
+    lawgroup_governance_principles = {
+        law_autocracy = strongly_disapprove
+        law_oligarchy = disapprove
+        law_constitutional_monarchy = neutral
+        law_presidential_republic = approve
+        law_parliamentary_republic = strongly_approve
+    }
+    
+    lawgroup_gaming_regulation = {
+        law_gaming_regulation = strongly_approve
+        law_gaming_prohibition = strongly_disapprove
+        law_state_gaming_monopoly = neutral
+    }
+    
+    # Economic preferences
+    lawgroup_economic_system = {
+        law_mercantilism = disapprove
+        law_interventionism = approve
+        law_laissez_faire = neutral
+    }
+    
+    # Educational preferences
+    lawgroup_education_system = {
+        law_religious_schools = strongly_disapprove
+        law_private_schools = disapprove
+        law_public_schools = strongly_approve
+    }
+    
+    # Character attributes
+    traits = {
+        trait_game_designer = {
+            weight = 3.0
+        }
+        innovative = {
+            weight = 3.0
+        }
+        charismatic = {
+            weight = 2.0
+        }
+        bigoted = {
+            weight = 0.0
+        }
+    }
+}
+
+# Gaming Conservative/Traditionalist
+gaming_traditional = {
+    icon = "gfx/interface/icons/ideology_icons/gaming_traditional.dds"
+    
+    character_ideology = yes
+    
+    lawgroup_citizenship = {
+        law_multicultural = disapprove
+        law_ethnostate = approve
+    }
+    
+    lawgroup_governance_principles = {
+        law_autocracy = approve
+        law_oligarchy = approve
+        law_parliamentary_republic = disapprove
+    }
+    
+    lawgroup_gaming_regulation = {
+        law_gaming_regulation = neutral
+        law_gaming_prohibition = strongly_approve
+        law_state_gaming_monopoly = approve
+    }
+    
+    # Cultural preferences
+    lawgroup_cultural_exclusion = {
+        law_cultural_exclusion = approve
+        law_no_cultural_exclusion = disapprove
+    }
+    
+    # Education preferences
+    lawgroup_education_system = {
+        law_religious_schools = strongly_approve
+        law_public_schools = disapprove
+    }
+    
+    # Character attributes
+    traits = {
+        trait_game_preservationist = {
+            weight = 3.0
+        }
+        pious = {
+            weight = 2.0
+        }
+        traditionalist = {
+            weight = 3.0
+        }
+        innovative = {
+            weight = 0.0
+        }
+    }
+}
+
+# Gaming Militarist
+gaming_militarist = {
+    icon = "gfx/interface/icons/ideology_icons/gaming_militarist.dds"
+    
+    character_ideology = yes
+    
+    lawgroup_citizenship = {
+        law_ethnostate = approve
+    }
+    
+    lawgroup_governance_principles = {
+        law_autocracy = strongly_approve
+        law_oligarchy = approve
+        law_presidential_republic = neutral
+        law_parliamentary_republic = disapprove
+    }
+    
+    lawgroup_gaming_regulation = {
+        law_gaming_regulation = neutral
+        law_state_gaming_monopoly = strongly_approve
+    }
+    
+    # Military preferences
+    lawgroup_army_model = {
+        law_professional_army = strongly_approve
+        law_peasant_levies = strongly_disapprove
+    }
+    
+    lawgroup_colonial_affairs = {
+        law_colonial_exploitation = strongly_approve
+        law_colonial_resettlement = approve
+    }
+    
+    # Character attributes
+    traits = {
+        trait_nationalist_game_designer = {
+            weight = 3.0
+        }
+        officer = {
+            weight = 3.0
+        }
+        bigoted = {
+            weight = 2.0
+        }
+        charismatic = {
+            weight = 1.5
+        }
+    }
+}
+
+# Gaming Occultist
+gaming_occultist = {
+    icon = "gfx/interface/icons/ideology_icons/gaming_occultist.dds"
+    
+    character_ideology = yes
+    
+    lawgroup_citizenship = {
+        law_ethnostate = approve
+    }
+    
+    lawgroup_governance_principles = {
+        law_autocracy = approve
+        law_oligarchy = approve
+    }
+    
+    lawgroup_gaming_regulation = {
+        law_gaming_regulation = neutral
+        law_gaming_prohibition = disapprove
+        law_state_gaming_monopoly = disapprove
+    }
+    
+    # Cultural preferences
+    lawgroup_cultural_exclusion = {
+        law_cultural_exclusion = approve
+    }
+    
+    # Intelligence preferences
+    lawgroup_intelligent_design = {
+        law_intelligent_design = strongly_approve
+        law_darwinism = strongly_disapprove
+    }
+    
+    # Character attributes
+    traits = {
+        mystical = {
+            weight = 3.0
+        }
+        trait_game_designer = {
+            weight = 2.0
+        }
+        charismatic = {
+            weight = 2.0
+        }
+        innovative = {
+            weight = 1.0
+        }
+    }
+}

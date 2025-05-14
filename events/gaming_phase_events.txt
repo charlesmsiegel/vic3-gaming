@@ -1,0 +1,550 @@
+# Events that trigger based on game year to ensure relevance throughout a campaign
+
+# Early Game Event (1836-1860): Traditional Gaming Revival
+gaming_phase_event.1 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_phase_event.1.t
+    desc = gaming_phase_event.1.d
+    flavor = gaming_phase_event.1.f
+    
+    duration = 3
+    
+    trigger = {
+        year >= 1836
+        year < 1860
+        has_technology_researched = technology_traditional_gaming
+        any_scope_state = {
+            has_building = building_university
+        }
+        NOT = { has_variable = early_game_gaming_event_happened }
+    }
+    
+    immediate = {
+        set_variable = early_game_gaming_event_happened
+        
+        random_scope_state = {
+            limit = {
+                has_building = building_university
+                is_incorporated = yes
+            }
+            save_scope_as = university_state
+        }
+    }
+    
+    # Academic revival of traditional games
+    option = {
+        name = gaming_phase_event.1.a
+        default_option = yes
+        
+        # Cultural preservation benefits
+        add_modifier = {
+            name = academic_traditional_games_revival
+            months = 48
+        }
+        
+        # Local university benefits
+        scope:university_state = {
+            add_modifier = {
+                name = traditional_games_archive
+                months = 48
+            }
+        }
+        
+        # Historical research bonus
+        add_technology_progress = {
+            technology = technology_modern_gaming
+            progress = 0.1
+        }
+        
+        # Add popularity to traditional gaming production method
+        random_scope_state = {
+            limit = {
+                has_building = building_gaming_establishments
+            }
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                }
+                activate_production_method = pm_traditional_gaming
+            }
+        }
+    }
+    
+    # Focus on local traditions
+    option = {
+        name = gaming_phase_event.1.b
+        
+        # Cultural benefits
+        add_modifier = {
+            name = local_gaming_traditions
+            months = 48
+        }
+        
+        # Unity effects
+        random_scope_state = {
+            limit = {
+                is_incorporated = yes
+            }
+            add_modifier = {
+                name = regional_solidarity
+                months = 36
+            }
+        }
+        
+        # Chance of character creation
+        random_chance = {
+            chance = 0.5
+            create_character = {
+                first_name = random
+                last_name = random
+                culture = root.culture
+                female = no
+                age = { min = 40 max = 60 }
+                traits = { 
+                    trait_game_preservationist
+                    traditionalist
+                }
+                save_scope_as = game_preserver
+                interest_group = ig_devout
+            }
+        }
+    }
+    
+    # Modernization focus
+    option = {
+        name = gaming_phase_event.1.c
+        
+        # Progress benefits
+        add_modifier = {
+            name = gaming_modernization
+            months = 48
+        }
+        
+        # Tech boost
+        add_technology_progress = {
+            technology = technology_recreational_codification
+            progress = 0.15
+        }
+        
+        # Some traditionalists upset
+        ig:ig_devout = {
+            add_approval = -1
+        }
+        
+        # Educational bonus
+        random_scope_state = {
+            limit = {
+                has_building = building_schools
+            }
+            add_modifier = {
+                name = gaming_education_initiative
+                months = 36
+            }
+        }
+    }
+}
+
+# Mid Game Event (1860-1900): Gaming Industrialization
+gaming_phase_event.2 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_phase_event.2.t
+    desc = gaming_phase_event.2.d
+    flavor = gaming_phase_event.2.f
+    
+    duration = 3
+    
+    trigger = {
+        year >= 1860
+        year < 1900
+        has_technology_researched = technology_modern_gaming
+        any_scope_state = {
+            has_building = building_furniture_manufactories
+        }
+        NOT = { has_variable = mid_game_gaming_event_happened }
+    }
+    
+    immediate = {
+        set_variable = mid_game_gaming_event_happened
+        
+        random_scope_state = {
+            limit = {
+                has_building = building_furniture_manufactories
+                is_incorporated = yes
+            }
+            save_scope_as = industrial_state
+        }
+    }
+    
+    # Mass production of gaming equipment
+    option = {
+        name = gaming_phase_event.2.a
+        default_option = yes
+        
+        # Industrial benefits
+        add_modifier = {
+            name = industrial_gaming_production
+            months = 60
+        }
+        
+        # Local industrial benefits
+        scope:industrial_state = {
+            add_modifier = {
+                name = gaming_manufacturing_center
+                months = 60
+            }
+            
+            # Add employment
+            add_modifier = {
+                name = gaming_industrial_employment
+                months = 36
+            }
+        }
+        
+        # Good chance of company formation
+        random_chance = {
+            chance = 0.7
+            if = {
+                limit = {
+                    NOT = { has_company = parker_brothers_company }
+                }
+                create_company = parker_brothers_company
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_company = chess_publishing_house }
+                }
+                create_company = chess_publishing_house
+            }
+        }
+    }
+    
+    # Focus on luxury export market
+    option = {
+        name = gaming_phase_event.2.b
+        
+        # Prestige and trade benefits
+        add_modifier = {
+            name = luxury_gaming_exports
+            months = 60
+        }
+        
+        # Local luxury production
+        scope:industrial_state = {
+            add_modifier = {
+                name = luxury_gaming_craftsmanship
+                months = 60
+            }
+        }
+        
+        # Attract wealthy customers
+        random_scope_state = {
+            limit = {
+                is_capital = yes
+            }
+            add_modifier = {
+                name = elite_gaming_culture
+                months = 48
+            }
+        }
+        
+        # Industrialists approve
+        ig:ig_industrialists = {
+            add_approval = 1
+        }
+    }
+    
+    # Gambling and entertainment focus
+    option = {
+        name = gaming_phase_event.2.c
+        
+        # Entertainment and tourism benefits
+        add_modifier = {
+            name = gambling_entertainment_industry
+            months = 60
+        }
+        
+        # Local entertainment boom
+        scope:industrial_state = {
+            add_modifier = {
+                name = entertainment_district
+                months = 60
+            }
+        }
+        
+        # Tax benefits but religious disapproval
+        add_treasury = 10000
+        
+        ig:ig_devout = {
+            add_approval = -1
+        }
+        
+        # Chance of gambling magnate
+        random_chance = {
+            chance = 0.5
+            create_character = {
+                first_name = random
+                last_name = random
+                culture = root.culture
+                female = no
+                age = { min = 35 max = 55 }
+                traits = { 
+                    trait_controversial_gambler
+                    charismatic
+                    expensive_tastes
+                }
+                save_scope_as = gambling_magnate
+                interest_group = ig_industrialists
+            }
+        }
+    }
+}
+
+# Late Game Event (1900+): Gaming Mass Culture
+gaming_phase_event.3 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_phase_event.3.t
+    desc = gaming_phase_event.3.d
+    flavor = gaming_phase_event.3.f
+    
+    duration = 3
+    
+    trigger = {
+        year >= 1900
+        has_technology_researched = technology_advanced_game_design
+        NOT = { has_variable = late_game_gaming_event_happened }
+    }
+    
+    immediate = {
+        set_variable = late_game_gaming_event_happened
+        
+        random_scope_state = {
+            limit = {
+                has_building = building_urban_center
+                is_incorporated = yes
+            }
+            save_scope_as = urban_state
+        }
+    }
+    
+    # Mass market gaming culture
+    option = {
+        name = gaming_phase_event.3.a
+        default_option = yes
+        
+        # Cultural penetration benefits
+        add_modifier = {
+            name = mass_gaming_culture
+            months = 72
+        }
+        
+        # Urban gaming culture
+        scope:urban_state = {
+            add_modifier = {
+                name = gaming_district
+                months = 72
+            }
+        }
+        
+        # Gaming schools proliferate
+        random_scope_state = {
+            limit = {
+                has_building = building_schools
+                NOT = { has_building = building_gaming_school }
+            }
+            add_building = {
+                building_type = building_gaming_school
+                level = 1
+            }
+        }
+        
+        # Gaming becomes part of national identity
+        add_modifier = {
+            name = gaming_national_identity
+            months = -1 # Permanent
+        }
+    }
+    
+    # Gaming competitions as national events
+    option = {
+        name = gaming_phase_event.3.b
+        
+        # National prestige benefits
+        add_modifier = {
+            name = national_gaming_competitions
+            months = 72
+        }
+        
+        # Media coverage
+        scope:urban_state = {
+            add_modifier = {
+                name = gaming_media_coverage
+                months = 72
+            }
+        }
+        
+        # Gaming celebrity culture
+        add_modifier = {
+            name = gaming_celebrity_culture
+            months = 72
+        }
+        
+        # Create celebrity gamer
+        create_character = {
+            first_name = random
+            last_name = random
+            culture = root.culture
+            female = random
+            age = { min = 25 max = 40 }
+            traits = { 
+                trait_gaming_celebrity
+                charismatic
+                ambitious
+            }
+            save_scope_as = celebrity_gamer
+            interest_group = ig_intelligentsia
+        }
+    }
+    
+    # Advanced gaming theory and education
+    option = {
+        name = gaming_phase_event.3.c
+        
+        # Academic and innovation benefits
+        add_modifier = {
+            name = advanced_gaming_theory
+            months = 72
+        }
+        
+        # University integration
+        random_scope_state = {
+            limit = {
+                has_building = building_university
+            }
+            add_modifier = {
+                name = gaming_theory_department
+                months = 72
+            }
+        }
+        
+        # Military applications
+        add_modifier = {
+            name = strategic_simulation
+            months = 48
+        }
+        
+        # Tech boost for role-playing games
+        add_technology_progress = {
+            technology = technology_psychological_theory
+            progress = 0.2
+        }
+        
+        # IG reactions
+        ig:ig_intelligentsia = {
+            add_approval = 2
+        }
+        
+        ig:ig_armed_forces = {
+            add_approval = 1
+        }
+    }
+}
+
+# Special Event - Gaming World Championship (triggered after 1900 if major gaming nation)
+gaming_phase_event.4 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_phase_event.4.t
+    desc = gaming_phase_event.4.d
+    flavor = gaming_phase_event.4.f
+    
+    duration = 3
+    
+    trigger = {
+        year >= 1900
+        has_variable = gaming_industry_developed
+        has_technology_researched = technology_professional_gaming
+        country_rank >= rank_value:major_power
+        NOT = { has_variable = gaming_world_championship_happened }
+        any_scope_building = {
+            is_building_type = great_building_national_gaming_academy
+        }
+    }
+    
+    immediate = {
+        set_variable = gaming_world_championship_happened
+        
+        random_scope_state = {
+            limit = {
+                any_scope_building = {
+                    is_building_type = great_building_national_gaming_academy
+                }
+            }
+            save_scope_as = championship_state
+        }
+    }
+    
+    # Host the inaugural Gaming World Championship
+    option = {
+        name = gaming_phase_event.4.a
+        default_option = yes
+        
+        # Major prestige boost
+        add_prestige = 200
+        
+        # Permanent modifier for being first host
+        add_modifier = {
+            name = inaugural_gaming_championship_host
+            months = -1 # Permanent
+        }
+        
+        # Host city benefits
+        scope:championship_state = {
+            add_modifier = {
+                name = world_championship_venue
+                months = -1 # Permanent
+            }
+        }
+        
+        # Diplomatic benefits
+        every_country = {
+            limit = {
+                has_building = building_chess_academy
+                NOT = { this = root }
+            }
+            change_relations = {
+                country = root
+                value = 25
+            }
+        }
+        
+        # Create legendary champion character
+        create_character = {
+            first_name = random
+            last_name = random
+            culture = root.culture
+            female = random
+            age = { min = 25 max = 35 }
+            traits = { 
+                trait_chess_prodigy
+                trait_gaming_celebrity
+                charismatic
+                ambitious
+            }
+            save_scope_as = world_champion
+            interest_group = ig_intelligentsia
+        }
+        
+        # Establish recurring championship
+        add_modifier = {
+            name = regular_championship_host
+            months = 120 # 10 years
+        }
+    }
+}

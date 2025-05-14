@@ -167,3 +167,154 @@ trait_game_preservationist = {
         country_authority_add = 10
     }
 }
+
+# common/character_traits/gaming_traits.txt
+# New Character Traits for Gaming Industry
+
+# New Chess Prodigy trait
+trait_chess_prodigy = {
+    icon = "gfx/interface/icons/character_traits/chess_prodigy.dds"
+    
+    # Complementary traits
+    compatible_traits = {
+        analytical
+        shrewd_intellect
+        charismatic
+    }
+    
+    # Conflicting traits
+    incompatible_traits = {
+        substance_abuser
+        impulsive
+        hedonist
+    }
+    
+    # Special abilities
+    character_modifier = {
+        character_prestige_add = 20
+    }
+    
+    # National benefits when active
+    country_modifier = {
+        country_prestige_add = 10
+        country_innovation_mult = 0.02
+    }
+}
+
+# Celebrity Gamer trait
+trait_gaming_celebrity = {
+    icon = "gfx/interface/icons/character_traits/gaming_celebrity.dds"
+    
+    # Complementary traits
+    compatible_traits = {
+        charismatic
+        shrewd_intellect
+        innovative
+    }
+    
+    # Conflicting traits
+    incompatible_traits = {
+        reclusive
+    }
+    
+    # Special abilities
+    character_modifier = {
+        character_prestige_add = 15
+        character_influence_add = 10
+    }
+    
+    # National benefits when active
+    country_modifier = {
+        country_prestige_add = 5
+        state_tourism_add = 5
+    }
+}
+
+# Controversial Gambler trait
+trait_controversial_gambler = {
+    icon = "gfx/interface/icons/character_traits/controversial_gambler.dds"
+    
+    # Complementary traits
+    compatible_traits = {
+        charismatic
+        shrewd_intellect
+        expensive_tastes
+    }
+    
+    # Conflicting traits
+    incompatible_traits = {
+        pious
+    }
+    
+    # Special abilities
+    character_modifier = {
+        character_prestige_add = 10
+        character_influence_add = -5
+    }
+    
+    # Mixed national effects
+    country_modifier = {
+        country_prestige_add = 3
+        state_radicals_mult = 0.05
+    }
+}
+
+# Add mystical trait for occult characters
+trait_mystical = {
+    icon = "gfx/interface/icons/character_traits/mystical.dds"
+    
+    # Complementary traits
+    compatible_traits = {
+        charismatic
+        reclusive
+        innovative
+    }
+    
+    # Conflicting traits
+    incompatible_traits = {
+        rational
+        meticulous
+    }
+    
+    # Character effects
+    character_modifier = {
+        character_prestige_add = 5
+        character_influence_add = 5
+    }
+    
+    # National effects
+    country_modifier = {
+        country_authority_add = 2
+        state_cultural_understanding_mult = 0.03
+    }
+}
+
+# Nationalist Game Designer trait
+trait_nationalist_game_designer = {
+    icon = "gfx/interface/icons/character_traits/nationalist_game_designer.dds"
+    
+    # Complementary traits
+    compatible_traits = {
+        charismatic
+        bigoted
+        officer
+    }
+    
+    # Conflicting traits
+    incompatible_traits = {
+        innovative
+        trait_game_preservationist
+    }
+    
+    # Character effects
+    character_modifier = {
+        character_influence_add = 10
+    }
+    
+    # National effects
+    country_modifier = {
+        country_offense_mult = 0.02
+        country_military_training_rate_mult = 0.03
+        state_radicals_mult = 0.02
+    }
+}

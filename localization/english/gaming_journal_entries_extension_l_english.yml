@@ -1,0 +1,31 @@
+# Localization for new journal entries
+
+l_english:
+  # Gaming Diplomacy Journal Entry
+  je_gaming_diplomacy: "Gaming Diplomacy"
+  je_gaming_diplomacy_desc: "Strategic board games can serve as more than mere entertainment - they offer a neutral ground for diplomatic engagement and cultural exchange. By hosting international tournaments and establishing ourselves as a center of gaming excellence, we can build relationships with other nations while showcasing our cultural achievements."
+  je_gaming_diplomacy_goal: "Become a gaming diplomatic power by:\n- Hosting international chess championships\n- Improving relations with at least 3 nations through gaming\n- Completing the National Gaming Academy Great Building"
+  
+  # Regional Gaming Traditions Journal Entry
+  je_regional_gaming_traditions: "Regional Gaming Traditions"
+  je_regional_gaming_traditions_desc: "The world is rich with diverse gaming traditions, each reflecting the culture and history of its origin. By embracing multiple regional gaming styles within our borders, we can create a multicultural tapestry of strategic thought and recreational tradition that enhances our cultural understanding and international prestige."
+  je_regional_gaming_traditions_goal: "Promote global gaming diversity by:\n- Establishing at least 3 different regional gaming traditions\n- Hosting cultural gaming exchanges\n- Building cultural understanding through gaming"
+  
+  # Luxury Gaming Trade Journal Entry
+  je_luxury_gaming_trade: "Luxury Gaming Trade"
+  je_luxury_gaming_trade_desc: "Gaming equipment crafted from exotic and precious materials can become coveted luxury goods for international trade. By establishing trade routes for rare materials and crafting exquisite gaming pieces, we can create a profitable luxury export industry that enhances our prestige and economy."
+  je_luxury_gaming_trade_goal: "Establish a luxury gaming export industry by:\n- Securing trade routes for exotic materials\n- Implementing luxury gaming production methods\n- Developing a reputation for exotic gaming imports"
+  
+  # Journal Entry Modifiers
+  gaming_diplomatic_prestige: "Gaming Diplomatic Prestige"
+  global_gaming_diversity: "Global Gaming Diversity"
+  cultural_gaming_capital: "Cultural Gaming Capital"
+  luxury_gaming_exporter: "Luxury Gaming Exporter"
+  exotic_gaming_port: "Exotic Gaming Port"
+  
+  # Journal Entry Modifier Tooltips
+  tooltip_gaming_diplomatic_prestige: "Our nation is recognized internationally for using gaming as a diplomatic tool, enhancing our prestige and influence."
+  tooltip_global_gaming_diversity: "We have embraced gaming traditions from around the world, creating a rich multicultural gaming environment that enhances our cultural understanding."
+  tooltip_cultural_gaming_capital: "This state serves as a global center for diverse gaming traditions, attracting cultural exchange and tourism."
+  tooltip_luxury_gaming_exporter: "Our nation is known for exporting exquisite gaming equipment crafted from exotic materials, providing economic benefits and prestige."
+  tooltip_exotic_gaming_port: "This port specializes in importing exotic materials for luxury gaming products and exporting finished gaming goods."

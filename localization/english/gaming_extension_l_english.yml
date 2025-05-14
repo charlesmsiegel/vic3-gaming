@@ -1,0 +1,282 @@
+# localization/english/gaming_extension_l_english.yml
+# Localization for all new features in the Gaming Industry extension
+
+l_english:
+  # New Technologies
+  tech_recreational_codification: "Recreational Codification"
+  tech_recreational_codification_desc: "The systematic documentation and standardization of game rules, enabling wider dissemination and consistent play experiences across different regions."
+  
+  tech_game_systemization: "Game Systemization"
+  tech_game_systemization_desc: "The formal organization of gaming activities into tournaments, leagues, and structured competition formats, elevating games from casual pastimes to organized entertainment."
+  
+  tech_narrative_mechanics: "Narrative Mechanics"
+  tech_narrative_mechanics_desc: "The integration of storytelling elements into game design, creating experiences that blend strategic play with immersive narratives."
+
+  # Production Methods
+  pm_standardized_rules: "Standardized Rules Publishing"
+  pm_standardized_rules_desc: "Publishing and distributing standardized rulebooks that formalize traditional games, allowing for consistent play experiences."
+  
+  pm_tournament_circuits: "Tournament Circuits"
+  pm_tournament_circuits_desc: "Organized competitive structures where players compete in regular tournaments for prestige and prizes."
+  
+  pm_storytelling_games: "Narrative Gaming Systems"
+  pm_storytelling_games_desc: "Games that incorporate storytelling elements alongside strategic play, allowing players to engage with rich thematic worlds."
+  
+  pm_xiangqi_houses: "Xiangqi Houses"
+  pm_xiangqi_houses_desc: "Establishments dedicated to Chinese Chess, a strategic board game with distinctive pieces that move according to unique patterns across a river-divided board."
+  
+  pm_backgammon_houses: "Backgammon Houses"
+  pm_backgammon_houses_desc: "Venues for playing backgammon, one of the oldest board games in the world featuring dice, strategy, and distinctive triangular spaces."
+  
+  pm_tafl_gaming: "Tafl Gaming Centers"
+  pm_tafl_gaming_desc: "Traditional Nordic game centers featuring Tafl games, which simulate battlefield tactics with asymmetric forces where one side attempts to escort their king to safety."
+  
+  pm_luxury_chess_sets: "Luxury Chess Production"
+  pm_luxury_chess_sets_desc: "Creation of exquisite chess sets using precious materials like ivory, gold, and exotic woods, catering to wealthy collectors and patrons."
+  
+  pm_luxury_casino: "Luxury Casino Operations"
+  pm_luxury_casino_desc: "Opulent gambling establishments that combine gaming with fine dining, entertainment, and exclusive accommodations, attracting elite clientele."
+  
+  pm_hanafuda_parlors: "Hanafuda Card Parlors"
+  pm_hanafuda_parlors_desc: "Traditional Japanese gaming houses specializing in the play of hanafuda card games, featuring beautiful floral-themed playing cards."
+
+  # Buildings
+  building_gaming_school: "Gaming Academy"
+  building_gaming_school_desc: "An educational institution focused on strategic thinking through gaming, offering both recreational and academic benefits."
+
+  # Laws
+  lawgroup_gaming_regulation: "Gaming Regulation"
+  law_gaming_regulation: "Regulated Gaming"
+  law_gaming_regulation_desc: "Gaming establishments operate under government oversight with licenses, taxation, and regulations to prevent fraud and addiction while allowing recreational gaming."
+  law_gaming_prohibition: "Gaming Prohibition"
+  law_gaming_prohibition_desc: "Gambling and certain games of chance are outlawed as immoral activities, though enforcement may vary and underground establishments often emerge."
+  law_state_gaming_monopoly: "State Gaming Monopoly"
+  law_state_gaming_monopoly_desc: "The state maintains exclusive control over all commercial gaming operations, directing profits toward public coffers while theoretically limiting corruption and exploitation."
+
+  # Great Buildings
+  great_building_national_gaming_academy: "National Gaming Academy"
+  great_building_national_gaming_academy_desc: "A monumental institution dedicated to the study, development, and celebration of strategic games. This grand building houses tournament halls, research libraries, educational facilities, and exhibition spaces showcasing gaming traditions from around the world. The National Gaming Academy serves as a global center for gaming culture and intellectual competition."
+
+  # Character Traits
+  trait_chess_prodigy: "Chess Prodigy"
+  trait_chess_prodigy_desc: "This individual demonstrates extraordinary talent in chess from a young age, with an intuitive grasp of strategy and remarkable calculation abilities."
+  
+  trait_gaming_celebrity: "Gaming Celebrity"
+  trait_gaming_celebrity_desc: "A famous figure in gaming circles whose reputation transcends local competitions to achieve national or international recognition."
+  
+  trait_controversial_gambler: "Controversial Gambler"
+  trait_controversial_gambler_desc: "A figure known for high-stakes gambling with a controversial reputation, admired for daring and criticized for recklessness."
+  
+  trait_mystical: "Mystical"
+  trait_mystical_desc: "An individual drawn to occult and esoteric knowledge, incorporating mystical elements into their work and worldview."
+  
+  trait_nationalist_game_designer: "Nationalist Game Designer"
+  trait_nationalist_game_designer_desc: "A game creator who deliberately incorporates nationalist ideology into their designs, using games as vehicles for political messaging."
+
+  # Historical Figures
+  historical_figure_viktor_roth: "Viktor Roth"
+  historical_figure_edmund_blackwood: "Edmund Blackwood"
+
+  # IG Reaction Modifiers
+  ig_devout_gaming_opposition: "Religious Opposition to Gaming"
+  ig_industrialists_gaming_support: "Industrial Support for Gaming"
+  ig_intelligentsia_gaming_support: "Intellectual Interest in Gaming"
+  ig_armed_forces_wargaming_support: "Military Support for Wargaming"
+  ig_rural_folk_traditional_gaming: "Traditional Gaming Support"
+
+  # Regional Gaming Modifiers
+  xiangqi_tournament: "Xiangqi Tournament"
+  western_chess_focus: "Western Chess Focus"
+  
+  # Colonial Gaming Modifiers
+  appropriated_indigenous_games: "Appropriated Indigenous Games"
+  exotic_gaming_trend: "Exotic Gaming Trend"
+  cultural_exploitation: "Cultural Gaming Exploitation"
+  gaming_cultural_exchange: "Gaming Cultural Exchange"
+  multicultural_gaming: "Multicultural Gaming Center"
+  cultural_recognition: "Cultural Gaming Recognition"
+  gaming_cultural_suppression: "Gaming Cultural Suppression"
+  cultural_resistance: "Cultural Gaming Resistance"
+
+  # Educational Gaming Modifiers
+  strategic_education_initiative: "Strategic Education Initiative"
+  strategic_thinking_education: "Strategic Thinking Education"
+  gaming_curriculum: "Gaming in Curriculum"
+  military_gaming_program: "Military Gaming Program"
+  officer_strategic_training: "Officer Strategic Gaming Training"
+
+  # Diplomatic Tournament Modifiers
+  diplomatic_chess_championship: "Diplomatic Chess Championship"
+  international_tournament_host: "International Tournament Host"
+  alliance_chess_tournament: "Alliance Chess Tournament"
+  exclusive_tournament_host: "Exclusive Tournament Host"
+  chess_diplomacy_initiative: "Chess Diplomacy Initiative"
+  chess_diplomacy_venue: "Chess Diplomacy Venue"
+  east_west_game_summit: "East-West Gaming Summit"
+  east_west_championship: "East-West Championship"
+  eastern_strategic_principles: "Eastern Strategic Principles"
+
+  # Celebrity Gaming Modifiers
+  national_chess_champion: "National Chess Champion"
+  champion_home_state: "Chess Champion's Home State"
+  state_sponsored_champion: "State-Sponsored Gaming Champion"
+  expensive_chess_program: "Expensive Chess Program"
+  chess_brain_drain: "Chess Brain Drain"
+
+  # Underground Gaming Modifiers
+  gambling_crackdown: "Gambling Crackdown"
+  underground_resistance: "Underground Gaming Resistance"
+  corrupt_gambling_oversight: "Corrupt Gambling Oversight"
+  organized_crime_gambling: "Organized Crime Gambling Ring"
+  gaming_legalization_transition: "Gaming Legalization Transition"
+  chess_modernization_society: "Chess Modernization Society"
+  traditional_gaming_preservation: "Traditional Gaming Preservation"
+  cultural_protectionism: "Cultural Gaming Protectionism"
+
+  # Trade Route Modifiers
+  exotic_gaming_imports: "Exotic Gaming Imports"
+  luxury_game_components: "Luxury Game Components"
+  exotic_chess_materials: "Exotic Chess Materials"
+  premium_gaming_materials: "Premium Gaming Materials"
+  domestic_craftsmanship: "Domestic Gaming Craftsmanship"
+  local_artisan_support: "Local Artisan Support"
+
+  # Militaristic Gaming Modifiers
+  ultranationalist_gaming: "Ultranationalist Gaming"
+  military_gaming_enthusiasm: "Military Gaming Enthusiasm"
+  nationalist_gaming_theorist: "Nationalist Gaming Theorist"
+  militaristic_gaming_center: "Militaristic Gaming Center"
+  educational_wargaming: "Educational Wargaming"
+  marginalized_theorist: "Marginalized Gaming Theorist"
+  professional_military_gaming: "Professional Military Gaming"
+  gaming_militarization_program: "Gaming Militarization Program"
+  gaming_propaganda_minister: "Gaming Propaganda Minister"
+  military_ideological_control: "Military Ideological Control Through Gaming"
+
+  # Occult Gaming Modifiers
+  occult_gaming_curiosity: "Occult Gaming Curiosity"
+  eccentric_game_designer: "Eccentric Game Designer"
+  traditional_mystical_gaming: "Traditional Mystical Gaming"
+  traditionalist_thought_leader: "Traditionalist Gaming Thought Leader"
+  occult_gaming_ban: "Occult Gaming Ban"
+  suppressed_occultist: "Suppressed Occultist Designer"
+
+  # Racial Gaming Modifiers
+  supremacist_gaming_themes: "Supremacist Gaming Themes"
+  racial_hierarchy_games: "Racial Hierarchy Games"
+  gaming_cultural_resistance: "Gaming Cultural Resistance"
+  abstract_strategy_focus: "Abstract Strategy Focus"
+  chess_club_emphasis: "Chess Club Emphasis"
+  egalitarian_gaming_movement: "Egalitarian Gaming Movement"
+  gaming_social_controversy: "Gaming Social Controversy"
+
+  # New Events - Interest Group Reactions
+  gaming_industry_event.20.t: "Religious Opposition to Gaming"
+  gaming_industry_event.20.d: "Our expansion of gaming establishments, particularly those offering gambling, has drawn harsh criticism from religious leaders. They argue that games of chance corrupt moral character and lead to financial ruin for families. Sermons condemning gambling and gaming have become increasingly common, and pamphlets warning of moral decay are being distributed throughout our cities."
+  gaming_industry_event.20.f: "The dice and cards are but the devil's playthings."
+  gaming_industry_event.20.a: "Implement religious oversight of gaming establishments"
+  gaming_industry_event.20.b: "These are merely entertainments, not moral concerns"
+
+  # Regional Gaming Events
+  gaming_industry_event.21.t: "Xiangqi: Chinese Chess"
+  gaming_industry_event.21.d: "As our interest in strategic board games grows, we've encountered the Chinese game of Xiangqi, often called Chinese Chess. While sharing some similarities with Western chess, Xiangqi has distinctive differences: pieces are placed on the intersections rather than within squares, the board features a 'river' dividing the two sides, and unique pieces like the Cannon have no Western equivalent. Hosting a Xiangqi tournament could celebrate this tradition and potentially build cultural bridges."
+  gaming_industry_event.21.f: "The General must be protected, for when he falls, the kingdom falls with him."
+  gaming_industry_event.21.a: "Host a Xiangqi tournament"
+  gaming_industry_event.21.b: "Focus on Western chess instead"
+
+  # Colonial Gaming Events
+  gaming_industry_event.22.t: "Indigenous Gaming Traditions"
+  gaming_industry_event.22.d: "Our colonial officials have documented unique indigenous gaming traditions in our overseas territories. These games, deeply woven into local cultures, often reflect spiritual beliefs, social hierarchies, and environmental adaptations. Some colonial administrators suggest these games could be commercially exploited, while others argue for cultural exchange or suppression in favor of European games."
+  gaming_industry_event.22.f: "The stones and seeds they play with hold centuries of tradition unknown to European parlors."
+  gaming_industry_event.22.a: "Appropriate these games for commercial benefit"
+  gaming_industry_event.22.b: "Establish a respectful cultural exchange"
+  gaming_industry_event.22.c: "Suppress indigenous games in favor of European ones"
+
+  # Educational Gaming Events
+  gaming_industry_event.23.t: "Strategic Education Initiative"
+  gaming_industry_event.23.d: "Educational reformers are proposing the integration of strategic games into our school curriculum. Chess, in particular, is highlighted for its ability to develop critical thinking, foresight, and pattern recognition. Some military officers have also noted the value of such games for developing tacticians, while economists point to the benefits for commercial strategy and negotiation skills."
+  gaming_industry_event.23.f: "The chessboard is a battlefield of the mind."
+  gaming_industry_event.23.a: "Implement a comprehensive gaming curriculum"
+  gaming_industry_event.23.b: "Focus on military applications"
+
+  # Trade Route Events
+  gaming_industry_event.24.t: "Exotic Gaming Materials"
+  gaming_industry_event.24.d: "Our trade networks have opened access to exotic materials perfect for crafting luxury gaming pieces. Ivory from Africa, silk from China, and precious woods from the tropics could be transformed into gaming equipment of extraordinary beauty and value. While expensive, using these materials could create prestigious exports and elevate the status of our gaming industry."
+  gaming_industry_event.24.f: "The smooth feel of ivory chess pieces in hand conveys wealth as much as taste."
+  gaming_industry_event.24.a: "Import exotic materials for luxury gaming products"
+  gaming_industry_event.24.b: "Focus on domestic craftsmanship with local materials"
+
+  # Diplomatic Tournament Events
+  gaming_industry_event.25.t: "International Chess Championship"
+  gaming_industry_event.25.d: "As chess becomes increasingly recognized as an intellectual pursuit transcending national boundaries, we have an opportunity to host an International Chess Championship. Such an event could serve as a diplomatic platform while showcasing our cultural achievements. We must decide whether to make this a truly inclusive international event, focus on strengthening existing alliances, or perhaps use it as an opportunity for careful diplomacy with rivals."
+  gaming_industry_event.25.f: "The battlefield of sixty-four squares can build bridges where traditional diplomacy fails."
+  gaming_industry_event.25.a: "Host an inclusive international tournament"
+  gaming_industry_event.25.b: "Invite our allies and exclude rivals"
+  gaming_industry_event.25.c: "Focus on a diplomatic tournament with our rival"
+
+  gaming_industry_event.26.t: "East-West Gaming Summit"
+  gaming_industry_event.26.d: "Our deepening relations with East Asian nations have created an opportunity for a unique cultural exchange centered around strategic board games. While Western chess emphasizes piece capture and decisive battle, Eastern games like Go focus on territory control and long-term positioning. A summit bringing together masters of both traditions could strengthen diplomatic ties while enriching both gaming cultures."
+  gaming_industry_event.26.f: "Two ancient traditions of strategic thought, meeting across a table."
+  gaming_industry_event.26.a: "Host a cultural exchange focused on mutual understanding"
+  gaming_industry_event.26.b: "Organize a competitive tournament between East and West"
+
+  # Celebrity Gamer Events
+  gaming_industry_event.27.t: "Chess Champion Emerges"
+  gaming_industry_event.27.d: "A brilliant young chess player from our nation has emerged victorious in several international tournaments, drawing attention from around the world. This prodigy's innovative playing style and tactical brilliance have already led to comparisons with historical greats like Morphy and Steinitz. As their reputation grows, we must decide how to support this homegrown talent who brings such prestige to our nation."
+  gaming_industry_event.27.f: "The eyes of the world now follow every move made by our brilliant strategist."
+  gaming_industry_event.27.a: "Celebrate them as a national hero with state support"
+  gaming_industry_event.27.b: "Let them develop their career independently"
+
+  gaming_industry_event.28.t: "Foreign Recruitment of Our Champion"
+  gaming_industry_event.28.d: "Our chess champion has received a lucrative offer from a foreign power, including significant financial incentives, access to their elite training facilities, and the chance to compete regularly against their best players. This would represent a significant brain drain and loss of prestige for our nation, but attempting to match these terms would be expensive."
+  gaming_industry_event.28.f: "The knight contemplates jumping to a more favorable position."
+  gaming_industry_event.28.a: "Match their offer to keep our champion at home"
+  gaming_industry_event.28.b: "We cannot justify such expense for games"
+
+  # Underground Gaming Events
+  gaming_industry_event.29.t: "Underground Gambling Den Discovered"
+  gaming_industry_event.29.d: "Authorities have uncovered a sophisticated underground gambling operation operating in defiance of laws or social norms. Hidden in the basement of an innocuous building, this establishment has apparently been serving affluent citizens for months, offering games of chance and significant wagers. The discovery presents a choice: enforce prohibition vigorously, turn a blind eye for the right price, or reconsider our restrictive policies."
+  gaming_industry_event.29.f: "Behind unmarked doors, fortunes change hands in smoky rooms."
+  gaming_industry_event.29.a: "Raid and shut down this criminal enterprise"
+  gaming_industry_event.29.b: "Look the other way for a generous 'contribution'"
+  gaming_industry_event.29.c: "Perhaps our prohibition laws need reconsideration"
+
+  gaming_industry_event.30.t: "Secret Chess Society"
+  gaming_industry_event.30.d: "A clandestine society has formed among our educated elite, devoted to studying Western chess as introduced by foreign diplomats. These intellectuals meet secretly to play and discuss this 'modern' game, seeing it as a symbol of progressive Western thought. While seemingly harmless, this represents a broader pattern of foreign cultural influence challenging traditional values and authority."
+  gaming_industry_event.30.f: "The movement of wooden pieces across checkered boards signals shifting intellectual winds."
+  gaming_industry_event.30.a: "Support this modernist cultural exchange"
+  gaming_industry_event.30.b: "Ban this foreign influence and preserve our traditions"
+
+  # Regressive Gaming Events
+  gaming_industry_event.31.t: "Militaristic Gaming Ideology"
+  gaming_industry_event.31.d: "Viktor Roth, a charismatic game designer with ultranationalist leanings, has developed a series of wargames that go beyond traditional military simulation. His games deliberately incorporate racial hierarchy theories, glorify conquest, and promote an extreme vision of national destiny. While his designs have technical merit, they clearly serve as vectors for radical nationalist ideology. Military officers have shown particular interest in Roth's work."
+  gaming_industry_event.31.f: "The pieces on his board are not merely armies, but races locked in an eternal struggle for dominance."
+  gaming_industry_event.31.a: "His games will strengthen our military spirit"
+  gaming_industry_event.31.b: "Keep gaming apolitical and focused on education"
+  gaming_industry_event.31.c: "Make his vision central to our national ideology"
+
+  gaming_industry_event.32.t: "The Mystical Gaming Society"
+  gaming_industry_event.32.d: "Edmund Blackwood, an aristocratic game designer, has founded an exclusive gaming society that incorporates occult themes and mystical symbolism into elaborate role-playing scenarios. His games combine traditional folklore with reactionary political themes, romanticizing feudal hierarchies and ancient bloodlines. While appealing to certain elite circles, these games promote a worldview that rejects modern social progress in favor of mystical traditionalism."
+  gaming_industry_event.32.f: "Ancient runes and modern politics intertwine as players assume roles in a mythic hierarchy."
+  gaming_industry_event.32.a: "Tolerate this as harmless eccentricity"
+  gaming_industry_event.32.b: "Support these traditional cultural expressions"
+  gaming_industry_event.32.c: "Condemn these occult activities"
+
+  gaming_industry_event.33.t: "Racial Hierarchy in Games"
+  gaming_industry_event.33.d: "Game designers in our nation have begun incorporating our social hierarchy directly into gaming materials. New games feature explicit racial categories with different abilities and values, reinforcing concepts of inherent superiority and inferiority. While some embrace these games as reflecting natural order, others argue that games should remain abstract to focus on strategy rather than politics."
+  gaming_industry_event.33.f: "The ivory piece commands while the darker pieces serve - a board mirroring society."
+  gaming_industry_event.33.a: "These games reinforce our social order"
+  gaming_industry_event.33.b: "Focus on abstract strategy games like chess instead"
+  gaming_industry_event.33.c: "Surprisingly, promote games with egalitarian themes"
+
+  # Other Modifiers with missing localization
+  regulated_gambling: "Regulated Gambling"
+  religious_gaming_oversight: "Religious Gaming Oversight"
+  unrestricted_gambling: "Unrestricted Gambling"
+  xiangqi_tournament: "Xiangqi Tournament"
+  western_chess_focus: "Western Chess Focus"
+  gaming_innovation_ecosystem: "Gaming Innovation Ecosystem"
+  gaming_legalization_transition: "Gaming Legalization Transition"
+  gaming_innovation_pioneer: "Gaming Innovation Pioneer"
+  cultural_soft_power: "Cultural Soft Power"
+  gaming_cultural_mecca: "Gaming Cultural Mecca"

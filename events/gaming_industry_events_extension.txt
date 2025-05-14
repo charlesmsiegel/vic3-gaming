@@ -1,0 +1,1483 @@
+# events/gaming_industry_events_extension.txt
+# New Events for Improved Gaming Mod
+
+# Interest Group Events
+# Devout Opposition Event
+gaming_industry_event.20 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.20.t
+    desc = gaming_industry_event.20.d
+    flavor = gaming_industry_event.20.f
+    
+    duration = 3
+    
+    trigger = {
+        any_scope_state = {
+            any_scope_building = {
+                is_building_type = building_gaming_establishments
+                has_active_production_method = pm_gambling_houses
+            }
+        }
+        has_powerful_ig = ig_devout
+    }
+    
+    immediate = {
+        ig:ig_devout = {
+            save_scope_as = devout_ig
+        }
+    }
+    
+    # Compromise with religious authorities
+    option = {
+        name = gaming_industry_event.20.a
+        default_option = yes
+        
+        scope:devout_ig = {
+            add_approval = 1
+        }
+        
+        add_modifier = {
+            name = regulated_gambling
+            months = 24
+        }
+        
+        # Reduced profits but less opposition
+        random_scope_state = {
+            limit = {
+                any_scope_building = {
+                    is_building_type = building_gaming_establishments
+                    has_active_production_method = pm_gambling_houses
+                }
+            }
+            add_modifier = {
+                name = religious_gaming_oversight
+                months = 24
+            }
+        }
+    }
+    
+    # Ignore religious concerns
+    option = {
+        name = gaming_industry_event.20.b
+        
+        scope:devout_ig = {
+            add_approval = -2
+            add_modifier = {
+                name = ig_devout_gaming_opposition
+                months = 36
+            }
+        }
+        
+        # Better profits but religious opposition
+        random_scope_state = {
+            limit = {
+                any_scope_building = {
+                    is_building_type = building_gaming_establishments
+                    has_active_production_method = pm_gambling_houses
+                }
+            }
+            add_modifier = {
+                name = unrestricted_gambling
+                months = 36
+            }
+        }
+    }
+}
+
+# Regional Gaming Events
+# Xiangqi Tournament
+gaming_industry_event.21 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.21.t
+    desc = gaming_industry_event.21.d
+    flavor = gaming_industry_event.21.f
+    
+    duration = 3
+    
+    trigger = {
+        OR = {
+            country_has_primary_culture = cu:han
+            AND = {
+                any_country = {
+                    country_has_primary_culture = cu:han
+                    relations:root >= relations_threshold:cordial
+                }
+                has_technology_researched = technology_chess_academy
+            }
+        }
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                is_capital = yes
+            }
+            save_scope_as = capital_state
+        }
+    }
+    
+    # Host a Xiangqi tournament
+    option = {
+        name = gaming_industry_event.21.a
+        default_option = yes
+        
+        scope:capital_state = {
+            add_modifier = {
+                name = xiangqi_tournament
+                months = 24
+            }
+        }
+        
+        # Improve relations with China if not China
+        if = {
+            limit = {
+                NOT = { country_has_primary_culture = cu:han }
+            }
+            every_country = {
+                limit = {
+                    country_has_primary_culture = cu:han
+                }
+                change_relations = {
+                    country = root
+                    value = 10
+                }
+            }
+        }
+        else = {
+            add_prestige = 10
+        }
+    }
+    
+    # Focus on Western chess instead
+    option = {
+        name = gaming_industry_event.21.b
+        
+        scope:capital_state = {
+            add_modifier = {
+                name = western_chess_focus
+                months = 24
+            }
+        }
+        
+        # Improve relations with European powers
+        every_country = {
+            limit = {
+                OR = {
+                    country_has_primary_culture = cu:british
+                    country_has_primary_culture = cu:french
+                    country_has_primary_culture = cu:north_german
+                }
+                relations:root >= relations_threshold:cordial
+            }
+            change_relations = {
+                country = root
+                value = 5
+            }
+        }
+    }
+}
+
+# Colonial Gaming Exchange
+gaming_industry_event.22 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.22.t
+    desc = gaming_industry_event.22.d
+    flavor = gaming_industry_event.22.f
+    
+    duration = 3
+    
+    trigger = {
+        is_colonial_power = yes
+        any_scope_state = {
+            is_colonial = yes
+            is_incorporated = no
+            owner = root
+        }
+        has_technology_researched = technology_traditional_gaming
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                is_colonial = yes
+                is_incorporated = no
+                owner = root
+            }
+            save_scope_as = colonial_state
+        }
+        random_scope_state = {
+            limit = {
+                is_capital = yes
+            }
+            save_scope_as = capital_state
+        }
+    }
+    
+    # Appropriate indigenous games
+    option = {
+        name = gaming_industry_event.22.a
+        
+        # Economic benefits but colonial tension
+        add_modifier = {
+            name = appropriated_indigenous_games
+            months = 36
+        }
+        
+        scope:capital_state = {
+            add_modifier = {
+                name = exotic_gaming_trend
+                months = 36
+            }
+        }
+        
+        scope:colonial_state = {
+            add_modifier = {
+                name = cultural_exploitation
+                months = 36
+            }
+        }
+    }
+    
+    # Cultural exchange approach
+    option = {
+        name = gaming_industry_event.22.b
+        default_option = yes
+        
+        # Less economic benefit but better cultural relations
+        add_modifier = {
+            name = gaming_cultural_exchange
+            months = 48
+        }
+        
+        scope:capital_state = {
+            add_modifier = {
+                name = multicultural_gaming
+                months = 36
+            }
+        }
+        
+        scope:colonial_state = {
+            add_modifier = {
+                name = cultural_recognition
+                months = 36
+            }
+        }
+    }
+    
+    # Suppress indigenous games
+    option = {
+        name = gaming_industry_event.22.c
+        
+        # Cultural assimilation but increased tensions
+        add_modifier = {
+            name = gaming_cultural_suppression
+            months = 48
+        }
+        
+        scope:colonial_state = {
+            add_modifier = {
+                name = cultural_resistance
+                months = 48
+            }
+        }
+    }
+}
+
+# Educational Gaming Events
+# Strategic Education Initiative
+gaming_industry_event.23 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.23.t
+    desc = gaming_industry_event.23.d
+    flavor = gaming_industry_event.23.f
+    
+    duration = 3
+    
+    trigger = {
+        has_building = building_chess_academy
+        has_building = building_university
+        literacy_rate > 0.6
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                has_building = building_university
+            }
+            save_scope_as = education_state
+        }
+    }
+    
+    # Integrate gaming into education
+    option = {
+        name = gaming_industry_event.23.a
+        default_option = yes
+        
+        # Educational benefits
+        add_modifier = {
+            name = strategic_education_initiative
+            months = 48
+        }
+        
+        scope:education_state = {
+            # If gaming school building exists, use it
+            if = {
+                limit = {
+                    has_building = building_gaming_school
+                }
+                random_scope_building = {
+                    limit = {
+                        is_building_type = building_gaming_school
+                    }
+                    building_scale_level = 1
+                }
+            }
+            # Otherwise, add benefits to university
+            else = {
+                random_scope_building = {
+                    limit = {
+                        is_building_type = building_university
+                    }
+                    add_modifier = {
+                        name = gaming_curriculum
+                        months = 48
+                    }
+                }
+            }
+        }
+        
+        # Literacy boost
+        add_modifier = {
+            name = strategic_thinking_education
+            months = 36
+        }
+    }
+    
+    # Focus on military applications
+    option = {
+        name = gaming_industry_event.23.b
+        
+        # Military education focus
+        add_modifier = {
+            name = military_gaming_program
+            months = 36
+        }
+        
+        scope:education_state = {
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_barracks
+                }
+                building_scale_level = 1
+            }
+        }
+        
+        # Military strategy bonus
+        add_modifier = {
+            name = officer_strategic_training
+            months = 48
+        }
+    }
+}
+
+# Trade Route Events
+# Exotic Gaming Materials
+gaming_industry_event.24 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.24.t
+    desc = gaming_industry_event.24.d
+    flavor = gaming_industry_event.24.f
+    
+    duration = 3
+    
+    trigger = {
+        has_building = building_gaming_establishments
+        has_building = building_port
+        OR = {
+            has_trade_route_with_goods = goods_ivory
+            has_trade_route_with_goods = goods_silk
+            has_trade_route_with_goods = goods_luxury_clothes
+        }
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                has_building = building_gaming_establishments
+                has_building = building_port
+            }
+            save_scope_as = port_state
+        }
+    }
+    
+    # Invest in luxury gaming materials
+    option = {
+        name = gaming_industry_event.24.a
+        default_option = yes
+        
+        # Cost but prestige benefit
+        change_treasury = -5000
+        
+        add_modifier = {
+            name = exotic_gaming_imports
+            months = 36
+        }
+        
+        # Boost gaming establishments
+        scope:port_state = {
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                }
+                if = {
+                    limit = {
+                        has_active_production_method = pm_modern_board_games
+                    }
+                    add_modifier = {
+                        name = luxury_game_components
+                        months = 36
+                    }
+                }
+                else_if = {
+                    limit = {
+                        has_active_production_method = pm_traditional_chess_sets
+                    }
+                    add_modifier = {
+                        name = exotic_chess_materials
+                        months = 36
+                    }
+                }
+                else = {
+                    add_modifier = {
+                        name = premium_gaming_materials
+                        months = 36
+                    }
+                }
+            }
+        }
+    }
+    
+    # Focus on domestic materials
+    option = {
+        name = gaming_industry_event.24.b
+        
+        # Economic nationalism bonus
+        add_modifier = {
+            name = domestic_craftsmanship
+            months = 36
+        }
+        
+        # National focus benefits
+        scope:port_state = {
+            add_modifier = {
+                name = local_artisan_support
+                months = 36
+            }
+        }
+    }
+}
+
+# Diplomatic Tournament Events
+# International Chess Championship
+gaming_industry_event.25 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.25.t
+    desc = gaming_industry_event.25.d
+    flavor = gaming_industry_event.25.f
+    
+    duration = 3
+    
+    trigger = {
+        has_technology_researched = technology_professional_gaming
+        has_building = building_chess_academy
+        country_rank >= rank_value:minor_power
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                is_capital = yes
+            }
+            save_scope_as = capital_state
+        }
+        
+        # Find potential rivals and allies
+        random_country = {
+            limit = {
+                has_building = building_chess_academy
+                relations:root >= relations_threshold:cordial
+                NOT = { this = root }
+            }
+            save_scope_as = allied_country
+        }
+        
+        random_country = {
+            limit = {
+                has_building = building_chess_academy
+                relations:root <= relations_threshold:cold
+                NOT = { this = root }
+            }
+            save_scope_as = rival_country
+        }
+    }
+    
+    # Host inclusive international tournament
+    option = {
+        name = gaming_industry_event.25.a
+        default_option = yes
+        
+        # Prestige and tourism benefits
+        add_modifier = {
+            name = diplomatic_chess_championship
+            months = 36
+        }
+        
+        scope:capital_state = {
+            add_modifier = {
+                name = international_tournament_host
+                months = 24
+            }
+        }
+        
+        # Improve relations with all participants
+        every_country = {
+            limit = {
+                has_building = building_chess_academy
+                NOT = { this = root }
+            }
+            change_relations = {
+                country = root
+                value = 10
+            }
+        }
+    }
+    
+    # Invite allies, exclude rivals
+    option = {
+        name = gaming_industry_event.25.b
+        
+        # Less prestige but stronger alliance
+        add_modifier = {
+            name = alliance_chess_tournament
+            months = 36
+        }
+        
+        scope:capital_state = {
+            add_modifier = {
+                name = exclusive_tournament_host
+                months = 24
+            }
+        }
+        
+        # Significantly improve allied relations, worsen rival relations
+        scope:allied_country = {
+            change_relations = {
+                country = root
+                value = 25
+            }
+        }
+        
+        scope:rival_country = {
+            change_relations = {
+                country = root
+                value = -15
+            }
+        }
+    }
+    
+    # Focused bilateral tournament with rival
+    option = {
+        name = gaming_industry_event.25.c
+        
+        # Rivalry focused
+        add_modifier = {
+            name = chess_diplomacy_initiative
+            months = 36
+        }
+        
+        scope:capital_state = {
+            add_modifier = {
+                name = chess_diplomacy_venue
+                months = 24
+            }
+        }
+        
+        # Attempt to thaw relations with rival
+        scope:rival_country = {
+            change_relations = {
+                country = root
+                value = 20
+            }
+        }
+    }
+}
+
+# Go/Chess Cultural Exchange Summit
+gaming_industry_event.26 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.26.t
+    desc = gaming_industry_event.26.d
+    flavor = gaming_industry_event.26.f
+    
+    duration = 3
+    
+    trigger = {
+        has_technology_researched = technology_professional_gaming
+        has_building = building_chess_academy
+        NOT = { country_has_primary_culture = cu:japanese }
+        NOT = { country_has_primary_culture = cu:han }
+        
+        # Must have relations with East Asian power
+        OR = {
+            has_diplomatic_pact = {
+                who = c:JAP
+                type = alliance
+            }
+            has_diplomatic_pact = {
+                who = c:CHI
+                type = alliance
+            }
+            has_diplomatic_pact = {
+                who = c:KOR
+                type = alliance
+            }
+        }
+    }
+    
+    immediate = {
+        random_country = {
+            limit = {
+                OR = {
+                    this = c:JAP
+                    this = c:CHI
+                    this = c:KOR
+                }
+                has_diplomatic_pact = {
+                    who = root
+                    type = alliance
+                }
+            }
+            save_scope_as = asian_ally
+        }
+    }
+    
+    # Host cultural exchange
+    option = {
+        name = gaming_industry_event.26.a
+        default_option = yes
+        
+        # Cultural understanding benefits
+        add_modifier = {
+            name = east_west_game_summit
+            months = 36
+        }
+        
+        # Significant relation improvement
+        scope:asian_ally = {
+            change_relations = {
+                country = root
+                value = 25
+            }
+        }
+        
+        # Diplomatic pact improvement
+        if = {
+            limit = {
+                NOT = { has_diplomatic_pact = { who = scope:asian_ally type = customs_union } }
+            }
+            create_diplomatic_pact = {
+                country = scope:asian_ally
+                type = customs_union
+            }
+        }
+    }
+    
+    # Competitive tournament
+    option = {
+        name = gaming_industry_event.26.b
+        
+        # Prestige benefits
+        add_modifier = {
+            name = east_west_championship
+            months = 24
+        }
+        
+        # Moderate relation improvement
+        scope:asian_ally = {
+            change_relations = {
+                country = root
+                value = 15
+            }
+        }
+        
+        # Combat bonus from learning eastern strategy
+        add_modifier = {
+            name = eastern_strategic_principles
+            months = 48
+        }
+    }
+}
+
+# Celebrity Gamer Events
+# Chess Celebrity
+gaming_industry_event.27 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.27.t
+    desc = gaming_industry_event.27.d
+    flavor = gaming_industry_event.27.f
+    
+    duration = 3
+    
+    trigger = {
+        has_technology_researched = technology_professional_gaming
+        any_scope_state = {
+            has_building = building_chess_academy
+            has_active_production_method = {
+                building_type = building_chess_academy
+                production_method = pm_international_chess_tournaments
+            }
+        }
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                has_building = building_chess_academy
+                has_active_production_method = {
+                    building_type = building_chess_academy
+                    production_method = pm_international_chess_tournaments
+                }
+            }
+            save_scope_as = chess_state
+        }
+    }
+    
+    # Support as national hero
+    option = {
+        name = gaming_industry_event.27.a
+        default_option = yes
+        
+        # Generate chess champion
+        create_character = {
+            first_name = random
+            last_name = random
+            culture = root.culture
+            female = random # Either gender possible
+            age = { min = 20 max = 35 }
+            traits = { 
+                trait_chess_prodigy
+                analytical
+                charismatic
+            }
+            save_scope_as = chess_champion
+            interest_group = ig_intelligentsia
+        }
+        
+        # National benefits
+        add_modifier = {
+            name = national_chess_champion
+            months = 60
+        }
+        
+        # Local benefits
+        scope:chess_state = {
+            add_modifier = {
+                name = champion_home_state
+                months = 60
+            }
+        }
+    }
+    
+    # Brain drain risk - foreign recruitment
+    option = {
+        name = gaming_industry_event.27.b
+        
+        # Foreign power tries to recruit champion
+        random_country = {
+            limit = {
+                country_rank >= rank_value:major_power
+                relations:root >= relations_threshold:neutral
+                NOT = { this = root }
+                has_building = building_chess_academy
+            }
+            save_scope_as = foreign_country
+        }
+        
+        # Create character who might leave
+        create_character = {
+            first_name = random
+            last_name = random
+            culture = root.culture
+            female = random
+            age = { min = 20 max = 35 }
+            traits = { 
+                trait_chess_prodigy
+                analytical
+                innovative
+            }
+            save_scope_as = chess_champion
+            interest_group = ig_intelligentsia
+        }
+        
+        # 50% chance champion leaves for foreign country
+        random_chance = {
+            chance = 0.5
+            trigger_event = {
+                id = gaming_industry_event.28
+                days = 30
+            }
+        }
+    }
+}
+
+# Chess Champion Defection
+gaming_industry_event.28 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.28.t
+    desc = gaming_industry_event.28.d
+    flavor = gaming_industry_event.28.f
+    
+    duration = 3
+    
+    # This is triggered from previous event
+    
+    # Attempt to retain with benefits
+    option = {
+        name = gaming_industry_event.28.a
+        
+        # Financial cost
+        change_treasury = -10000
+        
+        # Keep champion with benefits
+        scope:chess_champion = {
+            add_modifier = {
+                name = state_sponsored_champion
+                months = 60
+            }
+        }
+        
+        # National benefits but at a cost
+        add_modifier = {
+            name = expensive_chess_program
+            months = 36
+        }
+    }
+    
+    # Let champion go
+    option = {
+        name = gaming_industry_event.28.b
+        default_option = yes
+        
+        # Diplomatic impact
+        scope:foreign_country = {
+            change_relations = {
+                country = root
+                value = -10
+            }
+        }
+        
+        # Brain drain effects
+        add_modifier = {
+            name = chess_brain_drain
+            months = 36
+        }
+        
+        # Champion leaves
+        scope:chess_champion = {
+            set_employer = scope:foreign_country
+        }
+    }
+}
+
+# Underground Gaming Events
+# Underground Casino
+gaming_industry_event.29 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.29.t
+    desc = gaming_industry_event.29.d
+    flavor = gaming_industry_event.29.f
+    
+    duration = 3
+    
+    trigger = {
+        OR = {
+            # Either gambling is prohibited...
+            has_law = law_type:law_gaming_prohibition
+            # ...or there's strong religious opposition
+            AND = {
+                has_powerful_ig = ig_devout
+                NOT = { has_active_production_method = { building_type = building_gaming_establishments production_method = pm_gambling_houses } }
+            }
+        }
+        # Urban requirement
+        any_scope_state = {
+            any_scope_city = {
+                city_size >= 5
+            }
+        }
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                any_scope_city = {
+                    city_size >= 5
+                }
+            }
+            save_scope_as = urban_state
+        }
+    }
+    
+    # Raid and shut down
+    option = {
+        name = gaming_industry_event.29.a
+        default_option = yes
+        
+        # Law enforcement crackdown
+        scope:urban_state = {
+            add_modifier = {
+                name = gambling_crackdown
+                months = 24
+            }
+        }
+        
+        # Religious approval
+        ig:ig_devout = {
+            add_approval = 1
+        }
+        
+        # Radicals from suppression
+        add_modifier = {
+            name = underground_resistance
+            months = 12
+        }
+    }
+    
+    # Bribe and ignore
+    option = {
+        name = gaming_industry_event.29.b
+        
+        # Corruption but tax benefits
+        add_modifier = {
+            name = corrupt_gambling_oversight
+            months = 36
+        }
+        
+        # Increased crime
+        scope:urban_state = {
+            add_modifier = {
+                name = organized_crime_gambling
+                months = 36
+            }
+        }
+        
+        # Religious disapproval
+        ig:ig_devout = {
+            add_approval = -1
+        }
+        
+        # Economic benefit
+        change_treasury = 5000
+    }
+    
+    # Reform laws to legalize
+    option = {
+        name = gaming_industry_event.29.c
+        
+        # Only available if we have prohibition law
+        trigger = {
+            has_law = law_type:law_gaming_prohibition
+        }
+        
+        # Start law change
+        start_law_debate = {
+            law = law_type:law_gaming_regulation
+        }
+        
+        # Transition period
+        add_modifier = {
+            name = gaming_legalization_transition
+            months = 24
+        }
+    }
+}
+
+# Secret Chess Society
+gaming_industry_event.30 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.30.t
+    desc = gaming_industry_event.30.d
+    flavor = gaming_industry_event.30.f
+    
+    duration = 3
+    
+    trigger = {
+        is_country_type = unrecognized
+        NOT = { has_technology_researched = technology_chess_academy }
+        any_country = {
+            is_country_type = recognized
+            has_technology_researched = technology_chess_academy
+            relations:root >= relations_threshold:cordial
+        }
+    }
+    
+    immediate = {
+        random_country = {
+            limit = {
+                is_country_type = recognized
+                has_technology_researched = technology_chess_academy
+                relations:root >= relations_threshold:cordial
+            }
+            save_scope_as = foreign_power
+        }
+    }
+    
+    # Support modernist society
+    option = {
+        name = gaming_industry_event.30.a
+        default_option = yes
+        
+        # Progressive modernization
+        add_modifier = {
+            name = chess_modernization_society
+            months = 48
+        }
+        
+        # Improve relations with Western power
+        scope:foreign_power = {
+            change_relations = {
+                country = root
+                value = 10
+            }
+        }
+        
+        # Technology boost
+        add_technology_progress = {
+            technology = technology_chess_academy
+            progress = 0.25
+        }
+    }
+    
+    # Ban foreign influences
+    option = {
+        name = gaming_industry_event.30.b
+        
+        # Traditionalist approach
+        add_modifier = {
+            name = traditional_gaming_preservation
+            months = 36
+        }
+        
+        # Isolationism boost
+        add_modifier = {
+            name = cultural_protectionism
+            months = 24
+        }
+    }
+}
+
+# Regressive Gaming Events
+# Militaristic Gaming Ideology Event
+gaming_industry_event.31 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.31.t
+    desc = gaming_industry_event.31.d
+    flavor = gaming_industry_event.31.f
+    
+    duration = 3
+    
+    trigger = {
+        year >= 1900
+        has_technology_researched = technology_professional_gaming
+        has_character = historical_figure_viktor_roth
+    }
+    
+    immediate = {
+        every_scope_character = {
+            limit = {
+                is_character_type = historical_figure_viktor_roth
+            }
+            save_scope_as = viktor_roth
+        }
+        
+        ig:ig_armed_forces = {
+            save_scope_as = military_ig
+        }
+    }
+    
+    # Embrace militaristic gaming
+    option = {
+        name = gaming_industry_event.31.a
+        
+        # Nationalistic military benefits
+        add_modifier = {
+            name = ultranationalist_gaming
+            months = 48
+        }
+        
+        # Military approval
+        scope:military_ig = {
+            add_approval = 2
+            add_modifier = {
+                name = military_gaming_enthusiasm
+                months = 36
+            }
+        }
+        
+        # Character promotion
+        scope:viktor_roth = {
+            add_modifier = {
+                name = nationalist_gaming_theorist
+                months = 60
+            }
+        }
+        
+        # Create militaristic wargaming company
+        random_scope_state = {
+            limit = {
+                has_building = building_barracks
+                is_incorporated = yes
+            }
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                }
+                activate_production_method = pm_wargaming
+            }
+            add_modifier = {
+                name = militaristic_gaming_center
+                months = 48
+            }
+        }
+    }
+    
+    # Reject extremist ideology
+    option = {
+        name = gaming_industry_event.31.b
+        default_option = yes
+        
+        # Moderate approach
+        add_modifier = {
+            name = educational_wargaming
+            months = 36
+        }
+        
+        # Character demotion
+        scope:viktor_roth = {
+            add_modifier = {
+                name = marginalized_theorist
+                months = 36
+            }
+        }
+        
+        # Still get some military benefits
+        scope:military_ig = {
+            add_modifier = {
+                name = professional_military_gaming
+                months = 24
+            }
+        }
+    }
+    
+    # Fully embrace and expand ideology
+    option = {
+        name = gaming_industry_event.31.c
+        
+        # Only available for radical nations
+        trigger = {
+            OR = {
+                has_law = law_type:law_autocracy 
+                has_law = law_type:law_oligarchy
+                ig:ig_armed_forces = { is_powerful = yes }
+            }
+        }
+        
+        # Major militarization
+        add_modifier = {
+            name = gaming_militarization_program
+            months = 60
+        }
+        
+        # Character elevation
+        scope:viktor_roth = {
+            add_modifier = {
+                name = gaming_propaganda_minister
+                months = 60
+            }
+        }
+        
+        # Military dominance
+        scope:military_ig = {
+            add_approval = 3
+            add_modifier = {
+                name = military_ideological_control
+                months = 48
+            }
+        }
+        
+        # Marginalize intellectuals
+        ig:ig_intelligentsia = {
+            add_approval = -2
+        }
+    }
+}
+
+# Occult Gaming Society Event
+gaming_industry_event.32 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.32.t
+    desc = gaming_industry_event.32.d
+    flavor = gaming_industry_event.32.f
+    
+    duration = 3
+    
+    trigger = {
+        has_technology_researched = technology_advanced_game_design
+        has_character = historical_figure_edmund_blackwood
+        year >= 1910
+    }
+    
+    immediate = {
+        every_scope_character = {
+            limit = {
+                is_character_type = historical_figure_edmund_blackwood
+            }
+            save_scope_as = edmund_blackwood
+        }
+        
+        ig:ig_devout = {
+            save_scope_as = religious_ig
+        }
+    }
+    
+    # Tolerate as harmless eccentricity
+    option = {
+        name = gaming_industry_event.32.a
+        default_option = yes
+        
+        # Cultural curiosity
+        add_modifier = {
+            name = occult_gaming_curiosity
+            months = 36
+        }
+        
+        # Character continues privately
+        scope:edmund_blackwood = {
+            add_modifier = {
+                name = eccentric_game_designer
+                months = 48
+            }
+        }
+    }
+    
+    # Support traditionalist elements
+    option = {
+        name = gaming_industry_event.32.b
+        
+        # Conservative benefits
+        add_modifier = {
+            name = traditional_mystical_gaming
+            months = 48
+        }
+        
+        # Character promotion
+        scope:edmund_blackwood = {
+            add_modifier = {
+                name = traditionalist_thought_leader
+                months = 60
+            }
+        }
+        
+        # Religious approval
+        scope:religious_ig = {
+            add_approval = 1
+        }
+        
+        # Intellectual disapproval
+        ig:ig_intelligentsia = {
+            add_approval = -1
+        }
+    }
+    
+    # Condemn and suppress
+    option = {
+        name = gaming_industry_event.32.c
+        
+        # Social control
+        add_modifier = {
+            name = occult_gaming_ban
+            months = 36
+        }
+        
+        # Religious approval
+        scope:religious_ig = {
+            add_approval = 2
+        }
+        
+        # Character marginalization
+        scope:edmund_blackwood = {
+            add_modifier = {
+                name = suppressed_occultist
+                months = 48
+            }
+        }
+    }
+}
+
+# Racial Hierarchy in Games Event
+gaming_industry_event.33 = {
+    type = country_event
+    placement = root
+    
+    title = gaming_industry_event.33.t
+    desc = gaming_industry_event.33.d
+    flavor = gaming_industry_event.33.f
+    
+    duration = 3
+    
+    trigger = {
+        has_technology_researched = technology_wargaming
+        OR = {
+            has_law = law_type:law_racial_segregation
+            has_law = law_type:law_colonial_exploitation
+            has_law = law_type:law_slavery
+        }
+        any_scope_state = {
+            has_building = building_gaming_establishments
+        }
+    }
+    
+    immediate = {
+        random_scope_state = {
+            limit = {
+                has_building = building_gaming_establishments
+            }
+            save_scope_as = gaming_state
+        }
+    }
+    
+    # Promote supremacist ideology
+    option = {
+        name = gaming_industry_event.33.a
+        
+        # Racial ideology reinforcement
+        add_modifier = {
+            name = supremacist_gaming_themes
+            months = 60
+        }
+        
+        # Cultural entrenchment
+        scope:gaming_state = {
+            add_modifier = {
+                name = racial_hierarchy_games
+                months = 48
+            }
+        }
+        
+        # Resistance
+        if = {
+            limit = {
+                any_scope_state = {
+                    has_discrimination_trait = unaccepted
+                }
+            }
+            random_scope_state = {
+                limit = {
+                    has_discrimination_trait = unaccepted
+                }
+                add_modifier = {
+                    name = gaming_cultural_resistance
+                    months = 36
+                }
+            }
+        }
+    }
+    
+    # Focus on abstract strategy
+    option = {
+        name = gaming_industry_event.33.b
+        default_option = yes
+        
+        # Neutral approach
+        add_modifier = {
+            name = abstract_strategy_focus
+            months = 36
+        }
+        
+        # Chess focus
+        scope:gaming_state = {
+            random_scope_building = {
+                limit = {
+                    is_building_type = building_gaming_establishments
+                }
+                add_modifier = {
+                    name = chess_club_emphasis
+                    months = 36
+                }
+            }
+        }
+    }
+    
+    # Surprising progressive option
+    option = {
+        name = gaming_industry_event.33.c
+        
+        # Tiny chance of progressive gaming
+        trigger = {
+            has_interest_group_supporter_greater_than = {
+                interest_group = ig_intelligentsia
+                value = 0.2
+            }
+        }
+        
+        # Reform impulse
+        add_modifier = {
+            name = egalitarian_gaming_movement
+            months = 36
+        }
+        
+        # Social tension
+        scope:gaming_state = {
+            add_modifier = {
+                name = gaming_social_controversy
+                months = 24
+            }
+        }
+        
+        # Progressive approval
+        ig:ig_intelligentsia = {
+            add_approval = 1
+        }
+        
+        # Conservative disapproval
+        ig:ig_landowners = {
+            add_approval = -1
+        }
+    }
+}
